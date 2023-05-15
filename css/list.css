@@ -1,0 +1,135 @@
+.data_searchBox {
+    width: 100%;
+    background-color: #9edc80;
+    border-radius: 4px;
+    padding: 4px;
+    /* display: inline-flex; */
+    align-items: center;
+}
+
+.data_searchBox .search_header p {
+    background-image: url(../img/research.svg);
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    font-family: "微軟正黑體";
+    font-size: 16px;
+    color: #FFF;
+    background-color: #66bb6a;
+    display: inline-block;
+    /* padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 27px; */
+    background-position: 4px center;
+    border-radius: 4px;
+    margin-right: 8px;
+    padding: 8px 8px 8px 27px;
+}
+
+.data_searchBox .search_header {
+    display: -webkit-inline-box;
+    /* display: contents; */
+}
+
+.btn_search:active,
+.btn_search.active {
+    background-image: none;
+    outline: 0;
+    /* -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125); */
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn_search input {
+    display: none;
+}
+
+.search_btnGroup {
+    margin-left: 0.5vw;
+}
+
+.rain_group {
+    margin-left: 20px;
+    display: none;
+}
+
+.rain_group label {
+    font-weight: bold;
+}
+
+.BtnQuery {
+    /* font-size: 14px;
+    font-family: "微軟正黑體";
+    font-weight: normal; */
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: #66bb6a;
+    color: #ffffff;
+    display: inline-block;
+    padding: 6px 20px 6px 36px;
+    border-style: none;
+    background-image: url(../img/magnifying-glass.svg);
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: 8px center;
+}
+
+.rain_group input[type="text"] {
+    width: 130px;
+}
+
+@media (max-width:1200px) {
+    .rain_group {
+        margin-left: 0;
+    }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+
+    .search_btnGroup {
+        display: contents;
+    }
+
+    .data_searchBox {
+        display: inline-block;
+    }
+}
+
+@media (max-width:1200px) {
+    .search_btnGroup {
+        display: block;
+    }
+
+    .data_searchBox {
+        display: inline-block;
+    }
+
+    .data_searchBox .search_header {
+        /* display: -webkit-inline-box; */
+        display: contents;
+    }
+}
+
+@media (max-width:480px) {
+    .rain_group input[type="text"] {
+        width: 70px;
+    }
+}
+
+
+p {
+    margin-bottom: 0rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0rem;
+}
+
+input,
+select {
+    border: 1px solid #aeaeae;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 4px;
+}
