@@ -18,6 +18,7 @@
     margin-top: 50px;
 }
 
+
 /* .col-12 {
     display: flex;
     padding: 0 !important;
@@ -33,6 +34,7 @@
     padding: 0 !important;
 }
 
+
 /* 
 .mapList .col-10,
 .mapList .col-2 {
@@ -45,23 +47,19 @@
         /* margin-bottom: 1.5rem !important; */
         margin: 0 0 1.5rem 0 !important;
     }
-
     .mapList .col-md-10 {
         flex: 0 0 80.333333%;
         max-width: 80.333333%;
     }
-
     .mapList .col-md-2 {
         flex: 0 0 19.666667%;
         max-width: 19.666667%;
     }
-
     .mapList .map,
     .mapList .map img,
     .data_table {
         width: 100%;
     }
-
     .group-M {
         display: none;
     }
@@ -73,22 +71,15 @@
         height: 300px;
         object-fit: cover;
     }
-
     .mapList .list-group,
     .mapList .card {
         /* margin: 2vh 10vw !important; */
-        margin: 2vh 15vw !important;
+        margin: 2vh 10px !important;
     }
-
     .group-D {
         display: none;
     }
-
-
 }
-
-
-
 
 .mapList .list-group,
 .mapList .card {
@@ -98,7 +89,6 @@
     margin-left: 10px;
     height: 100%;
 }
-
 
 .mapList .lights {
     background-image: url(../img/light_boxBG.png);
@@ -125,7 +115,6 @@
     list-style: none;
     padding: 7px 5px;
     margin: 0 20px;
-
 }
 
 .mapList .list-group .listText,
@@ -136,6 +125,7 @@
 
 
 /* table */
+
 .data_table h2 {
     background-color: #66bb6a;
     border-top-left-radius: 6px;
@@ -188,26 +178,21 @@
     .table-data {
         width: 100%;
     }
-
     .table-data tr {
         border: 1px solid #ccc;
     }
-
     .table-data tr:nth-child(2n+2) {
         background-color: #f1f1f1;
     }
-
     .table-data th {
         display: none;
     }
-
     .table-data td {
         display: block;
         border: none;
         position: relative;
         padding-left: 180px !important;
     }
-
     .table-data td:before {
         content: attr(data-th) " ";
         position: absolute;
@@ -216,17 +201,14 @@
         font-weight: bold;
         color: #4f9553;
     }
-
     .table-data tbody tr:nth-of-type(odd) {
         background-color: revert;
     }
-
     .table tbody td,
     .table tbody th {
         text-align: start;
         padding: 5px;
     }
-
     .table tbody img {
         width: 10%;
     }
