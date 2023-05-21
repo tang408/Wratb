@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+
+
+    <!-- 放header -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <div w3-include-html="header.html"></div>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<script>
+    w3.includeHTML();
+</script>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <!-- <div class="row"> -->
+            <!--圖台-->
+            <div class="row mapList">
+                <div class="col-12 col-md-10 map" id="div_turb">
+                    <img src="./img/map.png" alt="">
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul class="list-group group-D">
+                        <span class="lights">警示燈號</span>
+                        <li><img src="./img/light_green.png">無異常</li>
+                        <li><img src="./img/light_yellow.png">濁度低</li>
+                        <li><img src="./img/light_orange.png">濁度中</li>
+                        <li><img src="./img/light_red.png">濁度高</li>
+                        <div class="listText">
+                            <span class="txtGreen">無異常: </span>濁度
+                            < 1000NTU <br />
+                            <span class="txtYellow">濁度低: </span>濁度 > 1000NTU
+                            <br />
+                            <span class="txtOrange">濁度中: </span>濁度 > 3000NTU
+                            <br />
+                            <span class="txtRed">濁度高: </span>濁度 > 6000NTU
+                        </div>
+                    </ul>
+
+                    <div class="accordion group-M" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header lights" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-block" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        警示燈號
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <li><img src="./img/light_green.png">無異常</li>
+                                    <li><img src="./img/light_yellow.png">濁度低</li>
+                                    <li><img src="./img/light_orange.png">濁度中</li>
+                                    <li><img src="./img/light_red.png">濁度高</li>
+                                    <div class="listText">
+                                        <span class="txtGreen">無異常: </span>濁度
+                                        < 1000NTU <br />
+                                        <span class="txtYellow">濁度低: </span>濁度 > 1000NTU
+                                        <br />
+                                        <span class="txtOrange">濁度中: </span>濁度 > 3000NTU
+                                        <br />
+                                        <span class="txtRed">濁度高: </span>濁度 > 6000NTU
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--圖台結尾-->
+
+            <!--列表-->
+            <div class="data_table">
+                <h2>台九甲10.2K(計畫範圍)</h2>
+                <div class="Turbidity">
+                    <table class="table table-data" id="TurbTopTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">項次</th>
+                                <th scope="col">監測站名稱</th>
+                                <th scope="col">濁度</th>
+                                <th scope="col">警示燈號</th>
+                                <th scope="col">資料來源</th>
+                                <th scope="col">資料更新時間</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th data-th="#" scope="row">1</th>
+                                <td data-th="監測站名稱">覽勝橋</td>
+                                <td data-th="濁度">94</td>
+                                <td data-th="警示燈號"><img src="./img/light_green.png"></td>
+                                <td data-th="資料來源">臺北水源特定區管理局</td>
+                                <td data-th="資料更新時間">2023-05-03 17:00:00</td>
+                            </tr>
+                            <tr>
+                                <th data-th="#" scope="row">2</th>
+                                <td data-th="監測站名稱">下龜山橋</td>
+                                <td data-th="濁度">178</td>
+                                <td data-th="警示燈號"><img src="./img/light_green.png"></td>
+                                <td data-th="資料來源">臺北水源特定區管理局</td>
+                                <td data-th="資料更新時間">2023-05-03 17:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!--圖表-->
+            <div class="data_searchBox">
+                <div class="search_header">
+                    <p>濁度趨勢</p>
+                    監測站名稱 <select id="turb_station">
+                        <option value="1140H095">覽勝橋</option>
+                        <option value="1140H087">下龜山橋</option>
+                        <option value="1140H103">烏來橋</option>
+                    </select>
+                    <!-- 24小時/72小時/1週/自訂 -->
+                    <div class="search_btnGroup" data-toggle="buttons">
+                        <label class="btn btn_search active">
+                            <input class="three_change" type="radio" name="turb_options" id="turb_option1"
+                                autocomplete="off" checked value="24">
+                            24小時
+                        </label>
+                        <label class="btn btn_search">
+                            <input class="three_change" type="radio" name="turb_options" id="turb_option2"
+                                autocomplete="off" value="72">
+                            72小時
+                        </label>
+                        <label class="btn btn_search">
+                            <input class="three_change" type="radio" name="turb_options" id="turb_option3"
+                                autocomplete="off" value="168">
+                            1週
+                        </label>
+                        <label class="btn btn_search">
+                            <input class="custom" type="radio" name="turb_options" id="turb_option4" autocomplete="off"
+                                value="0">
+                            自訂
+                        </label>
+                    </div>
+
+                    <div class="time_group" id="turb_group">
+                        <label id="turb_time_str">時間</label>
+                        <input id="turb_date_start" type="text" />
+                        <label id="turb_tilde">~</label>
+                        <input id="turb_date_end" type="text" />
+
+                        <input id="btnTurbQuery" type="button" value="查詢" class="BtnQuery" />
+                    </div>
+                </div>
+
+                <div class="chartBox">
+                    <div id="container_turb" data-highcharts-chart="0" style="overflow: hidden;">
+                        <div id="highcharts-qkp38t4-0" dir="ltr" class="highcharts-container "
+                            style="position: relative; overflow: hidden; width: 1140px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                            <svg version="1.1" class="highcharts-root"
+                                style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;"
+                                xmlns="http://www.w3.org/2000/svg" width="1140" height="400" viewBox="0 0 1140 400">
+                                <desc>Created with Highcharts 7.2.1</desc>
+                                <defs>
+                                    <clipPath id="highcharts-qkp38t4-1-">
+                                        <rect x="0" y="0" width="1063" height="188" fill="none"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1140" height="400"
+                                    rx="0" ry="0"></rect>
+                                <rect fill="none" class="highcharts-plot-background" x="67" y="53" width="1063"
+                                    height="188"></rect>
+                                <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 70.5 53 L 70.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 92.5 53 L 92.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 114.5 53 L 114.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 136.5 53 L 136.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 158.5 53 L 158.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 180.5 53 L 180.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 203.5 53 L 203.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 225.5 53 L 225.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 247.5 53 L 247.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 269.5 53 L 269.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 291.5 53 L 291.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 313.5 53 L 313.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 335.5 53 L 335.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 358.5 53 L 358.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 380.5 53 L 380.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 402.5 53 L 402.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 424.5 53 L 424.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 446.5 53 L 446.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 468.5 53 L 468.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 490.5 53 L 490.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 513.5 53 L 513.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 535.5 53 L 535.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 557.5 53 L 557.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 579.5 53 L 579.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 601.5 53 L 601.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 623.5 53 L 623.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 645.5 53 L 645.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 668.5 53 L 668.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 690.5 53 L 690.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 712.5 53 L 712.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 734.5 53 L 734.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 756.5 53 L 756.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 778.5 53 L 778.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 801.5 53 L 801.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 823.5 53 L 823.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 845.5 53 L 845.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 867.5 53 L 867.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 889.5 53 L 889.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 911.5 53 L 911.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 933.5 53 L 933.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 956.5 53 L 956.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 978.5 53 L 978.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 1000.5 53 L 1000.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 1022.5 53 L 1022.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 1044.5 53 L 1044.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 1066.5 53 L 1066.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 1088.5 53 L 1088.5 241" opacity="1"></path>
+                                    <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                        d="M 1111.5 53 L 1111.5 241" opacity="1"></path>
+                                </g>
+                                <g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
+                                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                        class="highcharts-grid-line" d="M 67 241.5 L 1130 241.5" opacity="1"></path>
+                                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                        class="highcharts-grid-line" d="M 67 178.5 L 1130 178.5" opacity="1"></path>
+                                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                        class="highcharts-grid-line" d="M 67 116.5 L 1130 116.5" opacity="1"></path>
+                                    <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                        class="highcharts-grid-line" d="M 67 52.5 L 1130 52.5" opacity="1"></path>
+                                </g>
+                                <rect fill="none" class="highcharts-plot-border" data-z-index="1" x="67" y="53"
+                                    width="1063" height="188"></rect>
+                                <g class="highcharts-axis highcharts-xaxis" data-z-index="2">
+                                    <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1"
+                                        data-z-index="7" d="M 67 241.5 L 1130 241.5"></path>
+                                </g>
+                                <g class="highcharts-axis highcharts-yaxis" data-z-index="2"><text x="26.04443359375"
+                                        data-z-index="7" text-anchor="middle"
+                                        transform="translate(0,0) rotate(270 26.04443359375 147)"
+                                        class="highcharts-axis-title" style="color:#666666;fill:#666666;" y="147">
+                                        <tspan>濁度 (NTU)</tspan>
+                                    </text>
+                                    <path fill="none" class="highcharts-axis-line" data-z-index="7"
+                                        d="M 67 53 L 67 241"></path>
+                                </g>
+                                <g class="highcharts-series-group" data-z-index="3">
+                                    <g data-z-index="0.1"
+                                        class="highcharts-series highcharts-series-0 highcharts-line-series highcharts-color-0"
+                                        transform="translate(67,53) scale(1 1)" clip-path="url(#highcharts-qkp38t4-1-)">
+                                        <path fill="none"
+                                            d="M 3.6909722222222 43.866666666666674 L 11.072916666667 43.866666666666674 L 18.454861111111 53.26666666666668 L 25.836805555556 43.866666666666674 L 33.21875 43.866666666666674 L 40.600694444444 34.46666666666667 L 47.982638888889 43.866666666666674 L 55.364583333333 43.866666666666674 L 62.746527777778 65.8 L 70.128472222222 65.8 L 77.510416666667 53.26666666666668 L 84.892361111111 53.26666666666668 L 92.274305555556 65.8 L 99.65625 53.26666666666668 L 107.03819444444 53.26666666666668 L 114.42013888889 65.8 L 121.80208333333 53.26666666666668 L 129.18402777778 53.26666666666668 L 136.56597222222 53.26666666666668 L 143.94791666667 53.26666666666668 L 151.32986111111 53.26666666666668 L 158.71180555556 43.866666666666674 L 166.09375 43.866666666666674 L 173.47569444444 43.866666666666674 L 180.85763888889 43.866666666666674 L 188.23958333333 53.26666666666668 L 195.62152777778 43.866666666666674 L 203.00347222222 53.26666666666668 L 210.38541666667 43.866666666666674 L 217.76736111111 43.866666666666674 L 225.14930555556 34.46666666666667 L 232.53125 43.866666666666674 L 239.91319444444 43.866666666666674 L 247.29513888889 34.46666666666667 L 254.67708333333 43.866666666666674 L 262.05902777778 43.866666666666674 L 269.44097222222 43.866666666666674 L 276.82291666667 34.46666666666667 L 284.20486111111 34.46666666666667 L 291.58680555556 34.46666666666667 L 298.96875 34.46666666666667 L 306.35069444444 43.866666666666674 L 313.73263888889 43.866666666666674 L 321.11458333333 43.866666666666674 L 328.49652777778 34.46666666666667 L 335.87847222222 34.46666666666667 L 343.26041666667 34.46666666666667 L 350.64236111111 34.46666666666667 L 358.02430555556 34.46666666666667 L 365.40625 34.46666666666667 L 372.78819444444 25.066666666666663 L 380.17013888889 25.066666666666663 L 387.55208333333 25.066666666666663 L 394.93402777778 34.46666666666667 L 402.31597222222 34.46666666666667 L 409.69791666667 25.066666666666663 L 417.07986111111 25.066666666666663 L 424.46180555556 15.666666666666657 L 431.84375 15.666666666666657 L 439.22569444444 34.46666666666667 L 446.60763888889 25.066666666666663 L 453.98958333333 25.066666666666663 L 461.37152777778 25.066666666666663 L 468.75347222222 25.066666666666663 L 476.13541666667 15.666666666666657 L 483.51736111111 25.066666666666663 L 490.89930555556 15.666666666666657 L 498.28125 25.066666666666663 L 505.66319444444 15.666666666666657 L 513.04513888889 25.066666666666663 L 520.42708333333 25.066666666666663 L 527.80902777778 15.666666666666657 L 535.19097222222 15.666666666666657 L 542.57291666667 15.666666666666657 L 549.95486111111 6.26666666666668 L 557.33680555556 15.666666666666657 L 564.71875 6.26666666666668 L 572.10069444444 15.666666666666657 L 579.48263888889 25.066666666666663 L 586.86458333333 25.066666666666663 L 594.24652777778 15.666666666666657 L 601.62847222222 25.066666666666663 L 609.01041666667 25.066666666666663 L 616.39236111111 25.066666666666663 L 623.77430555556 15.666666666666657 L 631.15625 25.066666666666663 L 638.53819444444 25.066666666666663 L 645.92013888889 15.666666666666657 L 653.30208333333 25.066666666666663 L 660.68402777778 25.066666666666663 L 668.06597222222 25.066666666666663 L 675.44791666667 34.46666666666667 L 682.82986111111 34.46666666666667 L 690.21180555556 34.46666666666667 L 697.59375 34.46666666666667 L 704.97569444444 34.46666666666667 L 712.35763888889 43.866666666666674 L 719.73958333333 34.46666666666667 L 727.12152777778 103.4 L 734.50347222222 122.2 L 741.88541666667 94 L 749.26736111111 112.8 L 756.64930555556 112.8 L 764.03125 103.4 L 771.41319444444 103.4 L 778.79513888889 103.4 L 786.17708333333 103.4 L 793.55902777778 112.8 L 800.94097222222 112.8 L 808.32291666667 103.4 L 815.70486111111 112.8 L 823.08680555556 103.4 L 830.46875 103.4 L 837.85069444444 94 L 845.23263888889 103.4 L 852.61458333333 94 L 859.99652777778 94 L 867.37847222222 94 L 874.76041666667 94 L 882.14236111111 84.6 L 889.52430555556 84.6 L 896.90625 75.2 L 904.28819444444 84.6 L 911.67013888889 84.6 L 919.05208333333 112.8 L 926.43402777778 112.8 L 933.81597222222 112.8 L 941.19791666667 112.8 L 948.57986111111 122.2 L 955.96180555556 103.4 L 963.34375 103.4 L 970.72569444444 103.4 L 978.10763888889 103.4 L 985.48958333333 103.4 L 992.87152777778 94 L 1000.2534722222 94 L 1007.6354166667 94 L 1015.0173611111 103.4 L 1022.3993055556 103.4 L 1029.78125 94 L 1037.1631944444 103.4 L 1044.5451388889 94 L 1051.9270833333 94"
+                                            class="highcharts-graph" data-z-index="1" stroke="#7cb5ec" stroke-width="2"
+                                            stroke-linejoin="round" stroke-linecap="round"></path>
+                                        <path fill="none"
+                                            d="M -6.3090277777778 43.866666666666674 L 3.6909722222222 43.866666666666674 L 11.072916666667 43.866666666666674 L 18.454861111111 53.26666666666668 L 25.836805555556 43.866666666666674 L 33.21875 43.866666666666674 L 40.600694444444 34.46666666666667 L 47.982638888889 43.866666666666674 L 55.364583333333 43.866666666666674 L 62.746527777778 65.8 L 70.128472222222 65.8 L 77.510416666667 53.26666666666668 L 84.892361111111 53.26666666666668 L 92.274305555556 65.8 L 99.65625 53.26666666666668 L 107.03819444444 53.26666666666668 L 114.42013888889 65.8 L 121.80208333333 53.26666666666668 L 129.18402777778 53.26666666666668 L 136.56597222222 53.26666666666668 L 143.94791666667 53.26666666666668 L 151.32986111111 53.26666666666668 L 158.71180555556 43.866666666666674 L 166.09375 43.866666666666674 L 173.47569444444 43.866666666666674 L 180.85763888889 43.866666666666674 L 188.23958333333 53.26666666666668 L 195.62152777778 43.866666666666674 L 203.00347222222 53.26666666666668 L 210.38541666667 43.866666666666674 L 217.76736111111 43.866666666666674 L 225.14930555556 34.46666666666667 L 232.53125 43.866666666666674 L 239.91319444444 43.866666666666674 L 247.29513888889 34.46666666666667 L 254.67708333333 43.866666666666674 L 262.05902777778 43.866666666666674 L 269.44097222222 43.866666666666674 L 276.82291666667 34.46666666666667 L 284.20486111111 34.46666666666667 L 291.58680555556 34.46666666666667 L 298.96875 34.46666666666667 L 306.35069444444 43.866666666666674 L 313.73263888889 43.866666666666674 L 321.11458333333 43.866666666666674 L 328.49652777778 34.46666666666667 L 335.87847222222 34.46666666666667 L 343.26041666667 34.46666666666667 L 350.64236111111 34.46666666666667 L 358.02430555556 34.46666666666667 L 365.40625 34.46666666666667 L 372.78819444444 25.066666666666663 L 380.17013888889 25.066666666666663 L 387.55208333333 25.066666666666663 L 394.93402777778 34.46666666666667 L 402.31597222222 34.46666666666667 L 409.69791666667 25.066666666666663 L 417.07986111111 25.066666666666663 L 424.46180555556 15.666666666666657 L 431.84375 15.666666666666657 L 439.22569444444 34.46666666666667 L 446.60763888889 25.066666666666663 L 453.98958333333 25.066666666666663 L 461.37152777778 25.066666666666663 L 468.75347222222 25.066666666666663 L 476.13541666667 15.666666666666657 L 483.51736111111 25.066666666666663 L 490.89930555556 15.666666666666657 L 498.28125 25.066666666666663 L 505.66319444444 15.666666666666657 L 513.04513888889 25.066666666666663 L 520.42708333333 25.066666666666663 L 527.80902777778 15.666666666666657 L 535.19097222222 15.666666666666657 L 542.57291666667 15.666666666666657 L 549.95486111111 6.26666666666668 L 557.33680555556 15.666666666666657 L 564.71875 6.26666666666668 L 572.10069444444 15.666666666666657 L 579.48263888889 25.066666666666663 L 586.86458333333 25.066666666666663 L 594.24652777778 15.666666666666657 L 601.62847222222 25.066666666666663 L 609.01041666667 25.066666666666663 L 616.39236111111 25.066666666666663 L 623.77430555556 15.666666666666657 L 631.15625 25.066666666666663 L 638.53819444444 25.066666666666663 L 645.92013888889 15.666666666666657 L 653.30208333333 25.066666666666663 L 660.68402777778 25.066666666666663 L 668.06597222222 25.066666666666663 L 675.44791666667 34.46666666666667 L 682.82986111111 34.46666666666667 L 690.21180555556 34.46666666666667 L 697.59375 34.46666666666667 L 704.97569444444 34.46666666666667 L 712.35763888889 43.866666666666674 L 719.73958333333 34.46666666666667 L 727.12152777778 103.4 L 734.50347222222 122.2 L 741.88541666667 94 L 749.26736111111 112.8 L 756.64930555556 112.8 L 764.03125 103.4 L 771.41319444444 103.4 L 778.79513888889 103.4 L 786.17708333333 103.4 L 793.55902777778 112.8 L 800.94097222222 112.8 L 808.32291666667 103.4 L 815.70486111111 112.8 L 823.08680555556 103.4 L 830.46875 103.4 L 837.85069444444 94 L 845.23263888889 103.4 L 852.61458333333 94 L 859.99652777778 94 L 867.37847222222 94 L 874.76041666667 94 L 882.14236111111 84.6 L 889.52430555556 84.6 L 896.90625 75.2 L 904.28819444444 84.6 L 911.67013888889 84.6 L 919.05208333333 112.8 L 926.43402777778 112.8 L 933.81597222222 112.8 L 941.19791666667 112.8 L 948.57986111111 122.2 L 955.96180555556 103.4 L 963.34375 103.4 L 970.72569444444 103.4 L 978.10763888889 103.4 L 985.48958333333 103.4 L 992.87152777778 94 L 1000.2534722222 94 L 1007.6354166667 94 L 1015.0173611111 103.4 L 1022.3993055556 103.4 L 1029.78125 94 L 1037.1631944444 103.4 L 1044.5451388889 94 L 1051.9270833333 94 L 1061.9270833333 94"
+                                            visibility="visible" data-z-index="2" class="highcharts-tracker-line"
+                                            stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22">
+                                        </path>
+                                    </g>
+                                    <g data-z-index="0.1"
+                                        class="highcharts-markers highcharts-series-0 highcharts-line-series highcharts-color-0 highcharts-tracker"
+                                        transform="translate(67,53) scale(1 1)">
+                                        <path fill="#7cb5ec" visibility="hidden"
+                                            d="M 3 43.866666666666674 A 0 0 0 1 1 3 43.866666666666674 Z"
+                                            class="highcharts-halo highcharts-color-0" data-z-index="-1"
+                                            fill-opacity="0.25"></path>
+                                        <path fill="#7cb5ec"
+                                            d="M 3.0000000000000004 49.866666666666674 A 6 6 0 1 1 3.0059999990000037 49.86666366666692 Z"
+                                            stroke="#ffffff" stroke-width="1" opacity="1" visibility="hidden"></path>
+                                    </g>
+                                </g>
+                                <g class="highcharts-exporting-group" data-z-index="3">
+                                    <g class="highcharts-button highcharts-contextbutton" stroke-linecap="round"
+                                        transform="translate(1106,10)">
+                                        <title>Chart context menu</title>
+                                        <rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="24"
+                                            height="22" rx="2" ry="2" stroke="none" stroke-width="1"></rect>
+                                        <path fill="#666666" d="M 6 6.5 L 20 6.5 M 6 11.5 L 20 11.5 M 6 16.5 L 20 16.5"
+                                            class="highcharts-button-symbol" data-z-index="1" stroke="#666666"
+                                            stroke-width="3"></path><text x="0" data-z-index="1"
+                                            style="font-weight:normal;color:#333333;cursor:pointer;fill:#333333;"
+                                            y="12"></text>
+                                    </g>
+                                    <g class="highcharts-button" stroke-linecap="round" transform="translate(1007,10)">
+                                        <title></title>
+                                        <rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="96"
+                                            height="28" rx="2" ry="2" stroke="none" stroke-width="1"></rect><text x="5"
+                                            data-z-index="1"
+                                            style="font-weight:normal;color:#333333;cursor:pointer;fill:#333333;"
+                                            y="17">
+                                            <tspan>Download CSV</tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                                <g class="highcharts-label highcharts-series-label highcharts-series-label-0 highcharts-color-0"
+                                    opacity="1" data-z-index="3" transform="translate(1048,126)">
+                                    <path fill="none" class="highcharts-label-box" d="M 0 0" stroke="#7cb5ec"
+                                        stroke-width="1"></path><text x="0" data-z-index="1"
+                                        style="font-weight:bold;color:#7cb5ec;fill:#7cb5ec;" y="12">
+                                        <tspan>濁度 (NTU)</tspan>
+                                    </text>
+                                </g><text x="570" text-anchor="middle" class="highcharts-title" data-z-index="4"
+                                    style="color:#333333;font-size:18px;fill:#333333;" y="24">
+                                    <tspan>覽勝橋</tspan>
+                                </text><text x="570" text-anchor="middle" class="highcharts-subtitle" data-z-index="4"
+                                    style="color:#666666;fill:#666666;" y="52"></text><text x="10" text-anchor="start"
+                                    class="highcharts-caption" data-z-index="4" style="color:#666666;fill:#666666;"
+                                    y="397"></text>
+                                <g class="highcharts-legend" data-z-index="7" transform="translate(521,356)">
+                                    <rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="98"
+                                        height="29" visibility="visible"></rect>
+                                    <g data-z-index="1">
+                                        <g>
+                                            <g class="highcharts-legend-item highcharts-line-series highcharts-color-0 highcharts-series-0"
+                                                data-z-index="1" transform="translate(8,3)">
+                                                <path fill="none" d="M 0 11 L 16 11" class="highcharts-graph"
+                                                    stroke="#7cb5ec" stroke-width="2"></path>
+                                                <path fill="#7cb5ec"
+                                                    d="M 8 15 A 4 4 0 1 1 8.003999999333336 14.999998000000167 Z"
+                                                    class="highcharts-point" opacity="1"></path><text x="21"
+                                                    style="color:#333333;cursor:pointer;font-size:12px;font-weight:bold;fill:#333333;"
+                                                    text-anchor="start" data-z-index="2" y="15">
+                                                    <tspan>濁度 (NTU)</tspan>
+                                                </text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text
+                                        x="73.28369708657267"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 73.28369708657267 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 2…</tspan>
+                                        <title>2023-05-20 20:30:00</title>
+                                    </text><text x="95.42953041990667"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 95.42953041990667 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 21:00:00</tspan>
+                                        <title>2023-05-20 21:00:00</title>
+                                    </text><text x="117.57536375324067"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 117.57536375324067 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 21:30:00</tspan>
+                                    </text><text x="139.7211970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 139.7211970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 22:00:00</tspan>
+                                    </text><text x="161.8670304199107"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 161.8670304199107 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 22:30:00</tspan>
+                                    </text><text x="184.01286375324068"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 184.01286375324068 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 23:00:00</tspan>
+                                    </text><text x="206.1586970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 206.1586970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-20 23:30:00</tspan>
+                                    </text><text x="228.3045304199107"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 228.3045304199107 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 00:00:00</tspan>
+                                    </text><text x="250.45036375324068"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 250.45036375324068 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 00:30:00</tspan>
+                                    </text><text x="272.59619708657067"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 272.59619708657067 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 01:00:00</tspan>
+                                    </text><text x="294.74203041991063"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 294.74203041991063 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 01:30:00</tspan>
+                                    </text><text x="316.88786375324065"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 316.88786375324065 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 02:00:00</tspan>
+                                    </text><text x="339.03369708657067"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 339.03369708657067 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 02:30:00</tspan>
+                                    </text><text x="361.17953041991063"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 361.17953041991063 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 03:00:00</tspan>
+                                    </text><text x="383.32536375324065"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 383.32536375324065 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 03:30:00</tspan>
+                                    </text><text x="405.47119708657067"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 405.47119708657067 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 04:00:00</tspan>
+                                    </text><text x="427.61703041991063"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 427.61703041991063 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 04:30:00</tspan>
+                                    </text><text x="449.76286375324065"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 449.76286375324065 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 05:00:00</tspan>
+                                    </text><text x="471.90869708657067"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 471.90869708657067 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 05:30:00</tspan>
+                                    </text><text x="494.05453041991063"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 494.05453041991063 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 06:00:00</tspan>
+                                    </text><text x="516.2003637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 516.2003637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 06:30:00</tspan>
+                                    </text><text x="538.3461970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 538.3461970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 07:00:00</tspan>
+                                    </text><text x="560.4920304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 560.4920304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 07:30:00</tspan>
+                                    </text><text x="582.6378637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 582.6378637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 08:00:00</tspan>
+                                    </text><text x="604.7836970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 604.7836970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 08:30:00</tspan>
+                                    </text><text x="626.9295304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 626.9295304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 09:00:00</tspan>
+                                    </text><text x="649.0753637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 649.0753637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 09:30:00</tspan>
+                                    </text><text x="671.2211970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 671.2211970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 10:00:00</tspan>
+                                    </text><text x="693.3670304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 693.3670304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 10:30:00</tspan>
+                                    </text><text x="715.5128637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 715.5128637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 11:00:00</tspan>
+                                    </text><text x="737.6586970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 737.6586970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 11:30:00</tspan>
+                                    </text><text x="759.8045304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 759.8045304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 12:00:00</tspan>
+                                    </text><text x="781.9503637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 781.9503637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 12:30:00</tspan>
+                                    </text><text x="804.0961970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 804.0961970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 13:00:00</tspan>
+                                    </text><text x="826.2420304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 826.2420304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 13:30:00</tspan>
+                                    </text><text x="848.3878637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 848.3878637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 14:00:00</tspan>
+                                    </text><text x="870.5336970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 870.5336970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 14:30:00</tspan>
+                                    </text><text x="892.6795304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 892.6795304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 15:00:00</tspan>
+                                    </text><text x="914.8253637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 914.8253637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 15:30:00</tspan>
+                                    </text><text x="936.9711970865707"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 936.9711970865707 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 16:00:00</tspan>
+                                    </text><text x="959.1170304199106"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 959.1170304199106 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 16:30:00</tspan>
+                                    </text><text x="981.2628637532407"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 981.2628637532407 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 17:00:00</tspan>
+                                    </text><text x="1003.4086970865507"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 1003.4086970865507 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 17:30:00</tspan>
+                                    </text><text x="1025.5545304199507"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 1025.5545304199507 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 18:00:00</tspan>
+                                    </text><text x="1047.7003637532507"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 1047.7003637532507 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 18:30:00</tspan>
+                                    </text><text x="1069.8461970865505"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 1069.8461970865505 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 19:00:00</tspan>
+                                    </text><text x="1091.9920304199507"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 1091.9920304199507 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 19:30:00</tspan>
+                                    </text><text x="1114.1378637532507"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0) rotate(-45 1114.1378637532507 257)"
+                                        y="257" opacity="1">
+                                        <tspan>2023-05-21 20:00:00</tspan>
+                                    </text></g>
+                                <g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="52"
+                                        style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0)" y="182" opacity="1">40</text><text
+                                        x="52" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0)" y="120" opacity="1">60</text><text
+                                        x="52" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0)" y="57" opacity="1">80</text><text
+                                        x="52" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                        text-anchor="end" transform="translate(0,0)" y="245" opacity="1">20</text></g>
+                                <text x="1130" class="highcharts-credits" text-anchor="end" data-z-index="8"
+                                    style="cursor:pointer;color:#999999;font-size:9px;fill:#999999;"
+                                    y="395">Highcharts.com</text>
+                                <g class="highcharts-label highcharts-tooltip  highcharts-color-0"
+                                    style="pointer-events:none;white-space:nowrap;" data-z-index="8"
+                                    transform="translate(8,-9999)" opacity="0" visibility="visible">
+                                    <path fill="none"
+                                        class="highcharts-label-box highcharts-tooltip-box highcharts-shadow"
+                                        d="M 3.5 0.5 L 123.5 0.5 C 126.5 0.5 126.5 0.5 126.5 3.5 L 126.5 44.5 C 126.5 47.5 126.5 47.5 123.5 47.5 L 68.5 47.5 62.5 53.5 56.5 47.5 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"
+                                        stroke="#000000" stroke-opacity="0.049999999999999996" stroke-width="5"
+                                        transform="translate(1, 1)"></path>
+                                    <path fill="none"
+                                        class="highcharts-label-box highcharts-tooltip-box highcharts-shadow"
+                                        d="M 3.5 0.5 L 123.5 0.5 C 126.5 0.5 126.5 0.5 126.5 3.5 L 126.5 44.5 C 126.5 47.5 126.5 47.5 123.5 47.5 L 68.5 47.5 62.5 53.5 56.5 47.5 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"
+                                        stroke="#000000" stroke-opacity="0.09999999999999999" stroke-width="3"
+                                        transform="translate(1, 1)"></path>
+                                    <path fill="none"
+                                        class="highcharts-label-box highcharts-tooltip-box highcharts-shadow"
+                                        d="M 3.5 0.5 L 123.5 0.5 C 126.5 0.5 126.5 0.5 126.5 3.5 L 126.5 44.5 C 126.5 47.5 126.5 47.5 123.5 47.5 L 68.5 47.5 62.5 53.5 56.5 47.5 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"
+                                        stroke="#000000" stroke-opacity="0.15" stroke-width="1"
+                                        transform="translate(1, 1)"></path>
+                                    <path fill="rgba(247,247,247,0.85)"
+                                        class="highcharts-label-box highcharts-tooltip-box"
+                                        d="M 3.5 0.5 L 123.5 0.5 C 126.5 0.5 126.5 0.5 126.5 3.5 L 126.5 44.5 C 126.5 47.5 126.5 47.5 123.5 47.5 L 68.5 47.5 62.5 53.5 56.5 47.5 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"
+                                        stroke="#7cb5ec" stroke-width="1"></path><text x="8" data-z-index="1"
+                                        style="font-size:12px;color:#333333;cursor:default;fill:#333333;" y="20">
+                                        <tspan style="font-size: 10px">2023-05-20 20:30:00</tspan>
+                                        <tspan style="fill:#7cb5ec" x="8" dy="15">●</tspan>
+                                        <tspan dx="0"> 濁度 (NTU): </tspan>
+                                        <tspan style="font-weight:bold" dx="0">66</tspan>
+                                    </text>
+                                </g>
+                            </svg></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-datepicker.zh-TW.js"></script>
+<script src="js/rain.js"></script>
+<script src="js/all.js"></script>
+
+</html>

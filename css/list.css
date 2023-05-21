@@ -2,7 +2,7 @@
     width: 100%;
     background-color: #9edc80;
     border-radius: 4px;
-    padding: 4px;
+    padding: 0 5px 5px 5px;
     /* display: inline-flex; */
     align-items: center;
 }
@@ -29,6 +29,7 @@
 .data_searchBox .search_header {
     display: -webkit-inline-box;
     /* display: contents; */
+    padding: 5px 0;
 }
 
 .btn_search:active,
@@ -45,14 +46,15 @@
 
 .search_btnGroup {
     margin-left: 0.5vw;
+    /* margin-bottom: 0.5vh; */
 }
 
-.rain_group {
+.time_group {
     margin-left: 20px;
     display: none;
 }
 
-.rain_group label {
+.time_group label {
     font-weight: bold;
 }
 
@@ -73,12 +75,35 @@
     background-position: 8px center;
 }
 
-.rain_group input[type="text"] {
+.time_group input[type="text"] {
     width: 130px;
 }
 
+.time_ddl {
+    margin-left: 0.5vw;
+    display: inline;
+}
+
+.time_ddl select {
+    width: 120px;
+}
+
+.cctv_box h3 {
+    font-family: "微軟正黑體";
+    color: #000;
+    background-color: #66bb6a;
+    display: block;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+
 @media (max-width:1200px) {
-    .rain_group {
+    .time_group {
         margin-left: 0;
     }
 }
@@ -110,10 +135,27 @@
 }
 
 @media (max-width:480px) {
-    .rain_group input[type="text"] {
-        width: 70px;
+    .time_group input[type="text"] {
+        width: 90px;
+    }
+
+}
+
+@media (max-width:767px) {
+    .chartBoxR {
+        margin-top: 5px;
+    }
+
+    #camera04,
+    #camera05 {
+        width: 100%;
+    }
+
+    #camera04 {
+        margin-bottom: 1vh;
     }
 }
+
 
 
 p {
