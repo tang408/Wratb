@@ -1546,7 +1546,7 @@ oltmx.LayersManager = function (_mapPlugin, _layersInfo, mapOptions) {
             }
             var layerID = getLayerID(layerInfo);
             var layerContent = '<tr><th>' + layerInfo.name + '</th></tr>'
-                + '<tr><td id="identity_' + $('<div/>').text(layerID).html() + '" ><img src="./App_Themes/Map/images/loading-balls.gif"></td></tr>';
+                + '<tr><td id="identity_' + $('<div/>').text(layerID).html() + '" ><img src="./App_Themes/map/images/loading-balls.gif"></td></tr>';
             $bubbleContent.find(".BubleTable").append(layerContent);
             var $theContent = $bubbleContent.find("#identity_" + layerID.replace(jQueryIDInvalidChar, "\\$1"));
             var serviceInfo = layerInfo.serviceInfo;
@@ -1661,7 +1661,7 @@ oltmx.LayersManager = function (_mapPlugin, _layersInfo, mapOptions) {
         featureFromIdentify = {};
         layerDetailDIV = $bubbleContent;
         layerDetailDIV.find(".BubleTable").children().remove();
-        layerDetailDIV.find(".BubleTable").append('<tr><td><img src="./App_Themes/Map/images/loading-balls.gif"></td></tr>');
+        layerDetailDIV.find(".BubleTable").append('<tr><td><img src="./App_Themes/map/images/loading-balls.gif"></td></tr>');
         //ovFeatureInfo.setMap(map);
         //ovFeatureInfo.setPosition(coord);
 
@@ -1701,7 +1701,7 @@ oltmx.LayersManager = function (_mapPlugin, _layersInfo, mapOptions) {
                 anchor: [0.5, 32],
                 anchorXUnits: 'fraction',
                 anchorYUnits: 'pixels',
-                src: "./App_Themes/Map/images/location.png"
+                src: "./App_Themes/map/images/location.png"
             }
         };
 
