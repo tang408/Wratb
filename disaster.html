@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css"> -->
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/GSBase.css" rel="stylesheet" type="text/css">
-    <link href="css/GSForms.css" rel="stylesheet" type="text/css">
-    <link href="css/GSButton.css" rel="stylesheet" type="text/css">
+    <!-- <link href="./css/bootstrap.css" rel="stylesheet" type="text/css"> -->
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    <link href="./css/GSBase.css" rel="stylesheet" type="text/css">
+    <link href="./css/GSForms.css" rel="stylesheet" type="text/css">
+    <link href="./css/GSButton.css" rel="stylesheet" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
-    <link rel="stylesheet" href="css/mainMap.css">
+    <link rel="stylesheet" href="./css/mainMap.css">
     <!-- 放header -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <div w3-include-html="header.html"></div>
@@ -32,23 +32,125 @@
 
 
 <body>
-    <form method="post" action="./MainMap.aspx" id="form1">
-        <div class="aspNetHidden">
-            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
-                value="jJJrqG9Mr4+VgfbWb8//n2PzLaVj6bgYs33NFHr3XHuY0UuTe9byQWXhYZES5oQwqZbplDOwaNhCSBGaSduclNajH+wApAO68g3CkqkHNcs=">
-        </div>
+    <div id="cont-3" class="cont__item" style="display: block;">
+        <div class="container">
 
-        <div class="aspNetHidden">
-
-            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7A4B6C4C">
-        </div>
-        <div class="map-content">
-            <div id="cont-2">
-                <iframe src="Map.html" id="iframe_map">
-                </iframe>
+            <!--災害示警-->
+            <!--01-->
+            <div class="calamityBox" id="div_road_closed" style="display: none;">
+                <h1 class="roadLabel">道路封閉</h1>
+                <span class="title roadTitle" id="road_closed_headline"></span>
+                <table width="100%" class="TbFormAlert">
+                    <tbody>
+                        <tr>
+                            <th>生效期間</th>
+                            <td id="road_closed_effective"></td>
+                        </tr>
+                        <tr>
+                            <th>描述</th>
+                            <td id="road_closed_description"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="SeriousLevel">
+                    嚴重程度
+                    <img src="./images/star_gray.png" id="road_closed_severity_1">
+                    <img src="./images/star_gray.png" id="road_closed_severity_2">
+                    <img src="./images/star_gray.png" id="road_closed_severity_3">
+                    <img src="./images/star_gray.png" id="road_closed_severity_4">
+                </div>
+                <div class="unitBox" id="road_closed_senderName"></div>
             </div>
+            <!--02-->
+            <div class="calamityBox" id="div_flooding" style="display: none;">
+                <h1 class="waterLabel">淹水</h1>
+                <span class="title waterTitle" id="flooding_headline"></span>
+                <table width="100%" class="TbFormAlert">
+                    <tbody>
+                        <tr>
+                            <th>生效期間</th>
+                            <td id="flooding_effective"></td>
+                        </tr>
+                        <tr>
+                            <th>描述</th>
+                            <td id="flooding_description"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="SeriousLevel">
+                    嚴重程度
+                    <img src="./images/star_red.png" id="flooding_severity_1">
+                    <img src="./images/star_red.png" id="flooding_severity_2">
+                    <img src="./images/star_gray.png" id="flooding_severity_3">
+                    <img src="./images/star_gray.png" id="flooding_severity_4">
+                </div>
+                <div class="unitBox" id="flooding_senderName"></div>
+            </div>
+            <!--03-->
+            <div class="calamityBox" id="div_debris_flow" style="display: none;">
+                <h1 class="flowLabel">土石流</h1>
+                <span class="title flowTitle" id="debris_flow_headline"></span>
+                <table width="100%" class="TbFormAlert">
+                    <tbody>
+                        <tr>
+                            <th>生效期間</th>
+                            <td id="debris_flow_effective"></td>
+                        </tr>
+                        <tr>
+                            <th>描述</th>
+                            <td id="debris_flow_description"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="SeriousLevel">
+                    嚴重程度
+                    <img src="./images/star_red.png" id="debris_flow_severity_1">
+                    <img src="./images/star_red.png" id="debris_flow_severity_2">
+                    <img src="./images/star_gray.png" id="debris_flow_severity_3">
+                    <img src="./images/star_gray.png" id="debris_flow_severity_4">
+                </div>
+                <div class="unitBox" id="debris_flow_senderName"></div>
+            </div>
+            <!--04-->
+            <p style="color: #bbb; font-size: 13px;">本系統災害示警資料，由「國家災害防救科技中心-災害示警公開資料平」台提供。</p>
+            <div class="calamityBox" id="div_no_data" style="display: none;">
+                目前無任何即時災害示警資訊
+            </div>
+            <!----->
+
+            <!--05-->
+            <div class="calamityBox" id="div_earthquake" style="">
+                <h1 class="earthquakeLabel">地震</h1>
+                <span class="title earthquakeTitle" id="earthquake_headline">地震報告 新北市 2級</span>
+                <table width="100%" class="TbFormAlert">
+                    <tbody>
+                        <tr>
+                            <th>生效期間</th>
+                            <td id="earthquake_effective">2023-06-11T20:28:48+08:00</td>
+                        </tr>
+                        <tr>
+                            <th>描述</th>
+                            <td id="earthquake_description">06/11
+                                20:25臺灣東部海域發生規模5.2有感地震，最大震度宜蘭縣武塔、花蓮縣太魯閣、花蓮縣花蓮市、宜蘭縣宜蘭市、臺東縣東河、雲林縣古坑、新北市五分山、雲林縣斗六市2級。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="SeriousLevel">
+                    嚴重程度
+                    <img src="./images/star_red.png" id="earthquake_severity_1">
+                    <img src="./images/star_gray.png" id="earthquake_severity_2">
+                    <img src="./images/star_gray.png" id="earthquake_severity_3">
+                    <img src="./images/star_gray.png" id="earthquake_severity_4">
+                </div>
+                <div class="unitBox" id="earthquake_senderName">示警提供單位:中央氣象局</div>
+            </div>
+            <!---->
+            <!--災害示警-->
+
         </div>
-    </form>
+
+    </div>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

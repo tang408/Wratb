@@ -1,20 +1,22 @@
 ﻿@charset "utf-8";
-body {
+
+/* body {
 	background-position: left top;
 	background-image: url(../images/bg.png);
 	background-repeat: repeat-x;
 	background-attachment: scroll;
-}
-.wrapper{
+} */
+.wrapper {
 	max-width: 1200px;
 	min-width: 1000px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 10px;
 	padding-left: 10px;
-	overflow:hidden;
+	overflow: hidden;
 }
-.header{
+
+.header {
 	display: block;
 	height: 78px;
 	background-attachment: fixed;
@@ -24,17 +26,20 @@ body {
 	overflow: hidden;
 	background-color: #353535;
 }
-.logo{
+
+.logo {
 	float: left;
 	margin-top: 10px;
 }
-.main_nav{
+
+.main_nav {
 	float: left;
 	/*margin-top: 30px;*/
 	overflow: hidden;
 	/*height: 40px;*/
 }
-.main_nav li{
+
+.main_nav li {
 	font-family: "微軟正黑體";
 	color: #FFF;
 	float: left;
@@ -44,7 +49,8 @@ body {
 	padding-left: 33px;
 	font-size: 18px;
 }
-.main_nav li a{
+
+.main_nav li a {
 	display: inline-block;
 	color: #FFFFFF;
 	text-decoration: none;
@@ -64,10 +70,12 @@ body {
 	width: 140px;
 	line-height: 60px;
 }
-.main_nav li a img{
+
+.main_nav li a img {
 	margin-right: 4px;
 }
-.main_nav li a:hover{
+
+.main_nav li a:hover {
 	background-color: #232323;
 	padding-top: 0px;
 	padding-right: 12px;
@@ -75,19 +83,23 @@ body {
 	padding-left: 12px;
 	margin-top: 8px;
 }
-.main_nav li a.active{
+
+.main_nav li a.active {
 	background-color: #232323;
 	margin-top: 8px;
 }
+
 .cont__item {
 	line-height: 1.3;
 	color: #76716f;
 	display: none;
 }
+
 .cont__item.cont-active {
 	display: block;
 }
-.alert_box{
+
+.alert_box {
 	font-family: "微軟正黑體";
 	font-size: 16px;
 	color: #FFF;
@@ -95,7 +107,7 @@ body {
 	background-image: url(../images/icon_alert.png);
 	background-repeat: no-repeat;
 	background-position: 10px center;
-	background-size:28px auto;
+	background-size: 28px auto;
 	position: absolute;
 	z-index: 999;
 	height: 40px;
@@ -108,19 +120,22 @@ body {
 	padding-left: 36px;
 	line-height: 40px;
 }
-.map_box{
-	 *zoom: 1;
+
+.map_box {
+	*zoom: 1;
 	position: relative;
 	height: 390px;
 }
-.map_box .mapR{
+
+.map_box .mapR {
 	width: 210px;
 	background-color: #999;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 }
-.map_box .mapR .title{
+
+.map_box .mapR .title {
 	font-family: "微軟正黑體";
 	font-size: 16px;
 	line-height: 46px;
@@ -131,7 +146,8 @@ body {
 	text-align: center;
 	height: 46px;
 }
-.map_box .mapR .cont{
+
+.map_box .mapR .cont {
 	-webkit-border-bottom-right-radius: 4px;
 	-webkit-border-bottom-left-radius: 4px;
 	-moz-border-radius-bottomright: 4px;
@@ -154,7 +170,8 @@ body {
 	border-bottom-color: #585858;
 	border-left-color: #585858;
 }
-.map_box .mapR .cont p{
+
+.map_box .mapR .cont p {
 	font-family: "微軟正黑體";
 	font-size: 16px;
 	color: #000;
@@ -170,32 +187,31 @@ body {
 	margin-bottom: 4px;
 	margin-left: 12px;
 }
-.map_box .mapL{
+
+.map_box .mapL {
 	margin-right: 215px;
 }
 
 
-@media (max-width: 979px) {
+@media (max-width: 979px) {}
 
-}
-
-@media (max-width: 991px) {
-
-}
+@media (max-width: 991px) {}
 
 /*頁籤*/
 .menu__tabs {
 	list-style: none;
 	overflow: hidden;
 	display: block;
-	margin-top:-4px;
+	margin-top: -4px;
 }
+
 .menu__tabs li {
 	float: left;
 	font-size: 14px;
 	margin-top: 8px;
 	margin-right: 4px;
 }
+
 .menu__tabs a {
 	display: inline-block;
 	color: #FFFFFF;
@@ -216,35 +232,45 @@ body {
 	width: 120px;
 	line-height: 60px;
 }
-.menu__tabs a img{
+
+.menu__tabs a img {
 	margin-top: 20px;
 	margin-right: 4px;
 }
+
 .menu__tabs a:hover {
 	color: #000000;
 	background-color: #FFFFFF;
 }
-.menu__tabs a:hover img{
+
+.menu__tabs a:hover img {
 	-webkit-transition: all 0.1s ease;
 	-o-transition: all 0.1s ease;
 	transition: all 0.1s ease;
 	margin-top: -22px;
 	margin-right: 4px;
 }
+
 .menu__tabs a.active {
 	color: #000;
 	font-size: 14px;
 	background-color: #fff;
 }
-.menu__tabs a.active img{
-    margin-top: -22px;
+
+.menu__tabs a.active img {
+	margin-top: -22px;
 	margin-right: 4px;
 }
-.menu__tabs a.active i {color: #80cbb7;}
+
+.menu__tabs a.active i {
+	color: #80cbb7;
+}
+
 .menu__tabs a i {
 	margin-right: 3px;
 	color: #aaaaaa;
 }
+
 .menu__wrapper {
 	position: relative;
 	z-index: 400;
@@ -257,15 +283,18 @@ body {
 	overflow: visible;
 	padding: 16px;
 }
+
 .menu__wrapper .menu__item {
 	line-height: 1.3;
 	color: #76716f;
 	display: none;
 }
+
 .menu__wrapper .menu__item.item-active {
 	display: block;
 }
-.menu__wrapper h2{
+
+.menu__wrapper h2 {
 	font-family: "微軟正黑體";
 	font-size: 17px;
 	color: #5da946;
@@ -280,7 +309,8 @@ body {
 	margin-bottom: 4px;
 	border: 1px solid #5da946;
 }
-.menu__wrapper h3{
+
+.menu__wrapper h3 {
 	font-family: "微軟正黑體";
 	font-size: 15px;
 	color: #FFF;
@@ -297,35 +327,40 @@ body {
 	border-top-right-radius: 6px;
 	display: inline-block;
 }
+
 /*頁籤結尾*/
-.light_box{
+.light_box {
 	font-family: "微軟正黑體";
 	position: absolute;
 	height: 60px;
 	width: 280px;
 	top: 80px;
 	right: 20px;
-	overflow:hidden;
+	overflow: hidden;
 }
-.light_box h2{
+
+.light_box h2 {
 	font-family: "微軟正黑體";
 	color: #1c9999;
 	text-align: right;
 	padding-top: 8px;
 	padding-bottom: 8px;
 }
-.light_box .txtbox{
+
+.light_box .txtbox {
 	font-family: "微軟正黑體";
 	font-size: 13px;
 	color: #FFF;
 	float: right;
 	margin-left: 12px;
 }
-.light_box .txtbox img{
+
+.light_box .txtbox img {
 	margin-left: 4px;
-	vertical-align:text-top;
+	vertical-align: text-top;
 }
-.light_box .txtbox:first-of-type{
+
+.light_box .txtbox:first-of-type {
 	font-family: "微軟正黑體";
 	font-size: 15px;
 	color: #232323;
@@ -341,86 +376,98 @@ body {
 	border-radius: 4px;
 	font-weight: bold;
 }
+
 @media(min-width:1600px) {
-.light_box{
-	font-family: "微軟正黑體";
-	position: absolute;
-	width: 480px;
-	top: 80px;
-	right: 320px;
-	overflow: hidden;
-	margin-top: 20px;
-	vertical-align: middle;
+	.light_box {
+		font-family: "微軟正黑體";
+		position: absolute;
+		width: 480px;
+		top: 80px;
+		right: 320px;
+		overflow: hidden;
+		margin-top: 20px;
+		vertical-align: middle;
+	}
+
+	.light_box h2 {
+		font-family: "微軟正黑體";
+		color: #1c9999;
+		text-align: right;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		display: inline-block;
+	}
+
+	.light_box .txtbox {
+		font-family: "微軟正黑體";
+		font-size: 13px;
+		color: #FFF;
+		float: right;
+		margin-left: 12px;
+		margin-top: 8px;
+	}
+
+	.light_box .txtbox:first-child {
+		font-family: "微軟正黑體";
+		font-size: 15px;
+		color: #232323;
+		float: right;
+		margin-left: 12px;
+		margin-top: 8px;
+		background-color: #f392ad;
+		padding: 8px;
+		font-weight: bold;
+	}
 }
-.light_box h2{
-	font-family: "微軟正黑體";
-	color: #1c9999;
-	text-align: right;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	display:inline-block;
-}
-.light_box .txtbox{
-	font-family: "微軟正黑體";
-	font-size: 13px;
-	color: #FFF;
-	float: right;
-	margin-left: 12px;
-	margin-top: 8px;
-}
-.light_box .txtbox:first-child{
-	font-family: "微軟正黑體";
-	font-size: 15px;
-	color: #232323;
-	float: right;
-	margin-left: 12px;
-	margin-top: 8px;
-	background-color: #f392ad;
-	padding: 8px;
-	font-weight: bold;
-}
-}
+
 @media(min-width: 1280px) and (max-width:1599px) {
-.light_box{
-	font-family: "微軟正黑體";
-	position: absolute;
-	width: 480px;
-	top: 80px;
-	right: 20px;
+	.light_box {
+		font-family: "微軟正黑體";
+		position: absolute;
+		width: 480px;
+		top: 80px;
+		right: 20px;
+		overflow: hidden;
+		margin-top: 20px;
+		vertical-align: middle;
+	}
+
+	.light_box h2 {
+		font-family: "微軟正黑體";
+		color: #1c9999;
+		text-align: right;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		display: inline-block;
+	}
+
+	.light_box .txtbox {
+		font-family: "微軟正黑體";
+		font-size: 13px;
+		color: #FFF;
+		float: right;
+		margin-left: 12px;
+		margin-top: 8px;
+	}
+
+	.light_box .txtbox:first-child {
+		font-family: "微軟正黑體";
+		font-size: 15px;
+		color: #232323;
+		float: right;
+		margin-left: 12px;
+		margin-top: 16px;
+		background-color: #f392ad;
+		padding: 8px;
+		font-weight: bold;
+	}
+}
+
+.data_box {
 	overflow: hidden;
-	margin-top: 20px;
-	vertical-align: middle;
 }
-.light_box h2{
-	font-family: "微軟正黑體";
-	color: #1c9999;
-	text-align: right;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	display:inline-block;
-}
-.light_box .txtbox{
-	font-family: "微軟正黑體";
-	font-size: 13px;
-	color: #FFF;
-	float: right;
-	margin-left: 12px;
-	margin-top: 8px;
-}
-.light_box .txtbox:first-child{
-	font-family: "微軟正黑體";
-	font-size: 15px;
-	color: #232323;
-	float: right;
-	margin-left: 12px;
-	margin-top: 16px;
-	background-color: #f392ad;
-	padding: 8px;
-	font-weight: bold;
-}
-}
-.data_box{overflow: hidden;}
-.data_box h2{
+
+.data_box h2 {
 	font-family: "微軟正黑體";
 	font-size: 18px;
 	line-height: 23px;
@@ -438,8 +485,11 @@ body {
 	border-left-style: none;
 }
 
-.data_boxRed{overflow: hidden;}
-.data_boxRed h2{
+.data_boxRed {
+	overflow: hidden;
+}
+
+.data_boxRed h2 {
 	font-family: "微軟正黑體";
 	font-size: 18px;
 	line-height: 23px;
@@ -456,9 +506,12 @@ body {
 	border-bottom-style: none;
 	border-left-style: none;
 }
-<!---->
-.data_boxRed{overflow: hidden;}
-.data_boxRed h2{
+
+< !---->.data_boxRed {
+	overflow: hidden;
+}
+
+.data_boxRed h2 {
 	font-family: "微軟正黑體";
 	font-size: 18px;
 	line-height: 23px;
@@ -475,22 +528,26 @@ body {
 	border-bottom-style: none;
 	border-left-style: none;
 }
-.cctv_box{
+
+.cctv_box {
 	padding: 10px;
 	float: left;
 	width: 50%;
 	overflow: hidden;
 }
-.cctv_box h3{
+
+.cctv_box h3 {
 	font-family: "微軟正黑體";
 	color: #000;
 	background-color: #66bb6a;
 	display: block;
 }
-.cctv_box .cont{
+
+.cctv_box .cont {
 	border: 1px solid #CCC;
 }
-.footer{
+
+.footer {
 	font-family: "微軟正黑體";
 	font-size: 16px;
 	color: #FFF;
@@ -508,7 +565,7 @@ body {
 
 
 /*---------災害示警樣式--------------*/
-.calamityBox{
+.calamityBox {
 	display: block;
 	padding: 8px;
 	border: 1px solid #bababa;
@@ -519,19 +576,22 @@ body {
 	overflow: hidden;
 	margin-top: 10px;
 	margin-bottom: 10px;
-    background-color:#FFF
+	background-color: #FFF
 }
-.calamityBox h1{
+
+.calamityBox h1 {
 	font-family: "微軟正黑體";
 	display: inline-block;
 	font-size: 19px;
 	margin-right: 10px;
 }
-.calamityBox .title{
+
+.calamityBox .title {
 	font-size: 21px;
 	font-weight: 600;
 }
-.roadLabel{
+
+.roadLabel {
 	background-color: #ffc600;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -546,7 +606,8 @@ body {
 	padding-bottom: 4px;
 	padding-left: 40px;
 }
-.waterLabel{
+
+.waterLabel {
 	background-color: #4aaeff;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -561,7 +622,8 @@ body {
 	padding-bottom: 4px;
 	padding-left: 40px;
 }
-.flowLabel{
+
+.flowLabel {
 	background-color: #ff998b;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -576,7 +638,8 @@ body {
 	padding-bottom: 4px;
 	padding-left: 40px;
 }
-.earthquakeLabel{
+
+.earthquakeLabel {
 	background-color: #7bb845;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -591,7 +654,8 @@ body {
 	padding-bottom: 4px;
 	padding-left: 40px;
 }
-.SeriousLevel{
+
+.SeriousLevel {
 	font-family: "微軟正黑體";
 	font-size: 15px;
 	color: #ff0030;
@@ -604,11 +668,13 @@ body {
 	padding-bottom: 8px;
 	padding-left: 16px;
 }
-.SeriousLevel img{
+
+.SeriousLevel img {
 	margin-right: 4px;
 	margin-left: 4px;
 }
-.unitBox{
+
+.unitBox {
 	font-family: "微軟正黑體";
 	font-size: 13px;
 	color: #FFF;
@@ -616,25 +682,30 @@ body {
 	padding: 8px;
 	float: right;
 	-webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
-.roadTitle{
+
+.roadTitle {
 	color: #ffae00;
 }
-.waterTitle{
+
+.waterTitle {
 	color: #4aaeff;
 }
-.flowTitle{
+
+.flowTitle {
 	color: #ff998b;
 }
-.earthquakeTitle{
+
+.earthquakeTitle {
 	color: #39571e;
 }
+
 /*-----------------------*/
 
 /*決策面板傾斜觀測*/
-.tile_searchBox{
+.tile_searchBox {
 	background-color: #9edc80;
 	overflow: hidden;
 	-webkit-border-radius: 4px;
@@ -642,12 +713,14 @@ border-radius: 4px;
 	border-radius: 4px;
 	padding: 4px;
 }
-.tile_searchBox .search{
+
+.tile_searchBox .search {
 	display: block;
 	margin-bottom: 20px;
 	color: #000;
 }
-.tile_searchBox .search p{
+
+.tile_searchBox .search p {
 	background-image: url(../images/research.svg);
 	background-repeat: no-repeat;
 	background-size: 25px auto;
@@ -666,7 +739,8 @@ border-radius: 4px;
 	border-radius: 4px;
 	margin-right: 8px;
 }
-.tile_searchBox .chartBoxL{
+
+.tile_searchBox .chartBoxL {
 	float: left;
 	width: 49%;
 	background-color: #FFF;
@@ -675,7 +749,8 @@ border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-.tile_searchBox .chartBoxR{
+
+.tile_searchBox .chartBoxR {
 	float: right;
 	width: 49%;
 	background-color: #FFF;
@@ -684,7 +759,9 @@ border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-.tile_searchBox .chartBoxL p, .tile_searchBox .chartBoxR p{
+
+.tile_searchBox .chartBoxL p,
+.tile_searchBox .chartBoxR p {
 	font-family: "微軟正黑體";
 	font-size: 16px;
 	color: #FFF;
