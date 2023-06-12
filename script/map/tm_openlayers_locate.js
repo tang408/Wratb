@@ -15,7 +15,7 @@ oltmx.util.Locate = function (mapPlugin) {
                 anchorXUnits: 'pixels',
                 anchorYUnits: 'pixels',
                 opacity: 0.75,
-                src: "App_themes/Map/images/location.png"
+                src: "./App_Themes/Map/images/location.png"
             }),
             stroke: new ol.style.Stroke({
                 color: "rgba(32,32,255,0.8)",
@@ -36,7 +36,7 @@ oltmx.util.Locate = function (mapPlugin) {
                     anchorXUnits: 'pixels',
                     anchorYUnits: 'pixels',
                     opacity: 0,
-                    src: "App_themes/Map/images/location.png"
+                    src: "./App_Themes/Map/images/location.png"
                 }),
                 text: new ol.style.Text({
                     text: text,
