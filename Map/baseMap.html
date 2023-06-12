@@ -4,14 +4,14 @@
 <head>
     <title></title>
 
-    <!-- <link href="../App_Themes/Map/css/reset.css" rel="stylesheet" type="text/css"> -->
-    <link href="./../App_Themes/Map/css/reset.css" rel="stylesheet" type="text/css">
+    <!-- <link href="../App_Themes/map/css/reset.css" rel="stylesheet" type="text/css"> -->
+    <link href="../App_Themes/map/css/reset.css" rel="stylesheet" type="text/css">
 
-    <link href="../App_Themes/Map/css/map.css" rel="stylesheet" type="text/css">
-    <link href="../App_Themes/Map/css/main.css" rel="stylesheet" type="text/css">
-    <link href="../App_Themes/Map/css/layout.css" rel="stylesheet" type="text/css">
-    <link href="../App_Themes/Map/css/jquery-ui.css" rel="stylesheet" type="text/css">
-    <link href="../App_Themes/Map/css/nanoscroller.css" rel="stylesheet" type="text/css">
+    <link href="../App_Themes/map/css/map.css" rel="stylesheet" type="text/css">
+    <link href="../App_Themes/map/css/main.css" rel="stylesheet" type="text/css">
+    <link href="../App_Themes/map/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="../App_Themes/map/css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="../App_Themes/map/css/nanoscroller.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet"
@@ -33,12 +33,12 @@
                     <tr>
                         <td style="display:block; position:relative;" class="TreeNode"><input type="checkbox"
                                 onchange="swicthMapVisible(this, &quot;電子地圖(含等高線)&quot;)"><img
-                                src="../App_Themes/Map/images/電子地圖(含等高線).png">電子地圖(含等高線)</td>
+                                src="../App_Themes/map/images/電子地圖(含等高線).png">電子地圖(含等高線)</td>
                     </tr>
                     <tr>
                         <td style="display:block; position:relative;" class="TreeNode"><input type="checkbox"
                                 onchange="swicthMapVisible(this, &quot;正射(航照)地圖&quot;)"><img
-                                src="../App_Themes/Map/images/正射(航照)地圖.png">正射(航照)地圖</td>
+                                src="../App_Themes/map/images/正射(航照)地圖.png">正射(航照)地圖</td>
                     </tr>
                 </table>
             </div>
@@ -93,7 +93,7 @@
             var $tr = $("<tr><td style='display:block; position:relative;'/></tr>");
             var $td = $tr.find("td:last");
             $td.append('<input type="checkbox" onchange=\'swicthMapVisible(this, "' + mapID + '")\' />');
-            $td.append('<img src="../App_Themes/Map/images/' + mapID + '.png">');
+            $td.append('<img src="../App_Themes/map/images/' + mapID + '.png">');
             $td.append(mapID);
             $td.addClass("TreeNode");
             $parentFolderTable.append($tr);
