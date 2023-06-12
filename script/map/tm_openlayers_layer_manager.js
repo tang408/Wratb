@@ -1701,7 +1701,7 @@ oltmx.LayersManager = function (_mapPlugin, _layersInfo, mapOptions) {
                 anchor: [0.5, 32],
                 anchorXUnits: 'fraction',
                 anchorYUnits: 'pixels',
-                src: "./App_Themes/map/images/location.png"
+                src: "./App_Themes/Map/images/location.png"
             }
         };
 
