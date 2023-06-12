@@ -1,0 +1,345 @@
+.TopBoxL{
+	display: inline-block;
+	padding: 8px;
+}
+.TopBoxR{
+	padding: 8px;
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+.LegendTxt{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	float: left;
+	height: 20px;
+	padding-right: 6px;
+	padding-left: 6px;
+	padding-top: 6px;
+}
+.LegendTxt a:link ,.LegendTxt a:visited{
+	text-decoration: none;
+	font-family: "微軟正黑體";
+	color: #000;
+}
+.LegendTxt a:hover{
+	text-decoration: none;
+	font-family: "微軟正黑體";
+	color: #F60;
+}
+/*列表樣式*/
+.ListTableTurb{}
+.ListTableTurb td{
+	font-family: "微軟正黑體";
+	background-color: #f1f1f1;
+	padding: 8px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	text-align: right;
+}
+.ListTableTurb td.major{
+	font-family: "微軟正黑體";
+	background-color: #ecfad4;
+	padding: 8px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+}
+.TxtGrey{
+	font-size: 12px;
+	color: #838383;
+	display: block;
+	text-align: left;
+}
+.TxtBlack{
+	font-size: 15px;
+	color: #000;
+	display: block;
+	text-align: left;
+}
+/*1000以下*/
+.TxtNumG{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	color: #00b8a9;
+	text-align: right;
+	padding-right: 6px;
+}
+/*1001-2000*/
+.TxtNumY{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	color: #ffd800;
+	text-align: right;
+	padding-right: 6px;
+}
+/*2001-3000*/
+.TxtNumO{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	color: #ff7b38;
+	text-align: right;
+	padding-right: 6px;
+}
+/*3000以上*/
+.TxtNumR{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	color: #e90f30;
+	text-align: right;
+	padding-right: 6px;
+}
+/*列表樣式結尾*/
+
+/*定位按鈕*/
+.BtnPin{
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	border: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #777777;
+	display: inline-block;
+	background-image: url(images/icon_pin.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 40px;
+	text-indent: -99999;
+	float: right;
+	background-color: #cbe2ff;
+	background-position: center center;
+	margin-top: 4px;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	margin-left: 18px;
+}
+.BtnPin:hover {
+    height: 20px;
+	width: 40px;
+	background-color: #FFF;
+}
+.BtnPin:active {
+    height: 20px;
+	width: 40px;
+	background-color: #FFF;
+}
+
+/*定位按鈕結尾*/
+
+
+/*開關*/
+.button-switch {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	height: 1.875em;
+	position: relative;
+	width: 6em;
+	float: left;
+	margin-bottom: 0.4em;
+}
+.button-switch .lbl-off,
+.button-switch .lbl-on {
+  cursor: pointer;
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+  line-height: 1em;
+  position: absolute;
+  top: 0.6em;
+  -webkit-transition: opacity 0.25s ease-out 0.1s;
+  transition: opacity 0.25s ease-out 0.1s;
+  text-transform: uppercase;
+}
+.button-switch .lbl-off {
+  right: 0.4375em;
+}
+.button-switch .lbl-on {
+  color: #fefefe;
+  opacity: 0;
+  left: 0.4375em;
+}
+.button-switch .switch {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 0;
+  font-size: 1em;
+  left: 0;
+  line-height: 0;
+  outline: none;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+.button-switch .switch:before,
+.button-switch .switch:after {
+  content: '';
+  font-size: 1em;
+  position: absolute;
+}
+.button-switch .switch:before {
+  border-radius: 1.25em;
+  background: #bdc3c7;
+  height: 1.875em;
+  left: -0.25em;
+  top: -0.1875em;
+  -webkit-transition: background-color 0.25s ease-out 0.1s;
+  transition: background-color 0.25s ease-out 0.1s;
+  width: 6.2em;
+}
+.button-switch .switch:after {
+  box-shadow: 0 .0625em .375em 0 #666;
+  border-radius: 50%;
+  background: #fefefe;
+  height: 1.5em;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.25s ease-out 0.1s;
+  transition: -webkit-transform 0.25s ease-out 0.1s;
+  transition: transform 0.25s ease-out 0.1s;
+  transition: transform 0.25s ease-out 0.1s, -webkit-transform 0.25s ease-out 0.1s;
+  width: 1.5em;
+}
+.button-switch .switch:checked:after {
+  -webkit-transform: translate(4em, 0);
+          transform: translate(4em, 0);
+}
+.button-switch .switch:checked ~ .lbl-off {
+  opacity: 0;
+}
+.button-switch .switch:checked ~ .lbl-on {
+  opacity: 1;
+}
+.button-switch .switch#switch-orange:checked:before {
+  background: #b3e55e;
+}
+.button-switch .switch#switch-blue:checked:before {
+  background: #3498db;
+}
+/*開關結尾*/
+
+/*開關歷線*/
+.toggleSwitch span span {
+  display: none;
+}
+
+@media only screen {
+  .toggleSwitch {
+	display: inline-block;
+	height: 20px;
+	position: relative;
+	overflow: visible;
+	padding: 0;
+	cursor: pointer;
+	width: 90px;
+	margin-top: 6px;
+  }
+  .toggleSwitch * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .toggleSwitch label,
+  .toggleSwitch > span {
+    line-height: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .toggleSwitch input:focus ~ a,
+  .toggleSwitch input:focus + label {
+    outline: none;
+  }
+  .toggleSwitch label {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+  }
+  .toggleSwitch input {
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+  }
+  .toggleSwitch > span {
+    position: absolute;
+    left: -50px;
+    width: 100%;
+    margin: 0;
+    padding-right: 50px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .toggleSwitch > span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 50%;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 0.9em;
+    width: 100%;
+    left: 15%;
+    top: -1px;
+    opacity: 0;
+  }
+  .toggleSwitch a {
+	position: absolute;
+	right: 40%;
+	z-index: 4;
+	display: block;
+	height: 100%;
+	padding: 0;
+	left: 4px;
+	width: 18px;
+	background-color: #fff;
+	border: 1px solid #CCC;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  .toggleSwitch > span span:first-of-type {
+    color: #ccc;
+    opacity: 1;
+    left: 45%;
+  }
+  .toggleSwitch > span:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 60px;
+    top: 0px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .toggleSwitch input:checked ~ a {
+    border-color: #fff;
+    left: 100%;
+    margin-left: -8px;
+  }
+  .toggleSwitch input:checked ~ span:before {
+    border-color: #0097D1;
+    box-shadow: inset 0 0 0 30px #0097D1;
+  }
+  .toggleSwitch input:checked ~ span span:first-of-type {
+    opacity: 0;
+  }
+  .toggleSwitch input:checked ~ span span:last-of-type {
+    opacity: 1;
+    color: #fff;
+  }
+ /*開關歷線結尾*/

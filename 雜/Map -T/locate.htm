@@ -1,0 +1,981 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="../script/map/jquery.js" type="text/javascript"></script>
+    <script src="../script/map/bootstrap.js" type="text/javascript"></script>
+    <link href="../App_Themes/map/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/map.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/nanoscroller.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/table.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var resizeInterval = null;
+        var mapPlugin = parent.mapPlugin;
+        $(function () {
+            district_init();
+            resizeLayout();
+        });
+        function resizeLayout() {
+            clearInterval(resizeInterval);
+            resizeInterval = setInterval(function () {
+                parent.resizeBox($(".nano").offset().top + $(".tab-content").height() + 15);
+                if ($(".nano").height() != ($("html").height() - $(".nano").offset().top)) {
+                    $(".nano").height($("html").height() - $(".nano").offset().top);
+                }
+                clearInterval(resizeInterval);
+            }, 200);
+        }
+        $(window).on("resize", function () {
+            resizeLayout();
+        });
+
+        function switchLocateType(obj, target) {
+            $("#lnk_" + target).tab('show');
+            var $tabs = $(".TabBox .BtnTab");
+            $tabs.removeClass("TabActive");
+            $tabs.each(function () {
+                if (this == obj) {
+                    $(obj).addClass("TabActive");
+                }
+            });
+            // 呼叫各個定位的初始動作
+            try {
+                eval(target + "_init();");
+            } catch (e) {
+            }
+            resizeLayout();
+        }
+        function fillDropdownList(target, dataUrl, bKeepFirst, finishFunc) {
+            var $target = null;
+            if ($.prototype.isPrototypeOf(target)) {
+                // target是jQuery物件
+                $target = target;
+            } else if (typeof target == "string") {
+                // target是String
+                $target = $("#" + target);
+            } else {
+                // 必須是html物件
+                $target = $(target);
+            }
+            $.ajax({
+                url: dataUrl,
+                success: function (data) {
+                    if (bKeepFirst) $target[0].options.length = 1;
+                    else $target.children().remove();
+                    for (var i = 0; i < data.length; i++) {
+                        $($target[0]).append("<option value='" + data[i].key + "'>" + data[i].value + "</option");
+                    }
+                    if (finishFunc) finishFunc();
+                }
+            });
+
+        }
+    </script>
+    <!--- for district --->
+    <script type="text/javascript">
+        function district_init() {
+            genCounties();
+        }
+        function genCounties() {
+            if ($("#ddlCounty").children().length == 0) {
+                fillDropdownList("ddlCounty", "../Service/KeyValueDataSource.ashx?data=county", false, function () { $("#ddlCounty > option:contains('桃園市')").attr("selected", "selected"); genTowns(); });
+            } else {
+                return;
+            }
+        }
+        function genTowns() {
+            fillDropdownList("ddlTown", "../Service/KeyValueDataSource.ashx?data=town&county=" + encodeURIComponent($("#ddlCounty").val()), true);
+        }
+        function genVillages() {
+            fillDropdownList("ddlVillage", "../Service/KeyValueDataSource.ashx?data=village&county=" + encodeURIComponent($("#ddlCounty").val()) + "&town=" + encodeURIComponent($("#ddlTown").val()), true);
+        }
+        function locateToDistrict() {
+            var dataUrl = null;
+            if ($("#ddlVillage").val() != "") {
+                dataUrl = "../Service/GetLocationInfo.ashx?data=village&county=" + encodeURIComponent($("#ddlCounty").val()) + "&town=" + encodeURIComponent($("#ddlTown").val()) + "&village=" + encodeURIComponent($("#ddlVillage").val());
+            } else if ($("#ddlTown").val() != "") {
+                dataUrl = "../Service/GetLocationInfo.ashx?data=town&county=" + encodeURIComponent($("#ddlCounty").val()) + "&town=" + encodeURIComponent($("#ddlTown").val());
+            } else {
+                dataUrl = "../Service/GetLocationInfo.ashx?data=county&county=" + encodeURIComponent($("#ddlCounty").val());
+            }
+            $.ajax({
+                url: dataUrl,
+                success: function (data) {
+                    parent.mapPlugin.locateTool.locateToWKT(data, "EPSG:3826", true);
+                }
+            });
+        }
+    </script>
+    <!--- end district --->
+    <!--- for address --->
+    <script type="text/javascript">
+        function address_init() {
+        }
+        function queryAddress() {
+            $.ajax("../service/TGOS_Geocoder.ashx?addr=" + encodeURIComponent($.trim($("#txtAddress").val())))
+             .then(
+                    function (resp) {
+                        if (resp.AddressList.length == 0) {
+                            alert(resp.Info[0].OutTraceInfo);
+                        } else {
+                            var addr = resp.AddressList[0];
+                            var coord = [addr.X, addr.Y];
+                            mapPlugin.showBubble({ coord: coord, proj: "EPSG:4326" }, addr.FULL_ADDR);
+                            mapPlugin.locateTool.locateToCoord(coord, "EPSG:4326");
+                        }
+                    },
+                    function () {
+                        alert("目前此服務無法使用");
+                    }
+                );
+        }
+    </script>
+    <!--- end address --->
+    <!--- for coordinate --->
+    <script type="text/javascript">
+        function coordinate_init() {
+        }
+        // 以十進位經緯度定位
+        function locateByWGS84Decimal() {
+            var lat = parseFloat($("#txtLatCoord").val());
+            var lng = parseFloat($("#txtLngCoord").val());
+            if (isNaN(lat) || isNaN(lng)) {
+                alert("經緯度必須是數字");
+                return;
+            }
+            parent.mapPlugin.locateTool.locateToCoord([lng, lat], "EPSG:4326", true);
+            parent.map.getView().setZoom(13);
+        }
+        // 以度分秒經緯度定位
+        function locateByWGS84DMS() {
+            var lat = parseFloat($("#txtLatDegree").val())
+                    + (isNaN(parseFloat($("#txtLatMinute").val())) ? 0 : parseFloat($("#txtLatMinute").val())) / 60
+                    + (isNaN(parseFloat($("#txtLatSecond").val())) ? 0 : parseFloat($("#txtLatSecond").val())) / 3600;
+
+            var lng = parseFloat($("#txtLngDegree").val())
+                    + (isNaN(parseFloat($("#txtLngMinute").val())) ? 0 : parseFloat($("#txtLngMinute").val())) / 60
+                    + (isNaN(parseFloat($("#txtLngSecond").val())) ? 0 : parseFloat($("#txtLngSecond").val())) / 3600;
+            if (isNaN(lat) || isNaN(lng)) {
+                alert("經緯度必須是數字");
+                return;
+            }
+            parent.mapPlugin.locateTool.locateToCoord([lng, lat], "EPSG:4326", true);
+            parent.map.getView().setZoom(13);
+        }
+        function locateByTWD97() {
+            var coordX = parseFloat($("#txtTWD97X").val());
+            var coordY = parseFloat($("#txtTWD97Y").val());
+            if (isNaN(coordX) || isNaN(coordY)) {
+                alert("坐標必須是數字");
+                return;
+            }
+            parent.mapPlugin.locateTool.locateToCoord([coordX, coordY], "EPSG:3826", true);
+            parent.map.getView().setZoom(13);
+        }
+        function locateByTWD67() {
+            var coordX = parseFloat($("#txtTWD67X").val());
+            var coordY = parseFloat($("#txtTWD67Y").val());
+            if (isNaN(coordX) || isNaN(coordY)) {
+                alert("坐標必須是數字");
+                return;
+            }
+            parent.mapPlugin.locateTool.locateToCoord([coordX, coordY], "EPSG:3828", true);
+            parent.map.getView().setZoom(13);
+        }
+        function switchCoordType(obj) {
+            $("._coordTab").removeClass("BtnOrangeActive");
+            $(obj).addClass("BtnOrangeActive");
+            $("._coordPanel").hide();
+            $("#" + obj.value + "Panel").show();
+            resizeLayout();
+        }
+    </script>
+    <!--- end coordinate --->
+    <!--- for cadastre --->
+    <script type="text/javascript">
+        function cadaster_init() {
+            changeCadasterCounty();
+        }
+        function changeCadasterCounty() {
+            fillDropdownList(
+                "ddlCadasterTown",
+                "../Service/KeyValueDataSource.ashx?data=cadaster_town&county_code=" + encodeURIComponent($("#ddlCadasterCounty").val()),
+                false,
+                function () {
+                    changeCadasterTown();
+                });
+        }
+        function changeCadasterTown() {
+            fillDropdownList(
+                "ddlCadasterSection",
+                "../Service/KeyValueDataSource.ashx?data=cadaster_section&county_code=" + encodeURIComponent($("#ddlCadasterCounty").val()) + "&town_code=" + encodeURIComponent($("#ddlCadasterTown").val()),
+                false);
+        }
+        //function changeCadasterSection() {
+        //    fillDropdownList(
+        //        "ddlSubSection",
+        //        "../Service/KeyValueDataSource.ashx?data=cadaster_sub_section&county_code=" + encodeURIComponent($("#ddlCadasterCounty").val()) + "&town_code=" + encodeURIComponent($("#ddlCadasterTown").val()) + "&section=" + encodeURIComponent($("#ddlCadasterSection").val()),
+        //        false,
+        //        function () {
+        //            $("#ddlSubSection").show();
+        //        });
+        //}
+        function locateToCadaster() {
+            var mNum = $("#txtMontherNum").val();
+            if (mNum.replace(/ /g, '') == "") {
+                alert("請輸入地號");
+                return;
+            }
+            mNum = parseInt(mNum, 10);
+            if (isNaN(mNum)) {
+                alert("地號必須是數字");
+                return;
+            }
+            var dataUrl = "../Service/GetLocationInfo.ashx?data=cadaster&county_code=" + encodeURIComponent($("#ddlCadasterCounty").val())
+                        + "&section_num=" + encodeURIComponent($("#ddlCadasterSection").val());
+            dataUrl += "&mNum=" + encodeURIComponent($("#txtMontherNum").val())
+                     + "&sNum=" + encodeURIComponent($("#txtSonNum").val());
+            $.ajax({
+                url: dataUrl,
+                success: function (data) {
+                    if (data.length > 0) {
+                        parent.mapPlugin.locateTool.locateToWKT(data, "EPSG:3826", true);
+                    } else {
+                        alert("找不到此地號");
+                    }
+                }
+            });
+
+        }
+    </script>
+    <!--- end cadastre --->
+    <!--- for basin --->
+    <script type="text/javascript">
+        function basin_init() {
+            //genBasin();
+        }
+        //function genBasin() {
+        //    fillDropdownList("ddlBasin", "../Service/KeyValueDataSource.ashx?data=basin&roadnum=" + encodeURIComponent($("#ddlRoadnum").val()), false, function () { genRoadStake(); });
+        //}
+        function locateToBasin() {
+            $.ajax({
+                url: "http://maps.wra.gov.tw/arcgis/services/WFS/APLayer_WFS_E/MapServer/WFSServer?SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TypeName=WFS_APLayer_WFS_E:basin&featureid=" + $("#ddlBasin").val(),
+                success: function (data) {
+                    var gml = "";
+                    if (data.documentElement.outerHTML) {
+                        gml = data.documentElement.outerHTML;
+                    } else if (arguments[2].responseText) {
+                        gml = arguments[2].responseText;
+                    }
+                    mapPlugin.locateTool.locateToGML(gml, true);
+                }
+            });
+        }
+    </script>
+    <!--- end basin --->
+    <!--- for eng --->
+    <script type="text/javascript">
+        function eng_init() {
+            showEngYear();
+        }
+        function showEngYear() {
+            fillDropdownList("ddlEngYear", "../Service/KeyValueDataSource.ashx?data=eng_year", false, showEngName);
+        }
+        function showEngName() {
+            fillDropdownList("ddlEngName", "../Service/KeyValueDataSource.ashx?data=eng_name&year=" + $("#ddlEngYear").val(), false);
+        }
+        function locateToEng() {
+            $.ajax({
+                url: "../Service/GetLocationInfo.ashx?data=eng&fid=" + $("#ddlEngName").val(),
+                success: function (data) {
+                    mapPlugin.layersMg.switchTheLayer("工程設施/歷年工程點位", true);
+                    mapPlugin.locateTool.locateToWKT(data, "EPSG:3828", true);
+                    mapPlugin.once('moveend', function(){
+                        var extent = mapPlugin.get2DExtent();
+                        console.log([(extent[0] + extent[2]) / 2, (extent[1] + extent[3]) / 2]);
+                        mapPlugin.layersMg.identify([(extent[0] + extent[2]) / 2, (extent[1] + extent[3]) / 2]);
+                    });
+                }
+            });
+        }
+    </script>
+    <!--- end eng --->
+    <!--- for gauge --->
+    <script type="text/javascript">
+        function gauge_init() {
+            showRainfall();
+        }
+        function gaugeChange() {
+            switch ($("#ddlGaugeType").val()) {
+                case "rainfall":
+                    showRainfall();
+                    break;
+                case "waterQuality":
+                    showWaterQualityMeter();
+                    break;
+                case "waterLevel":
+                    showDamWeir();
+                    break;
+            }
+        }
+        function showRainfall() {
+            $("._gauge").hide();
+            if ($("#ddlRainfall").children().length == 0) {
+                fillDropdownList("ddlRainfall", "../Service/KeyValueDataSource.ashx?data=rain_gauge", true);
+            }
+            $("#trRainfall").show();
+        }
+        function showWaterQualityMeter() {
+            $("._gauge").hide();
+            if ($("#ddlWaterQuality").children().length == 0) {
+                fillDropdownList("ddlWaterQuality", "../Service/KeyValueDataSource.ashx?data=water_quality_meter", true);
+            }
+            $("#trWaterQuality").show();
+        }
+        function showDamWeir() {
+            $("._gauge").hide();
+            if ($("#ddlWaterLevel").children().length == 0) {
+                fillDropdownList("ddlWaterLevel", "../Service/KeyValueDataSource.ashx?data=dam_weir", true);
+            }
+            $("#trWaterLevel").show();
+        }
+        function locateToGauge() {
+            var proj = "EPSG:3826";
+            switch ($("#ddlGaugeType").val()) {
+                case "rainfall":
+                    proj = "EPSG:4326";
+                    dataUrl = "../Service/GetLocationInfo.ashx?data=rain_gauge&fid=" + encodeURIComponent($("#ddlRainfall").val());
+                    break;
+                case "waterQuality":
+                    dataUrl = "../Service/GetLocationInfo.ashx?data=water_quality_meter&fid=" + encodeURIComponent($("#ddlWaterQuality").val());
+                    break;
+                case "waterLevel":
+                    dataUrl = "../Service/GetLocationInfo.ashx?data=dam_weir&fid=" + encodeURIComponent($("#ddlWaterLevel").val());
+                    break;
+            }
+            $.ajax({
+                url: dataUrl,
+                success: function (data) {
+                    parent.mapPlugin.locateTool.locateToWKT(data, proj, true);
+                }
+            });
+        }
+    </script>
+    <!--- end gauge --->
+    <!--- for structure --->
+    <script type="text/javascript"></script>
+    <!--- end structure --->
+    <!--- for drainage --->
+    <script type="text/javascript"></script>
+    <!--- end drainage --->
+    <!-- page event -->
+    <script type="text/javascript">
+        function page_active() {
+        }
+        function page_leave() {
+        }
+        // 關閉全部時，此功能需做的動作
+        function action_clear() {
+            mapPlugin.locateTool.clearLocatedFeature();
+        }
+        helpHtml = "";
+    </script>
+</head>
+<body>
+    <!--關閉+說明-->
+    <div class="BtnFunc">
+        <ul>
+            <li class="close"><a href="javascript:void(0);parent.toolSwitch()">關閉</a></li>
+            <!--<li class="help"><a href="javascript:void(0);" onclick="parent.showHelp(helpHtml);">說明</a></li>-->
+        </ul>
+    </div>
+    <!--頁籤-->
+    <div class="TabBox">
+        <input type="submit" onclick="switchLocateType(this,'district')" class="BtnTab TabActive"
+            value="行政區" />
+        <input type="submit" onclick="switchLocateType(this,'address')" class="BtnTab" value="地址" />
+        <input type="submit" onclick="switchLocateType(this,'coordinate')" class="BtnTab"
+            value="坐標" />
+        <input type="submit" onclick="switchLocateType(this,'cadaster')" class="BtnTab" value="地籍" />
+        <input type="submit" onclick="switchLocateType(this,'basin')" class="BtnTab" value="河川流域" />
+        <input type="submit" onclick="switchLocateType(this,'gauge')" class="BtnTab" value="測站" />
+        <input type="submit" onclick="switchLocateType(this,'eng')" class="BtnTab" value="工程" />
+    </div>
+    <ul style="display: none">
+        <li role="presentation"><a id="lnk_district" href="#district" role="tab"></a></li>
+        <li role="presentation"><a id="lnk_address" href="#address" role="tab"></a></li>
+        <li role="presentation"><a id="lnk_coordinate" href="#coordinate" role="tab"></a>
+        </li>
+        <li role="presentation"><a id="lnk_cadaster" href="#cadaster" role="tab"></a>
+        </li>
+        <li role="presentation"><a id="lnk_basin" href="#basin" role="tab"></a></li>
+        <li role="presentation"><a id="lnk_gauge" href="#gauge" role="tab"></a></li>
+        <li role="presentation"><a id="lnk_eng" href="#eng" role="tab"></a></li>
+    </ul>
+    <!--頁籤結尾-->
+    <!--可捲動範圍-->
+    <div class="nano">
+        <div class="nano-content">
+            <div class="tab-content">
+                <input type="button" class="BtnClear" value="清除所有定位" style="float: right"
+                    onclick="parent.mapPlugin.locateTool.clearLocatedFeature()" />
+                <!-- 行政區定位 -->
+                <div role="tabpanel" class="tab-pane active" id="district">
+                    <div style="display: inline-block; width: 100%;">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                            <tr>
+                                <th width="20%">
+                                    縣市
+                                </th>
+                                <td width="80%">
+                                    <select id="ddlCounty" onchange="genTowns()">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    鄉鎮區
+                                </th>
+                                <td>
+                                    <select id="ddlTown" onchange="genVillages()">
+                                        <option value="">全鄉鎮區</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    村里
+                                </th>
+                                <td>
+                                    <select id="ddlVillage">
+                                        <option value="">全村里</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;
+                                    
+                                </td>
+                                <td>
+                                    <input type="button" id="btnLocateToDistrict" class="BtnWhite" value="定位" onclick="locateToDistrict()" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 地址定位 -->
+                <div role="tabpanel" class="tab-pane" id="address">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                        <tr>
+                            <th width="56">
+                                地址
+                            </th>
+                            <td>
+                                <input type="text" id="txtAddress" style="width: 100%" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center">
+                                <input type="button" value="定位" class="BtnWhite" onclick="queryAddress();" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 坐標定位 -->
+                <div role="tabpanel" class="tab-pane" id="coordinate">
+                    <div style="display: inline-block; width: 100%; padding: 0px; margin: 0px;">
+                        <p>&nbsp;
+                            
+                        </p>
+                        <p>
+                            <input type="button" name="button" class="BtnOrange _coordTab BtnOrangeActive" value="WGS84"
+                                onclick="switchCoordType(this)" />
+                            <input type="button" name="button" class="BtnOrange _coordTab" value="TWD97" onclick="switchCoordType(this)" />
+                            <input type="button" name="button" class="BtnOrange _coordTab" value="TWD67" onclick="switchCoordType(this)" />
+                        </p>
+                        <!-- 經緯度定位介面 -->
+                        <div id="WGS84Panel" class="_coordPanel Location">
+                            <h4>
+                                十進位</h4>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                                <tr>
+                                    <th width="56">
+                                        經度
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtLngCoord" size="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        緯度
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtLatCoord" size="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <input type="button" name="button2" class="BtnWhite" value="定位" onclick="locateByWGS84Decimal()" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <span class="txt02">例如:<br />
+                                            經度 121.2421015<br />
+                                            緯度 24.835121</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <h4>
+                                度分秒</h4>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                                <tr>
+                                    <th>
+                                        經度
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtLngDegree" size="5" value="121" />
+                                        度
+                                        <input type="text" id="txtLngMinute" size="5" />
+                                        分
+                                        <input type="text" id="txtLngSecond" size="5" />
+                                        秒
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        緯度
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtLatDegree" size="5" value="23" />
+                                        度
+                                        <input type="text" id="txtLatMinute" size="5" />
+                                        分
+                                        <input type="text" id="txtLatSecond" size="5" />
+                                        秒
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <input type="button" name="button2" id="button2" class="BtnWhite" value="定位" onclick="locateByWGS84DMS()" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <span class="txt02">例如:<br />
+                                            經度 121度14分31.56秒<br />
+                                            緯度 24度50分6秒</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- TWD97定位介面 -->
+                        <div id="TWD97Panel" class="_coordPanel" style="display: none">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                                <tr>
+                                    <th width="60">
+                                        X坐標
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtTWD97X" size="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Y坐標
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtTWD97Y" size="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <input type="button" name="button2" class="BtnWhite" value="定位" onclick="locateByTWD97()" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <span class="txt02">例如:<br />
+                                            X坐標 274467.17
+                                            <br />
+                                            Y坐標 2747518.09</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- TWD67定位介面 -->
+                        <div id="TWD67Panel" class="_coordPanel" style="display: none">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                                <tr>
+                                    <th width="60">
+                                        X坐標
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtTWD67X" size="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Y坐標
+                                    </th>
+                                    <td>
+                                        <input type="text" id="txtTWD67Y" size="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <input type="button" name="button2" class="BtnWhite" value="定位" onclick="locateByTWD67()" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                        
+                                    </td>
+                                    <td>
+                                        <span class="txt02">例如:<br />
+                                            X坐標 273639.24<br />
+                                            Y坐標 2747724.01</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- 地籍 -->
+                <div role="tabpanel" class="tab-pane" id="cadaster">
+                    <div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ListGrey">
+                            <tr>
+                                <th>
+                                    縣市
+                                </th>
+                                <td>
+                                    <select id="ddlCadasterCounty" onchange="changeCadasterCounty()">
+                                        <option value="A">臺北市</option>
+                                        <option value="C">基隆市</option>
+                                        <option value="F">新北市</option>
+                                        <option value="G">宜蘭縣</option>
+                                        <option value="H" selected="selected">桃園市</option>
+                                        <option value="J">新竹縣</option>
+                                        <option value="O">新竹市</option>
+                                        <option value="U">花蓮縣</option>
+                                        <option value="Z">連江縣</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    鄉鎮區
+                                </th>
+                                <td>
+                                    <select id="ddlCadasterTown" onchange="changeCadasterTown()">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    地段
+                                </th>
+                                <td>
+                                    <select id="ddlCadasterSection">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    地號
+                                </th>
+                                <td>
+                                    <input id="txtMontherNum" type="text" maxlength="4" style="width: 50px; text-align: right" />
+                                    -
+                                    <input id="txtSonNum" type="text" maxlength="4" style="width: 50px; text-align: right" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <input type="button" class="BtnWhite" value="定位" onclick="locateToCadaster()" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 流域定位 -->
+                <div class="tab-pane" id="basin">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                        <tr>
+                            <th width="20%">
+                                流域
+                            </th>
+                            <td width="80%">
+                                <select id="ddlBasin">
+                                    <option value="basin.F599__1">老梅j溪</option>
+                                    <option value="basin.F599__2">阿里磅溪</option>
+                                    <option value="basin.F599__3">大坑溪</option>
+                                    <option value="basin.F599__4">八連溪</option>
+                                    <option value="basin.F599__5">北勢坑溪</option>
+                                    <option value="basin.F599__6">大屯溪</option>
+                                    <option value="basin.F599__7">後州溪</option>
+                                    <option value="basin.F599__8">萬里磺溪</option>
+                                    <option value="basin.F599__9">興化店溪</option>
+                                    <option value="basin.F599__10">瑪鍊溪</option>
+                                    <option value="basin.F599__11">田寮河</option>
+                                    <option value="basin.F599__12">水仙溪</option>
+                                    <option value="basin.F599__13">後坑溪</option>
+                                    <option value="basin.F599__14">瑞樹坑溪</option>
+                                    <option value="basin.F599__15">林口溪</option>
+                                    <option value="basin.F599__16">寶樹坑溪</option>
+                                    <option value="basin.F599__17">石碇溪</option>
+                                    <option value="basin.F599__18">觀音溪</option>
+                                    <option value="basin.F599__19">飯壢溪</option>
+                                    <option value="basin.F599__20">新屋溪</option>
+                                    <option value="basin.F599__21">大坡溪</option>
+                                    <option value="basin.F599__22">波羅溪</option>
+                                    <option value="basin.F599__23">猴洞坑溪</option>
+                                    <option value="basin.F599__24">蘇澳溪</option>
+                                    <option value="basin.F599__25">東澳溪</option>
+                                    <option value="basin.F599__26">良里溪</option>
+                                    <option value="basin.F599__27">小清水溪</option>
+                                    <option value="basin.F599__28">三仙溪</option>
+                                    <option value="basin.F599__29">新港溪</option>
+                                    <option value="basin.F599__30">北太麻里溪</option>
+                                    <option value="basin.F599__31">太石盤溪</option>
+                                    <option value="basin.F599__32">竹社溪</option>
+                                    <option value="basin.F599__33">社皆坑溪</option>
+                                    <option value="basin.F599__34">洪土溪</option>
+                                    <option value="basin.F599__35">林子坑溪</option>
+                                    <option value="basin.F599__36">北勢溪</option>
+                                    <option value="basin.F599__37">南湖溪</option>
+                                    <option value="basin.F599__38">率芒溪</option>
+                                    <option value="basin.F599__39">保力溪</option>
+                                    <option value="basin.F599__40">枋山溪</option>
+                                    <option value="basin.F599__41">卑南溪</option>
+                                    <option value="basin.F599__42">通宵溪</option>
+                                    <option value="basin.F599__43">舊濁水溪</option>
+                                    <option value="basin.F599__44">鹽水溪</option>
+                                    <option value="basin.F599__45">蘭陽溪</option>
+                                    <option value="basin.F599__46">雙溪</option>
+                                    <option value="basin.F599__47">磺溪</option>
+                                    <option value="basin.F599__48">頭前溪</option>
+                                    <option value="basin.F599__49">濁水溪</option>
+                                    <option value="basin.F599__50">鳳山溪</option>
+                                    <option value="basin.F599__51">新城溪</option>
+                                    <option value="basin.F599__52">新虎尾溪</option>
+                                    <option value="basin.F599__53">港口溪</option>
+                                    <option value="basin.F599__54">曾文溪</option>
+                                    <option value="basin.F599__55">淡水河</option>
+                                    <option value="basin.F599__56">高屏溪</option>
+                                    <option value="basin.F599__57">馬武溪</option>
+                                    <option value="basin.F599__58">烏溪</option>
+                                    <option value="basin.F599__59">美崙溪</option>
+                                    <option value="basin.F599__60">急水溪</option>
+                                    <option value="basin.F599__61">後龍溪</option>
+                                    <option value="basin.F599__62">南澳溪</option>
+                                    <option value="basin.F599__63">南崁溪</option>
+                                    <option value="basin.F599__64">金崙溪</option>
+                                    <option value="basin.F599__65">花蓮溪</option>
+                                    <option value="basin.F599__66">社子溪</option>
+                                    <option value="basin.F599__67">知本溪</option>
+                                    <option value="basin.F599__68">林邊溪</option>
+                                    <option value="basin.F599__69">東港溪</option>
+                                    <option value="basin.F599__70">和平溪</option>
+                                    <option value="basin.F599__71">秀姑巒溪</option>
+                                    <option value="basin.F599__72">利嘉溪</option>
+                                    <option value="basin.F599__73">西湖溪</option>
+                                    <option value="basin.F599__74">老街溪</option>
+                                    <option value="basin.F599__75">朴子溪</option>
+                                    <option value="basin.F599__76">立霧溪</option>
+                                    <option value="basin.F599__77">四重溪</option>
+                                    <option value="basin.F599__78">北港溪</option>
+                                    <option value="basin.F599__79">冬山河</option>
+                                    <option value="basin.F599__80">水母溪</option>
+                                    <option value="basin.F599__81">太麻里溪</option>
+                                    <option value="basin.F599__82">中港溪</option>
+                                    <option value="basin.F599__83">大武溪</option>
+                                    <option value="basin.F599__84">大竹溪</option>
+                                    <option value="basin.F599__85">大安溪</option>
+                                    <option value="basin.F599__86">大甲溪</option>
+                                    <option value="basin.F599__87">三棧溪</option>
+                                    <option value="basin.F599__88">八掌溪</option>
+                                    <option value="basin.F599__89">二仁溪</option>
+                                    <option value="basin.F599__90">大南灣沿海</option>
+                                    <option value="basin.F599__91">金瓜石</option>
+                                    <option value="basin.F599__92">白沙屯沿海</option>
+                                    <option value="basin.F599__93">坑內溪</option>
+                                    <option value="basin.F599__94">梗枋溪</option>
+                                    <option value="basin.F599__95">頭城溪</option>
+                                    <option value="basin.F599__96">湖口沿海</option>
+                                    <option value="basin.F599__97">得子口溪</option>
+                                    <option value="basin.F599__98">冷水坑</option>
+                                    <option value="basin.F599__99">通霄沿海</option>
+                                    <option value="basin.F599__100">房裡溪</option>
+                                    <option value="basin.F599__101">觀音沿海</option>
+                                    <option value="basin.F599__102">卡那岸沿海</option>
+                                    <option value="basin.F599__103">水璉溪</option>
+                                    <option value="basin.F599__104">崙背沿海</option>
+                                    <option value="basin.F599__105">虎尾溪</option>
+                                    <option value="basin.F599__106">豐濱溪</option>
+                                    <option value="basin.F599__107">新港沿海</option>
+                                    <option value="basin.F599__108">長濱沿海</option>
+                                    <option value="basin.F599__109">布袋沿海</option>
+                                    <option value="basin.F599__110">長濱溪</option>
+                                    <option value="basin.F599__111">掃別溪</option>
+                                    <option value="basin.F599__112">石門溪</option>
+                                    <option value="basin.F599__113">海老溪</option>
+                                    <option value="basin.F599__114">都歷溪</option>
+                                    <option value="basin.F599__115">茄定沿海</option>
+                                    <option value="basin.F599__116">斑鳩溪</option>
+                                    <option value="basin.F599__117">左營沿海</option>
+                                    <option value="basin.F599__118">高雄圳</option>
+                                    <option value="basin.F599__119">太麻里沿海</option>
+                                    <option value="basin.F599__120">大鳥溪</option>
+                                    <option value="basin.F599__121">南興溪</option>
+                                    <option value="basin.F599__122">安溯溪</option>
+                                    <option value="basin.F599__123">達仁溪</option>
+                                    <option value="basin.F599__124">獅子頭沿海</option>
+                                    <option value="basin.F599__125">佳樂水</option>
+                                    <option value="basin.F599__126">墾丁國家公園</option>
+                                    <option value="basin.F599__127">小港沿海</option>
+                                    <option value="basin.F599__128">太平溪</option>
+                                    <option value="basin.F599__129">阿公店溪</option>
+                                    <option value="basin.F599__130">客雅溪</option>
+                                    <option value="basin.F599__131">洋仔溪</option>
+                                    <option value="basin.F599__132">鹿港溪</option>
+                                    <option value="basin.F599__133">將軍溪</option>
+                                    <option value="basin.F599__134">台中港沿海</option>
+                                    <option value="basin.F599__135">都蘭溪</option>
+                                    <option value="basin.F599__136">羊寮溪</option>
+                                    <option value="basin.F599__137">新街溪</option>
+                                    <option value="basin.F599__138">楓港溪</option>
+                                    <option value="basin.F599__139">楓港沿海</option>
+                                    <option value="basin.F599__140">三姓公溪</option>
+                                    <option value="basin.F599__141">富源溪</option>
+                                    <option value="basin.F599__142">福德坑溪</option>
+                                    <option value="basin.F599__143">九棚溪</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <input type="button" id="Button1" class="BtnWhite" value="定位" onclick="locateToBasin()" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 測站定位 -->
+                <div class="tab-pane" id="gauge">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                        <tr>
+                            <th width="30%">
+                                測站類型
+                            </th>
+                            <td width="70%">
+                                <select id="ddlGaugeType" onchange="gaugeChange()">
+                                    <option value="rainfall">雨量</option>
+                                    <option value="waterQuality">水質</option>
+                                    <option value="waterLevel">水位</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="trRainfall" class="_gauge">
+                            <th>
+                                雨量站
+                            </th>
+                            <td>
+                                <select id="ddlRainfall">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="trWaterQuality" class="_gauge" style="display: none">
+                            <th>
+                                水質測站
+                            </th>
+                            <td>
+                                <select id="ddlWaterQuality">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="trWaterLevel" class="_gauge" style="display: none">
+                            <th>
+                                水庫堰壩
+                            </th>
+                            <td>
+                                <select id="ddlWaterLevel">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <input type="button" id="Button3" class="BtnWhite" value="定位" onclick="locateToGauge()" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 工程 -->
+                <div class="tab-pane" id="eng">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="ListGrey">
+                        <tr>
+                            <th width="30%" style="white-space:nowrap">
+                                年度
+                            </th>
+                            <td width="70%">
+                                <select id="ddlEngYear" onchange="showEngName()">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="white-space:nowrap">
+                                工程
+                            </th>
+                            <td>
+                                <select id="ddlEngName">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <input type="button" class="BtnWhite" value="定位" onclick="locateToEng()" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--可捲動範圍結尾-->
+</body>
+</html>

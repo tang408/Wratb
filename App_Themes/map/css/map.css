@@ -1,0 +1,2197 @@
+﻿@charset "utf-8";
+
+input {
+	border-radius: 4px;
+	border: 1px solid #CCC;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	height: 19px;
+	width: 19px;
+	margin-right: 6px;
+	margin-top: 0px;
+}
+
+.map_search {
+	position: absolute;
+	z-index: 9999;
+	left: 3.5em;
+	top: 1em;
+	background-color: #0f97ff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	overflow: hidden;
+	background-image: url(../images/icon_search.svg);
+	background-repeat: no-repeat;
+	background-position: 4px center;
+	background-size: 24px auto;
+	padding-top: 8px;
+	padding-right: 12px;
+	padding-bottom: 8px;
+	padding-left: 32px;
+}
+
+.map_menu {
+	position: absolute;
+	left: 36px;
+	top: 15px;
+	z-index: 9999;
+	margin-right: 5px;
+	overflow: hidden;
+}
+
+.map_cont {
+	/* position: absolute;
+	left: 0px;
+	top: 60px;
+	z-index: 9999;
+	margin-right: 5px;
+	overflow: hidden;
+	border-radius: 8px; */
+	position: absolute;
+	left: 15px;
+	top: 70px;
+	z-index: 9999;
+	margin-right: 5px;
+	overflow: hidden;
+	border-radius: 8px;
+	/* border: 1px solid; */
+}
+
+.FuncBox {
+	width: 380px;
+	/* float: right; */
+}
+
+@media (min-width:500px) {
+	.FuncBox {
+		float: right;
+	}
+}
+
+.Box {
+	height: 100%;
+	background-color: #FFF;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+/*close 、HELP和透明度的icon*/
+.BtnFunc {
+	padding-top: 5px;
+}
+
+.BtnFunc ul {
+	display: block;
+	width: 100%;
+	height: 26px;
+}
+
+.BtnFunc li {
+	float: right;
+	margin-right: 5px;
+}
+
+.BtnFunc li a {
+	display: block;
+	width: 26px;
+	height: 26px;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+}
+
+.BtnFunc li a:hover {
+	background-position: 0 -26px;
+}
+
+.BtnFunc li a:active,
+#BtnFunc li.active a {
+	background-position: left bottom;
+}
+
+.BtnFunc li.close a {
+	background-image: url(../images/Map_icon_close26.png);
+}
+
+.BtnFunc li.help a {
+	background-image: url(../images/Map_icon_help26.png);
+}
+
+
+.BtnTrans {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	border: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #777777;
+	display: inline-block;
+	background-image: url(../images/Map_icon_transp.svg);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 30px;
+	text-indent: -99999;
+	float: right;
+	background-color: transparent;
+	background-position: center center;
+	background-size: 15px auto;
+	margin-right: 4px;
+}
+
+.BtnTrans:hover {
+	background-image: url(../images/Map_icon_transp_h.svg);
+	background-position: center center;
+	background-size: 15px auto;
+}
+
+.BtnTrans:active {
+	background-image: url(../images/Map_icon_transp_h.svg);
+	background-position: center center;
+	background-size: 15px auto;
+}
+
+.Btn-PositionTop {
+	margin-top: -4px;
+}
+
+.BtnDelete {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	border: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #777777;
+	display: inline-block;
+	background-image: url(../images/Map_icon_delete.png);
+	background-repeat: no-repeat;
+	height: 11px;
+	width: 11px;
+	text-indent: -99999;
+	float: right;
+	margin: 4px;
+	background-color: #FFF;
+}
+
+.BtnDelete:hover {
+	background-image: url(../images/Map_icon_delete_h.png);
+	height: 11px;
+	width: 11px;
+	background-color: #FFF;
+}
+
+.BtnDelete:active {
+	background-image: url(../images/Map_icon_delete_h.png);
+	height: 11px;
+	width: 11px;
+	background-color: #FFF;
+}
+
+.BtnListEdit {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	border: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #777777;
+	display: inline-block;
+	background-image: url(../images/BtnListEdit.png);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 21px;
+	text-indent: -99999;
+	float: right;
+	margin: 4px;
+	background-color: #FFF;
+}
+
+.BtnListEdit:hover {
+	background-image: url(../images/BtnListEdit_h.png);
+	height: 21px;
+	width: 21px;
+	background-color: #FFF;
+}
+
+.BtnListEdit:active {
+	background-image: url(../images/BtnListEdit_h.png);
+	height: 21px;
+	width: 21px;
+	background-color: #FFF;
+}
+
+.BtnListDel {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	border: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #777777;
+	display: inline-block;
+	background-image: url(../images/BtnListDel.png);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 21px;
+	text-indent: -99999;
+	float: right;
+	margin: 4px;
+	background-color: #FFF;
+}
+
+.BtnListDel:hover {
+	background-image: url(../images/BtnListDel_h.png);
+	height: 21px;
+	width: 21px;
+	background-color: #FFF;
+}
+
+.BtnListDel:active {
+	background-image: url(../images/BtnListDel_h.png);
+	height: 21px;
+	width: 21px;
+	background-color: #FFF;
+}
+
+.BtnListPin {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	border: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #777777;
+	display: inline-block;
+	background-image: url(../images/BtnListPin.png);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 21px;
+	text-indent: -99999;
+	float: right;
+	margin: 4px;
+	background-color: #FFF;
+}
+
+.BtnListPin:hover {
+	background-image: url(../images/BtnListPin_h.png);
+	height: 21px;
+	width: 21px;
+	background-color: #FFF;
+}
+
+.BtnListPin:active {
+	background-image: url(../images/BtnListPin_h.png);
+	height: 21px;
+	width: 21px;
+	background-color: #FFF;
+}
+
+/*-------------------------------*/
+/*頁籤*/
+.TabBox {
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d5d5d5;
+}
+
+.BtnTab {
+	font-size: 14px;
+	font-family: "微軟正黑體";
+	font-weight: normal;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 0px solid #eeb44f;
+	text-decoration: none;
+	background-color: #B3E55E;
+	color: #000000;
+	display: inline-block;
+	cursor: pointer;
+	margin-bottom: 5px;
+	padding-top: 8px;
+	padding-right: 12px;
+	padding-bottom: 8px;
+	padding-left: 12px;
+}
+
+.BtnTab:hover {
+	background-color: #51AF5B;
+	color: #FFF;
+}
+
+.BtnTab:active {
+	position: relative;
+	top: 1px;
+}
+
+.TabActive {
+	background-color: #51AF5B;
+	color: #FFF;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	padding-top: 8px;
+	padding-right: 12px;
+	padding-bottom: 8px;
+	padding-left: 12px;
+}
+
+/*-----------------------------*/
+
+/*樹枝狀第一層*/
+.TreeFolder {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	background-image: url(../images/Map_tree_close.svg);
+	background-position: left 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/*padding-left: 26px;*/
+	background-repeat: no-repeat;
+	background-size: 20px auto;
+}
+
+.TreeFolder a:link,
+.TreeFolder a:visited {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	text-decoration: none;
+}
+
+.TreeFolder a:hover {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #ff7800;
+	text-decoration: none;
+}
+
+.TreeFolder.active {
+	color: #ff7800;
+	background-image: url(../images/Map_tree_open.svg);
+	background-position: left 6px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/*padding-left: 26px;*/
+	background-repeat: no-repeat;
+	background-size: 20px auto;
+}
+
+.TreeFolder.active a:link,
+.TreeFolder.active a:visited {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #ff7800;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-decoration: none;
+}
+
+.TreeFolder.active a:hover {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-decoration: none;
+}
+
+.SubFolderList {
+	padding-left: 24px;
+}
+
+.TreeNode,
+.TreeFolder .TreeNode {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 26px;
+	background-repeat: no-repeat;
+}
+
+.TreeNode a:link,
+.TreeNode a:visited,
+.TreeFolder .TreeNode a:link,
+.TreeFolder .TreeNode a:visited {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	text-decoration: none;
+}
+
+.TreeNode a:hover,
+.TreeFolder .TreeNode a:hover {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #ff7800;
+	text-decoration: none;
+}
+
+/*-----------------------------*/
+
+/*樹枝狀第二層*/
+.Tree02 {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	background-image: url(../images/Map_tree_close.png);
+	background-position: 18px 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 30px;
+	background-repeat: no-repeat;
+}
+
+.Tree02 a:link,
+.Tree02 a:visited {
+	color: #000;
+}
+
+.Tree02_none {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 30px;
+	background-repeat: no-repeat;
+}
+
+.Tree02_none a:link,
+.Tree02_none a:visited {
+	color: #000;
+}
+
+.Tree02_selected {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	background-image: url(../images/Map_tree_open.png);
+	background-position: 18px 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 30px;
+	background-repeat: no-repeat;
+}
+
+.Tree02_selected a:link,
+.Tree02_selected a:visited {
+	color: #ff4e00;
+}
+
+/*-----------------------------*/
+
+/*樹枝狀第三層*/
+.Tree03 {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	color: #ff4e00;
+	padding-left: 18px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/*-----------------------------*/
+
+/*按鈕*/
+.BtnWhite {
+	font-size: 12px;
+	font-family: "細明體";
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dcdcdc;
+	text-decoration: none;
+	background: -moz-linear-gradient(center top, #ffffff 5%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(100%, #f6f6f6));
+	background-color: #ffffff;
+	color: #0;
+	display: inline-block;
+	text-shadow: 1px 0px 0px #ffffff;
+	padding-top: 4px;
+	padding-right: 9px;
+	padding-bottom: 4px;
+	padding-left: 9px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+}
+
+.BtnWhite :hover {
+	background: -moz-linear-gradient(center top, #f6f6f6 5%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff');
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #f6f6f6), color-stop(100%, #ffffff));
+	background-color: #f6f6f6;
+}
+
+.BtnWhite :active {
+	position: relative;
+	top: 1px;
+}
+
+.BtnGreen {
+	font-size: 12px;
+	font-family: "細明體";
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 0px solid #dcdcdc;
+	text-decoration: none;
+	background-color: #b3e55e;
+	color: #0;
+	display: inline-block;
+	padding-top: 4px;
+	padding-right: 9px;
+	padding-bottom: 4px;
+	padding-left: 9px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.BtnGreen :hover {
+	background-color: #51af5b;
+}
+
+.BtnGreen :active {
+	position: relative;
+	top: 1px;
+}
+
+.BtnClear {
+	font-size: 12px;
+	font-family: "細明體";
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dcdcdc;
+	text-decoration: none;
+	background-image: url(../images/BtnClear.png);
+	background-repeat: no-repeat;
+	height: 27px;
+	min-width: 90px;
+	background-position: 4px center;
+	text-align: left;
+	padding-left: 28px;
+	padding-right: 10px;
+	background-color: #ffffff;
+	color: #0;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+}
+
+.BtnClear :hover {
+	background-color: #f6f6f6;
+}
+
+.BtnClear :active {
+	position: relative;
+	top: 1px;
+}
+
+.BtnBack {
+	font-size: 12px;
+	font-family: "細明體";
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dcdcdc;
+	text-decoration: none;
+	background-image: url(../images/BtnBack.png);
+	background-repeat: no-repeat;
+	height: 27px;
+	min-width: 90px;
+	background-position: 4px center;
+	text-align: left;
+	padding-left: 28px;
+	padding-right: 10px;
+	background-color: #ffffff;
+	color: #0;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+}
+
+.BtnBack :hover {
+	background-color: #f6f6f6;
+}
+
+.BtnBack :active {
+	position: relative;
+	top: 1px;
+}
+
+.BtnGrey {
+	font-size: 12px;
+	font-family: "細明體";
+	font-weight: normal;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	border: 0px;
+	text-decoration: none;
+	background-color: #888888;
+	color: #ffffff;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 5px;
+	padding-top: 0px;
+	padding-right: 9px;
+	padding-bottom: 0px;
+	padding-left: 9px;
+	height: 21px;
+}
+
+.BtnGrey:hover {
+	background-color: #888888;
+}
+
+.BtnGrey:active {
+	position: relative;
+	top: 1px;
+}
+
+.BtnOrange {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	/*	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;*/
+	border: 0px solid #ff7800;
+	text-decoration: none;
+	background-color: #e3e3e3;
+	color: #a3a3a3;
+	display: inline-block;
+	cursor: pointer;
+	padding-top: 6px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-left: 12px;
+	margin-bottom: 10px;
+}
+
+.BtnOrange:hover {
+	background-color: #ffa200;
+	color: #fff;
+}
+
+.BtnOrange:active {
+	position: relative;
+	top: 1px;
+}
+
+.BtnOrangeActive {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	/*	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #ff7800;*/
+	text-decoration: none;
+	background-color: #ffa200;
+	color: #fff;
+	padding-top: 6px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-left: 12px;
+}
+
+.BtnBlue {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 0px solid #337fed;
+	text-decoration: none;
+	background-color: #2068c1;
+	color: #ffffff;
+	display: inline-block;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	padding-top: 6px;
+	padding-right: 10px;
+	padding-bottom: 6px;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.BtnBlue:hover {
+	background-color: #1e62d0;
+}
+
+.BtnBlue:active {
+	position: relative;
+	top: 1px;
+}
+
+/*-----------------------------*/
+/*表單*/
+.ListTitle {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	background-color: #2068c1;
+	text-align: left;
+	padding: 4px;
+}
+
+.List {}
+
+.List th {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	background-color: #2068c1;
+	text-align: left;
+	padding: 4px;
+}
+
+.List td {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #333;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #c8c8c8;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+}
+
+.List_right {
+	color: #2068c1;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	float: right;
+	background-image: none;
+}
+
+.List02 {}
+
+.List02 th {}
+
+.List02 td {
+	font-family: "微軟正黑體";
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.ListTitle {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	background-color: #2068c1;
+	text-align: left;
+	padding: 4px;
+}
+
+.List03 {}
+
+.List03 th {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	background-color: #2068c1;
+	text-align: left;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #FFF;
+	border-bottom-color: #FFF;
+	padding-top: 8px;
+	padding-right: 4px;
+	padding-bottom: 8px;
+	padding-left: 4px;
+}
+
+.List03 td {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #333;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #c8c8c8;
+	padding-top: 8px;
+	padding-right: 4px;
+	padding-bottom: 8px;
+	padding-left: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-top-color: #c8c8c8;
+	border-right-color: #c8c8c8;
+}
+
+.ListGrey {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #3b3b3b;
+	margin-bottom: 10px;
+}
+
+.ListGrey th {
+	text-align: left;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	background-image: url(../images/arr01.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+}
+
+.ListGrey td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+}
+
+.txt03 {
+	border-right-style: none;
+	border-bottom-style: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	color: #03C;
+	text-align: left;
+	border-top-style: none;
+	border-left-style: none;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+/*-----------------------------*/
+
+/*泡泡視窗+彈跳視窗樣式*/
+.Bubble {
+	padding: 5px;
+}
+
+.Bubble h1 {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	line-height: 18px;
+	color: #000;
+	padding-bottom: 5px;
+}
+
+.BubleTable {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.BubleTable>tbody>tr>th {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	line-height: 15px;
+	color: #0075c4;
+	text-align: left;
+	padding-top: 6px;
+	padding-bottom: 2px;
+	font-weight: bold;
+	padding-right: 2px;
+	background-image: url(../images/Bubble_arr.png);
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding-left: 18px;
+}
+
+.BubleTable>tbody>tr>td {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 15px;
+	color: #666;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 20px;
+	padding-right: 2px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #8ac0e4;
+	text-align: right;
+}
+
+.BubleTableS {}
+
+.BubleTableS th {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 15px;
+	color: #000000;
+	text-align: left;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-weight: normal;
+	padding-right: 2px;
+	background-image: none;
+	background-repeat: no-repeat;
+	padding-left: 2px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.BubleTableS td {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 15px;
+	color: #666;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 2px;
+	border-bottom-style: none;
+	padding-right: 2px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	text-align: left;
+}
+
+.BubleDetail a:link,
+.BubleDetail a:hover,
+.BubleDetail a:visited {
+	font-family: "細明體";
+	font-size: 13px;
+	color: #F60;
+	text-decoration: none;
+}
+
+.BubleTableS td a {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 15px;
+	color: #F30;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 2px;
+	border-bottom-style: none;
+	padding-right: 2px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	text-decoration: none;
+}
+
+.Popup {
+	padding: 10px;
+}
+
+.Popup h1 {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #0086ff;
+	line-height: 21px;
+	margin-bottom: 10px;
+}
+
+.Popup p {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	line-height: 25px;
+	color: #000;
+}
+
+/*-----------------------------*/
+
+/*底圖切換150513*/
+.BaseMapTitle {
+	background-color: #ff7900;
+	color: #FFF;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	padding-top: 4px;
+	padding-right: 9px;
+	padding-bottom: 4px;
+	padding-left: 9px;
+	display: inline;
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+.BaseMapTop {
+	margin-bottom: 25px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+.BaseMapTop p {
+	font-family: "細明體";
+	font-size: 13px;
+	line-height: 19px;
+	color: #ff9958;
+	text-align: center;
+}
+
+.BaseMapDown {
+	background-color: #ececec;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.BaseMapDown h1 {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.map_add {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #ff772d;
+	background-image: url(../images/Map_icon_add.png);
+	background-position: 10px center;
+	height: 22px;
+	margin-bottom: 10px;
+	padding-left: 25px;
+	border: 1px dashed #ffad81;
+	background-repeat: no-repeat;
+	padding-top: 6px;
+}
+
+.map01 {
+	background-image: url(../images/Mapunderlay01.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	height: 24px;
+	padding-left: 95px;
+	border: 1px solid #c8c8c8;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 10px;
+	padding-top: 6px;
+}
+
+.map02 {
+	background-image: url(../images/Mapunderlay02.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	height: 24px;
+	padding-left: 95px;
+	border: 1px solid #c8c8c8;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 10px;
+	padding-top: 6px;
+}
+
+.map03 {
+	background-image: url(../images/Mapunderlay03.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	height: 24px;
+	padding-left: 95px;
+	border: 1px solid #c8c8c8;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 10px;
+	padding-top: 6px;
+}
+
+.map04 {
+	background-image: url(../images/Mapunderlay04.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	height: 24px;
+	padding-left: 95px;
+	border: 1px solid #c8c8c8;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 10px;
+	padding-top: 6px;
+}
+
+.map05 {
+	background-image: url(../images/Mapunderlay05.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	height: 24px;
+	padding-left: 95px;
+	border: 1px solid #c8c8c8;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 10px;
+	padding-top: 6px;
+}
+
+.map06 {
+	background-image: url(../images/Mapunderlay06.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	height: 24px;
+	padding-left: 95px;
+	border: 1px solid #c8c8c8;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 10px;
+	padding-top: 6px;
+}
+
+.map01:hover,
+.map02:hover,
+.map03:hover,
+.map04:hover,
+.map05:hover,
+.map06:hover {
+	background-position: 1px center;
+	background-color: #e2e2e2;
+	cursor: move;
+}
+
+.maptrans {
+	background-color: #ffffff;
+	/* for IE */
+	filter: alpha(opacity=50);
+	/* CSS3 standard */
+	opacity: 0.5;
+}
+
+
+/*-----------------------------*/
+
+/*底圖切換樣式180605*/
+.BasicMapTable {}
+
+.BasicMapTable td {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	padding-top: 12px;
+	padding-right: 8px;
+	padding-bottom: 12px;
+	padding-left: 40px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #8ad992;
+}
+
+.BasicMapTable td:hover {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	background-color: #8ad992;
+	cursor: pointer;
+}
+
+.BasicMapTable td a {
+	color: #000;
+	text-decoration: none;
+}
+
+.BasicMapTable td.active {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	background-color: #8ad992;
+	cursor: pointer;
+	background-image: url(../images/BasicMap_checked.svg);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: 28px auto;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+}
+
+/*-----------------------------*/
+
+/*透明度*/
+.transp {
+	border-radius: 4px;
+	-webkit-box-shadow: 2px 2px 5px #adadad;
+	-moz-box-shadow: 2px 2px 5px #adadad;
+	box-shadow: 2px 2px 5px #adadad;
+	background-color: #FFF;
+	border: 1px solid #d7d7d7;
+	height: 40px;
+	width: 180px;
+	z-index: 1200;
+	overflow: hidden;
+}
+
+/*-----------------------------*/
+
+/*圖層區塊樣式*/
+.LayerList {
+	width: 100%;
+}
+
+.LayerList h1 {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	background-color: #ff7800;
+	width: 76px;
+	text-align: center;
+	line-height: 27px;
+}
+
+.LayerTable {}
+
+.LayerTable td {
+	padding-top: 5px;
+	padding-right: 1px;
+	padding-bottom: 5px;
+	padding-left: 1px;
+}
+
+.LayerTable td a:link,
+.LayerTable td a:visited {
+	font-family: "細明體";
+	font-size: 12px;
+	color: #333;
+	text-decoration: none;
+	text-align: center;
+}
+
+.LayerTable td a:hover {
+	font-family: "細明體";
+	font-size: 12px;
+	color: #06F;
+	text-decoration: none;
+	text-align: center;
+}
+
+/*-----------------------------*/
+
+/*圖層套疊編輯樣式*/
+.EditTable {
+	margin-bottom: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+}
+
+.EditTable td {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	padding-top: 5px;
+	padding-right: 2px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+.IconStyle {
+	text-align: center;
+	border: 1px solid #CCC;
+	width: 52px;
+	vertical-align: top;
+	padding: 0px;
+	background-image: url(../images/txt.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 52px;
+}
+
+.IconFont {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #2068c1;
+	text-align: left;
+	line-height: 27px;
+	font-weight: bold;
+}
+
+/*-----------------------------*/
+
+/*圖台左下坐標資訊*/
+#mouse-position {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 100;
+	background-color: #4d4d4d;
+	color: #FFF;
+	padding: 4px;
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+/*----------------------------*/
+
+/*圖台街景坐標的泡泡視窗(ol-popup Bubble)*/
+.MapBubbleStyle {
+	padding-right: 17px;
+	margin: 20px 10px 10px 10px;
+	max-height: 600px;
+	min-width: 300px;
+	max-width: 800px;
+	overflow: auto;
+}
+
+.MapBubbleStyle ul {
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.MapBubbleStyle li {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 21px;
+}
+
+.MapBubbleStyle li a:link,
+.MapBubbleStyle li a:visited {
+	color: #666;
+}
+
+.MapBubbleStyle li a:hover {
+	color: #F63;
+}
+
+.MapBubbleStyle p {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+}
+
+.MapBubbleStyle a:link,
+.MapBubbleStyle a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+.MapBubbleStyle a:hover {
+	color: #F30;
+}
+
+.CoordinateTxt {
+	color: #F30;
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+/*----------------------------*/
+
+/*說明文字樣式*/
+.TxtBlue {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	line-height: 25px;
+	color: #2068c1;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+	display: block;
+}
+
+.TxtPink {
+	color: #e52b90;
+}
+
+.TxtRed {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	line-height: 25px;
+	color: #CC0000;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+	display: block;
+	font-weight: bold;
+}
+
+/*----------------------------*/
+/*定位坐標樣式*/
+.Location {}
+
+.Location h4 {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #ff7900;
+	background-image: url(../images/LocationTitle.png);
+	background-repeat: no-repeat;
+	display: block;
+	background-position: left bottom;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+/*----------------------------*/
+/*圖層套疊搜尋樣式*/
+.LegendSearch {
+	background-color: #efefef;
+	background-image: url(../images/legend_search.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	padding-left: 45px;
+	padding-top: 5px;
+}
+
+/*----------------------------*/
+@media(min-width:980px) {
+	.mapnav {
+		margin-top: 5px;
+		display: inline-block;
+	}
+
+	.mapnav ul {
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.mapnav li {
+		float: left;
+		height: 48px;
+		width: 62px;
+		text-align: center;
+		margin-right: 1px;
+		margin-left: 1px;
+		background-color: #4d4d4d;
+		border-radius: 4px;
+	}
+
+	.mapnav li a {
+		display: inline-block;
+		height: 10px;
+		font-family: "微軟正黑體";
+		color: #FFF;
+		text-decoration: none;
+		/*text-indent: -9999px;*/
+		font-size: 14px;
+		width: 62px;
+		padding-top: 27px;
+	}
+
+	.mapnav li a:hover {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li a:active,
+	.mapnav li.active a {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li.nav_00 a {
+		background-image: url(../images/map_icon00.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*回全轄區*/
+	.mapnav li.nav_01 a {
+		background-image: url(../images/map_icon01.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*底圖切換*/
+	.mapnav li.nav_02 a {
+		background-image: url(../images/map_icon02.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*量測*/
+	.mapnav li.nav_03 a {
+		background-image: url(../images/map_icon03.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*範圍查詢*/
+	.mapnav li.nav_04 a {
+		background-image: url(../images/map_icon04.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*定位*/
+	.mapnav li.nav_05 a {
+		background-image: url(../images/map_icon05.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖層套疊*/
+	.mapnav li.nav_06 a {
+		background-image: url(../images/map_icon06.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*匯出*/
+	.mapnav li.nav_07 a {
+		background-image: url(../images/map_icon07.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*關閉全部*/
+	.mapnav li.nav_08 a {
+		background-image: url(../images/map_icon08.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖台標示*/
+	.mapnav li.nav_99 a {
+		background-image: url(../images/MapMenuBack.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.map_menu .toggle {
+		font-size: 16px;
+		border-radius: 4px;
+		border: 1px none #cecece;
+		font-family: "微軟正黑體";
+		line-height: 30px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		color: #FFF;
+		background-color: #4d4d4d;
+		text-align: center;
+		height: 36px;
+		width: 62px;
+	}
+
+	.map_menu.box-open .toggle:after {
+		content: "關閉"
+	}
+
+	.map_menu.box-close .toggle:after {
+		content: "展開"
+	}
+
+	.mapnav {
+		display: inline-block;
+		transition: height 0.35s ease;
+		overflow: hidden;
+		/*display: inline-block;*/
+		width: 62px;
+	}
+
+	.box-close .mapnav {
+		height: 0px;
+	}
+
+	.box-open .mapnav {
+		height: 400px;
+		margin-top: 0px;
+	}
+
+	.mapnav ul {
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.mapnav li {
+		float: left;
+		height: 48px;
+		width: 62px;
+		text-align: center;
+		margin-top: 1px;
+		margin-bottom: 1px;
+		background-color: #4d4d4d;
+		border-radius: 4px;
+	}
+
+	.mapnav li a {
+		display: inline-block;
+		height: 10px;
+		font-family: "微軟正黑體";
+		color: #FFF;
+		text-decoration: none;
+		/*text-indent: -9999px;*/
+		font-size: 14px;
+		width: 62px;
+		padding-top: 27px;
+	}
+
+	.mapnav li a:hover {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li a:active,
+	.mapnav li.active a {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li.nav_00 a {
+		background-image: url(../images/map_icon00.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*回全轄區*/
+	.mapnav li.nav_09 a {
+		background-image: url(../images/map_icon01.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*底圖切換*/
+	.mapnav li.nav_02 a {
+		background-image: url(../images/map_icon02.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*量測*/
+	.mapnav li.nav_03 a {
+		background-image: url(../images/map_icon03.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*範圍查詢*/
+	.mapnav li.nav_04 a {
+		background-image: url(../images/map_icon04.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*定位*/
+	.mapnav li.nav_05 a {
+		background-image: url(../images/map_icon05.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖層套疊*/
+	.mapnav li.nav_06 a {
+		background-image: url(../images/map_icon06.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*匯出*/
+	.mapnav li.nav_07 a {
+		background-image: url(../images/map_icon07.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*關閉全部*/
+	.mapnav li.nav_08 a {
+		background-image: url(../images/map_icon08.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖台標示*/
+	.mapnav li.nav_99 a {
+		background-image: url(../images/MapMenuBack.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*--------------------*/
+	.map_cont {
+		position: absolute;
+		right: 70px;
+		top: 5px;
+		z-index: 9999;
+		margin-right: 5px;
+		overflow: hidden;
+		border-radius: 8px;
+	}
+
+	/*-------------------*/
+	.BtnFunc {
+		padding-top: 5px;
+	}
+
+	.BtnFunc ul {
+		display: block;
+		width: 100%;
+		height: 26px;
+	}
+
+	.BtnFunc li {
+		float: right;
+		margin-right: 5px;
+	}
+
+	.BtnFunc li a {
+		display: block;
+		width: 26px;
+		height: 26px;
+		text-indent: -9999px;
+		background-repeat: no-repeat;
+	}
+
+	.BtnFunc li a:hover {
+		background-position: 0 -26px;
+	}
+
+	.BtnFunc li a:active,
+	#BtnFunc li.active a {
+		background-position: left bottom;
+	}
+
+	.BtnFunc li.close a {
+		background-image: url(../images/Map_icon_close26.png);
+	}
+
+	.BtnFunc li.help a {
+		background-image: url(../images/Map_icon_help26.png);
+	}
+}
+
+@media(min-width: 321px) and (max-width:767px) {
+	.map_search {
+		position: absolute;
+		z-index: 9999;
+		left: 4px;
+		top: 10px;
+		width: 98%;
+	}
+
+	.map_search>input {
+		font-family: "微軟正黑體";
+		font-size: 20px;
+		height: 36px;
+		padding: 6px;
+	}
+
+	.map_menu .toggle {
+		font-size: 16px;
+		border-radius: 4px;
+		border: 1px none #cecece;
+		font-family: "微軟正黑體";
+		line-height: 30px;
+		margin-top: 66px;
+		margin-bottom: 5px;
+		color: #FFF;
+		background-color: #4d4d4d;
+		text-align: center;
+		height: 36px;
+		width: 62px;
+	}
+
+	.map_menu.box-open .toggle:after {
+		content: "關閉"
+	}
+
+	.map_menu.box-close .toggle:after {
+		content: "展開"
+	}
+
+	.mapnav {
+		display: inline-block;
+		transition: height 0.35s ease;
+		overflow: hidden;
+		/*display: inline-block;*/
+		width: 62px;
+	}
+
+	.box-close .mapnav {
+		height: 0px;
+	}
+
+	.box-open .mapnav {
+		height: 400px;
+		margin-top: 0px;
+	}
+
+	.mapnav ul {
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.mapnav li {
+		float: left;
+		height: 48px;
+		width: 62px;
+		text-align: center;
+		margin-top: 1px;
+		margin-bottom: 1px;
+		background-color: #4d4d4d;
+		border-radius: 4px;
+	}
+
+	.mapnav li a {
+		display: inline-block;
+		height: 10px;
+		font-family: "微軟正黑體";
+		color: #FFF;
+		text-decoration: none;
+		/*text-indent: -9999px;*/
+		font-size: 14px;
+		width: 62px;
+		padding-top: 27px;
+	}
+
+	.mapnav li a:hover {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li a:active,
+	.mapnav li.active a {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li.nav_00 a {
+		background-image: url(../images/map_icon00.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*回全轄區*/
+	.mapnav li.nav_01 a {
+		background-image: url(../images/map_icon01.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*底圖切換*/
+	.mapnav li.nav_02 a {
+		background-image: url(../images/map_icon02.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*量測*/
+	.mapnav li.nav_03 a {
+		background-image: url(../images/map_icon03.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*範圍查詢*/
+	.mapnav li.nav_04 a {
+		background-image: url(../images/map_icon04.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*定位*/
+	.mapnav li.nav_05 a {
+		background-image: url(../images/map_icon05.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖層套疊*/
+	.mapnav li.nav_06 a {
+		background-image: url(../images/map_icon06.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*匯出*/
+	.mapnav li.nav_07 a {
+		background-image: url(../images/map_icon07.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*關閉全部*/
+	.mapnav li.nav_08 a {
+		background-image: url(../images/map_icon08.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖台標示*/
+	.mapnav li.nav_99 a {
+		background-image: url(../images/MapMenuBack.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*------------------*/
+	.map_cont {
+		/* position: absolute;
+		right: 70px;
+		top: 20%;
+		z-index: 9999;
+		margin-right: 5px;
+		overflow: hidden;
+		border-radius: 8px; */
+		position: absolute;
+		right: 0%;
+		top: 20%;
+		z-index: 9999;
+		/* margin-right: 5px; */
+		overflow: hidden;
+		border-radius: 8px;
+	}
+
+	/*-------------------*/
+
+
+}
+
+@media (max-width: 320px) {
+	.map_menu .toggle {
+		font-size: 16px;
+		border-radius: 4px;
+		border: 1px none #cecece;
+		font-family: "微軟正黑體";
+		line-height: 30px;
+		margin-top: 60px;
+		margin-bottom: 5px;
+		color: #FFF;
+		background-color: #4d4d4d;
+		text-align: center;
+		height: 36px;
+		width: 62px;
+	}
+
+	.map_menu.box-open .toggle:after {
+		content: "關閉"
+	}
+
+	.map_menu.box-close .toggle:after {
+		content: "展開"
+	}
+
+	.mapnav {
+		display: inline-block;
+		transition: height 0.35s ease;
+		overflow: hidden;
+		/*display: inline-block;*/
+		width: 62px;
+	}
+
+	.box-close .mapnav {
+		height: 0px;
+	}
+
+	.box-open .mapnav {
+		height: 400px;
+		margin-top: 0px;
+	}
+
+	.mapnav ul {
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.mapnav li {
+		float: left;
+		height: 48px;
+		width: 62px;
+		text-align: center;
+		margin-top: 1px;
+		margin-bottom: 1px;
+		background-color: #4d4d4d;
+		border-radius: 4px;
+	}
+
+	.mapnav li a {
+		display: inline-block;
+		height: 10px;
+		font-family: "微軟正黑體";
+		color: #FFF;
+		text-decoration: none;
+		/*text-indent: -9999px;*/
+		font-size: 14px;
+		width: 62px;
+		padding-top: 27px;
+	}
+
+	.mapnav li a:hover {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li a:active,
+	.mapnav li.active a {
+		background-position: center top;
+		background-color: #51af5b;
+		height: inherit;
+		margin-bottom: 4px;
+		border-radius: 4px;
+	}
+
+	.mapnav li.nav_00 a {
+		background-image: url(../images/map_icon00.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*回全轄區*/
+	.mapnav li.nav_09 a {
+		background-image: url(../images/map_icon01.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*底圖切換*/
+	.mapnav li.nav_02 a {
+		background-image: url(../images/map_icon02.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*量測*/
+	.mapnav li.nav_03 a {
+		background-image: url(../images/map_icon03.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*範圍查詢*/
+	.mapnav li.nav_04 a {
+		background-image: url(../images/map_icon04.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*定位*/
+	.mapnav li.nav_05 a {
+		background-image: url(../images/map_icon05.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖層套疊*/
+	.mapnav li.nav_06 a {
+		background-image: url(../images/map_icon06.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*匯出*/
+	.mapnav li.nav_07 a {
+		background-image: url(../images/map_icon07.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*關閉全部*/
+	.mapnav li.nav_08 a {
+		background-image: url(../images/map_icon08.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+
+	/*圖台標示*/
+	.mapnav li.nav_99 a {
+		background-image: url(../images/MapMenuBack.png);
+		background-repeat: no-repeat;
+		background-position: center 4px;
+		background-size: 23px auto;
+	}
+}

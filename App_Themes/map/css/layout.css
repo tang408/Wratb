@@ -1,0 +1,397 @@
+@charset "utf-8";
+html, body { height: 100%; }
+#wrap {
+ min-height: 100%;
+ *display: table; /* For IE7 Hack */
+ *height: 100%; /* For IE7 Hack */
+}
+#main {
+	overflow: auto;
+	padding-bottom: 70px;
+} /* must be same height as the footer */
+#footer {
+	position: relative;
+	margin-top: -70px; /* negative value of footer height */
+	height: 70px;
+	clear: both;
+	background-color: #e1e1e1;
+	background-image: url(../images/nav_bg.png);
+	background-repeat: repeat-x;
+	font-family: "細明體";
+	font-size: 13px;
+	line-height: 25px;
+	color: #666;
+	text-align: center;
+}
+/*--------------------------------*/
+
+/*header內的樣式*/
+#top{}
+.header{
+	background-image: url(../images/topbg.jpg);
+	background-repeat: repeat-x;
+	height: 37px;
+}
+.header img{
+	float: left;
+}
+.member_box{
+	font-family: "細明體";
+	font-size: 13px;
+	color: #818181;
+	text-align: right;
+	float: right;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+/*----------------------------*/
+
+/*content樣式*/
+.content{}
+.breadcrumb{
+	background-image: url(../images/breadbg.jpg);
+	background-repeat: repeat-x;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #6e84c9;
+	padding-top: 6px;
+	padding-left: 5px;
+	height: 25px;
+}
+.breadcrumb_txt{
+	color: #7b7b7b;
+}
+/*---------------------------*/
+
+/*dashboard樣式*/
+.dashboard_box{
+	margin: 10px;
+}
+.dash_title{
+	height: 35px;
+	border: 1px solid #e4e4e4;
+	background-image: url(../images/icon_dashboard.png);
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	padding-top: 10px;
+	padding-left: 42px;
+	font-weight: bold;
+}
+.dash_cont{
+	margin-top: 5px;
+	overflow: hidden;
+}
+.dash_pullmenu{
+	width: 100%;
+	text-align: left;
+	padding: 5px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+}
+.dash01{
+	background-color: #e9e9e9;
+	background-image: url(../images/dash01.jpg);
+	background-repeat: no-repeat;
+	min-height: 163px;
+	width: 213px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	float: left;
+	text-align: center;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+.dash02{
+	background-color: #84a3ff;
+	background-image: url(../images/dash02.jpg);
+	background-repeat: no-repeat;
+	min-height: 163px;
+	width: 213px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	float: left;
+	text-align: center;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+.dash_txt01{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #ff7200;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+.dash_txt02{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #ff00a2;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+.dash_txt03{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #53b900;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+.dash_txt04{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color:#004eff;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+.dash_txt05{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color:#ce9130;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+.dash_txt06{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color:#7582ff;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+.dash_txt07{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color:#ff71be;
+	text-align: center;
+	line-height: 29px;
+	font-weight: bold;
+}
+/*----------------------------*/
+
+/*查詢區塊*/
+.QueryBox{	margin: 10px;}
+.QueryTitle{
+	height: 35px;
+	border: 1px solid #e4e4e4;
+	background-image: url(../images/icon_query.png);
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	padding-top: 10px;
+	padding-left: 42px;
+	font-weight: bold;
+}
+.QueryCont{	
+    margin-top: 5px;
+	overflow: hidden;
+}
+.QueryBtnBox{
+	width: 100%;
+	margin-bottom: 10px;
+}
+/*----------------------------*/
+/*頁次區塊*/
+.PageBox{
+	text-align: center;
+	width: 100%;
+}
+/*----------------------------*/
+/*詳細頁區塊*/
+.DetailBtnBox{
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+.DetailBox{
+	margin: 10px;
+}
+.DetailTitle{
+	height: 35px;
+	border: 1px solid #e4e4e4;
+	background-image: url(../images/icon_detail.png);
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #000;
+	padding-top: 10px;
+	padding-left: 42px;
+	font-weight: bold;
+}
+.DetailCont{
+	margin-top: 5px;
+	overflow: hidden;
+	text-align: center;
+}
+.DetailCont .SubTitle{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	background-color: #dadada;
+	text-align: left;
+	width: 100%;
+	padding-top: 6px;
+	padding-right: 2px;
+	padding-bottom: 6px;
+	padding-left: 2px;
+	float: left;
+}
+.DetailCont .SubTitle span{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #F30;
+	margin-right: 10px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.DetailCont .Cont{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+.DetailCont .ContL{
+	text-align: left;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	float: left;
+	width: 48%;
+	margin-right: 10px;
+	overflow: hidden;
+}
+.DetailCont .ContL h3{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	font-weight: bold;
+	color: #009fe4;
+	line-height: 33px;
+	background-image: url(../images/arr.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 16px;
+}
+/*----------------------------*/
+/*頁籤*/
+.Tab{
+	background-image: url(../images/tabbg.png);
+	background-repeat: repeat-x;
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.Tab ul{
+	font-size: 15px;
+	list-style: none;
+	font-family: "微軟正黑體";
+	display:block;
+	height: 40px;
+}
+.Tab li{
+	float: left;
+	height: 40px;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+}
+.Tab li a{
+	color: #000;
+	display:block;
+}
+.Tab li a:hover{
+	color: #ff7f00;
+	text-decoration: none;
+}
+.Tab li.active a{
+	color: #ff7f00;
+	font-weight: bold;
+	background-image: url(../images/tab_active.png);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 120px;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+/*----------------------------*/
+
+/*回頁首樣式*/
+.FloatTop{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+	background-image: url(../images/floatbg.png);
+	background-repeat: no-repeat;
+	height: 33px;
+	width: 94px;
+	text-align: center;
+	padding-top: 10px;
+	float: right;
+	position: absolute;
+	bottom: 60px;
+	right: 10px;
+}
+.FloatTop a:link ,.FloatTop a:visited{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+}
+.FloatTop a:hover{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FF0;
+	text-decoration: none;
+}
+/*-----------------------------*/
+
+
+.map_box{
+ font-family: "微軟正黑體";
+ font-size: 14px;
+ color: #FFF;
+ background-color: #6a6a6a;
+ text-align: center;
+ padding: 5px;
+}
+.map_box a{
+ font-family: "微軟正黑體";
+ font-size: 14px;
+ color: #FFF;
+ text-align: center;
+ text-decoration: none;
+ line-height: 24px;
+}
+.map_list{}
+.map_list td{
+ padding-top: 2px;
+ padding-bottom: 2px;
+ border-top-width: 1px;
+ border-top-style: solid;
+ border-top-color: #8c8c8c;
+ font-size: 12px;
+}
+.map_list td a{
+ padding-top: 2px;
+ padding-bottom: 2px;
+ border-top-width: 1px;
+ font-size: 12px;
+}

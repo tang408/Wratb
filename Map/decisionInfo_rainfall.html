@@ -1,0 +1,476 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link href="../App_Themes/map/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/map.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/turbidity.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/map/css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="../App_Themes/map/css/bootstrap.css" rel="stylesheet" type="text/css" /> -->
+
+    <link href="../App_Themes/map/css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="../App_Themes/map/css/mapContent.css">
+
+    <style type="text/css">
+        body {
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="info_shadow">
+    </div>
+    <!--關閉+縮小放大-->
+    <div class="BtnFunT">
+        <ul>
+            <li class="close"><a href="javascript:void(0)"
+                    onclick="parent.$('#largeInfo').hide({duration:700, easing:'linear'})">
+                    關閉</a></li>
+            <li id="winMin" class="min" style="display: none"><a href="javascript:void(0)" onclick="shrinkLargeInfo()">
+                    縮小</a></li>
+            <li id="winMax" class="max"><a href="javascript:void(0)" onclick="expandLargeInfo()">
+                    放大</a></li>
+        </ul>
+    </div>
+    <!--關閉+縮小放大結尾-->
+    <!--頁籤-->
+    <div id="lblStations" class="TabBox">
+    </div>
+    <!--頁籤結尾-->
+    <!--篩選條件-->
+    <div id="querySwitcher" class="TurbSearchBtn">
+        <ul>
+            <li class="btnhidden" onclick="swicthQueryPanel(false)"><a>收合查詢</a></li>
+            <li class="btnshow" onclick="swicthQueryPanel(true)" style="display: none"><a>
+                    開啟查詢</a></li>
+        </ul>
+    </div>
+    <div id="queryPanel" class="row TurbSearch">
+        <!--天數-->
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="QueryTitleS">
+                快速查詢</div>
+            <p>&nbsp;
+
+            </p>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" onclick="setDaysBefore(1);">
+                    24小時</button>
+                <button type="button" class="btn btn-default" onclick="setDaysBefore(2);">
+                    48小時</button>
+                <button type="button" class="btn btn-default" onclick="setDaysBefore(3);">
+                    72小時</button>
+            </div>
+        </div>
+        <!--天數結尾-->
+        <!--時間-->
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="QueryTitleS">
+                自訂時間</div>
+            <p>&nbsp;
+
+            </p>
+            <form class="form-inline" role="form">
+                <div class="datebox">
+                    <input type="text" class="form-control datepicker" id="startTime" placeholder="請選擇日期">
+                </div>
+                <div class="datebox">
+                    <input type="text" class="form-control datepicker" id="endTime" placeholder="請選擇日期">
+                </div>
+            </form>
+        </div>
+        <input type="hidden" id="hfDurationType" value="1h" />
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <input type="button" class="BtnWhite" value="查詢" onclick="requeryData()" />
+        </div>
+        <!--時間結尾-->
+    </div>
+    <!--篩選條件結尾-->
+    <!--可捲動的範圍-->
+    <!--圖表-->
+    <div id="chartContainer" class="scroll-bar-wrap">
+        <div class="scroll-box">
+            <div id="theChart" class="T-chartbox">
+            </div>
+            <div class="cover-bar">
+            </div>
+        </div>
+    </div>
+    <!--圖表結尾-->
+    <div class="T-chartbtnbox">
+        <input type="button" id="" class="BtnWhite" value="匯出圖片" onclick="$('#theChart').highcharts().exportChart()">
+        <input type="button" id="" class="BtnWhite" value="匯出CSV" onclick="targetModel.downloadExcel()">
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+
+<script src="../script/map_custom/tbd_vars.ashx" type="text/javascript"></script>
+<script src="../script/map/jquery.js" type="text/javascript"></script>
+<!-- <script src="../script/map/bootstrap.js" type="text/javascript"></script> -->
+
+
+<script src="../Script/Highcharts/highcharts.js" type="text/javascript"></script>
+<script src="../Script/Highcharts/modules/exporting.js" type="text/javascript"></script>
+<script src="../Script/Highcharts/modules/offline-exporting.js" type="text/javascript"></script>
+<script src="../Script/map/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../Script/map/datepicker-zh-TW.js" type="text/javascript"></script>
+<script src="../Script/map/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var targetModel = null;
+    var idata;
+    var module = new (function () {
+        var dataIdx = 0;
+        var mapStaNoName = {};
+        var mapStaNoLayer = {};
+        var mapStaSeries = {};
+
+        // 已查詢的時間區間
+        var staDateDuration = ['', ''];
+        var colorSet = ["#0000AA", "#005555", "#005588", "#008855", "#AAAAAA"];
+
+        this.createHightChart = function (reset) {
+            //$("#chkThreshole").parent().show();
+            targetModel = this;
+            if (reset) {
+                dataIdx = 0;
+                mapStaNoName = {};
+            }
+            mapStaSeries = {};
+            $('#theChart').highcharts({
+                chart: {
+                    type: 'line'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+                yAxis: [{
+                    title: "雨量(mm)",
+                    floor: 0
+                }],
+                plotOptions: {
+                    line: {
+                        lineWidth: 2,
+                        states: {
+                            hover: {
+                                lineWidth: 2
+                            }
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                        pointInterval: 300000 // one hour
+                        //,pointStart: Date.UTC(2015, 4, 31, 0, 0, 0)
+                    },
+                    column: {
+                        turboThreshold: 10000
+                    }
+                },
+                exporting: {
+                    buttons: {
+                        contextButton: {
+                            enabled: false
+                        }
+                    }
+                },
+                title: ""
+            });
+            //this.switchThreshole();
+        }
+
+        // 加入一個站台
+        this.addStation = function (sta_no, sta_name) {
+            var startTime = $.trim($("#startTime").val());
+            var endTime = $.trim($("#endTime").val());
+            if (startTime == "") {
+                var dStart = new Date();
+                dStart = new Date(dStart.getUTCFullYear(), dStart.getMonth(), dStart.getDate(), dStart.getHours() - 24);
+                $("#startTime").datetimepicker("setDate", dStart);
+                startTime = $.trim($("#startTime").val());
+            }
+            if (endTime == "") {
+                $("#endTime").datetimepicker("setDate", new Date());
+                endTime = $.trim($("#endTime").val());
+            }
+
+            mapStaNoName[sta_no] = sta_name;
+            //var durationType = $("#hfDurationType").val();
+
+            // 如果時間改變了，requery all station
+            if (startTime != staDateDuration[0] || endTime != staDateDuration[1]) {
+                staDateDuration = [startTime, endTime];
+                this.requeryData();
+                return;
+            }
+
+            if (!mapStaNoName[sta_no]) {
+                $("#lblStations").append('<input id="st_' + sta_no + '" type="button" class="BtnTab_Turb" value="' + sta_name + '" onclick="" />\n');
+            }
+            var url = "../service/QueryRainfallHistory.ashx?startTime=" + encodeURIComponent(startTime)
+                + "&endTime=" + encodeURIComponent(endTime)
+                + "&stNo=" + encodeURIComponent(sta_no);;
+
+            $.ajax(url, { context: { stNo: sta_no, module: this } })
+                .done(function (data) {
+                    module.addStationData(data, this.stNo);
+                });
+
+            //$(window).trigger("resize");
+        }
+
+        this.theData = null;
+        this.addStationData = function (data, sta_no) {
+            idata = data;
+            this.theData = data;
+            if (this.theData.getRainfallHistory) {
+                this.theData = this.theData.getRainfallHistory;
+            }
+            var theData = this.theData;
+            if (theData.length == 0) {
+            }
+            if (mapStaSeries[sta_no]) {
+                try {
+                    mapStaSeries[sta_no].remove();
+                } catch (e) { }
+                delete mapStaSeries[sta_no];
+            }
+            var theSeries = $('#theChart').highcharts().addSeries({
+                name: mapStaNoName[sta_no],
+                //color: colorSet[dataIdx],
+                lineWidth: 2,
+                zIndex: 5,
+                //states: {
+                //    hover: {
+                //        lineWidth: 4
+                //    }
+                //},
+                marker: {
+                    enabled: false,
+                    lineWidth: 1
+                },
+                pointInterval: 300000 // 5 min
+            });
+            theSeries.setOptions({ zIndex: 5 });
+            var durationType = $("#hfDurationType").val();
+            var chartData = [];
+            for (var i = 0; i < theData.length; i++) {
+                var theDate = new Date(Date.parse(theData[i].DataDatetime));
+                chartData.push({
+                    x: theDate,
+                    y: theData[i].Value,
+                    name: (theDate.getYear() + 1900) + '/' + (theDate.getMonth() + 1) + '/' + theDate.getDate() + ' ' + theDate.getHours() + ':' + theDate.getMinutes()
+                });
+            }
+            //console.log(chartData);
+            theSeries.setData(chartData);
+            mapStaSeries[sta_no] = theSeries;
+            dataIdx++;
+        }
+
+        this.removeStation = function (sta_no) {
+            if (mapStaSeries[sta_no]) {
+                mapStaSeries[sta_no].remove(true);
+                delete mapStaSeries[sta_no];
+                delete mapStaNoName[sta_no];
+                $("#st_" + sta_no).remove();
+            }
+        }
+
+        this.requeryData = function () {
+            this.createHightChart(false);
+            var startTime = $.trim($("#startTime").val());
+            var endTime = $.trim($("#endTime").val());
+            if (startTime == "") {
+                var dStart = new Date();
+                dStart = new Date(dStart.getUTCFullYear(), dStart.getMonth(), dStart.getDate(), dStart.getHours() - 24);
+                $("#startTime").datetimepicker("setDate", dStart);
+                startTime = $.trim($("#startTime").val());
+            }
+            if (endTime == "") {
+                $("#endTime").datetimepicker("setDate", new Date());
+                endTime = $.trim($("#endTime").val());
+            }
+            staDateDuration = [startTime, endTime];
+            for (var key in mapStaNoName) {
+                this.addStation(key, mapStaNoName[key]);
+            }
+        }
+
+        //this.switchThreshole = function () {
+        //    var yAxis = $('#theChart').highcharts().yAxis[0];
+        //    if ($("#chkThreshole").prop("checked")) {
+        //        for (var i = 0; i < threshole.length; i++) {
+        //            yAxis.addPlotBand(threshole[i]);
+        //        }
+        //    } else {
+        //        for (var i = 0; i < threshole.length; i++) {
+        //            yAxis.removePlotBand(threshole[i].id);
+        //        }
+        //    }
+        //}
+
+        this.downloadExcel = function () {
+            //var staNos = [];
+            //for (var key in mapStaNoName) {
+            //    staNos.push(key);
+            //    if (key && key.replace(/ /g, "") != "") {
+            //        sta_no = key;
+            //    }
+            //}
+            //var durationType = $("#hfDurationType").val();
+            //if (mapStaNoLayer[sta_no] == "shemen") {
+            //    window.open(wranbCloudUrl + "/getWraNBData.asmx/getRainfallHourlyExcel?siteIDs=" + encodeURIComponent(staNos.join(","))
+            //           + "&startTime=" + encodeURIComponent(staDateDuration[0]) + "&endtime=" + encodeURIComponent(staDateDuration[1])
+            //           + "&durationType=" + encodeURIComponent(durationType), "_blank");
+            //} else {
+            //    window.open(wranbCloudUrl + "/getWraNBData.asmx/getRainfallGovHistoryExcel?siteIDs=" + encodeURIComponent(staNos.join(","))
+            //           + "&startTime=" + encodeURIComponent(staDateDuration[0]) + "&endtime=" + encodeURIComponent(staDateDuration[1])
+            //           + "&durationType=" + encodeURIComponent(durationType), "_blank");
+            //}
+            var content = [['時間', '雨量']];
+            var filename = "雨量";
+            for (var i = 0; i < idata.length; i++) {
+
+                var ddt = idata[i].DataDatetime;
+                var i_data = idata[i].Value;
+                if (i_data != null) {
+                    content.push([ddt, i_data.toString()]);
+                }
+            }
+
+            downloadCSV(content, filename);
+        }
+
+        this.reflow = function () {
+            var chart = $('#theChart').highcharts();
+            chart.reflowNow = function () {
+                this.containerHeight = this.options.chart.height || window.window.HighchartsAdapter.adapterRun(this.renderTo, 'height') || 400;
+                this.containerWidth = this.options.chart.width || window.window.HighchartsAdapter.adapterRun(this.renderTo, 'width');
+                this.setSize(this.containerWidth, this.containerHeight, false);
+                this.hasUserSize = null;
+            }
+            chart.reflowNow();
+        }
+
+    })();
+
+    function downloadCSV(content, filename) {
+        var finalVal = '';
+
+        for (var i = 0; i < content.length; i++) {
+            var value = content[i];
+
+            for (var j = 0; j < value.length; j++) {
+                var innerValue = value[j];
+                var result = innerValue.replace(/"/g, '""');
+                if (result.search(/("|,|\n)/g) >= 0)
+                    result = '"' + result + '"';
+                if (j > 0)
+                    finalVal += ',';
+                finalVal += result;
+            }
+
+            finalVal += '\n';
+        }
+
+        var pom = document.createElement('a');
+        //pom.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(finalVal));
+        pom.setAttribute('href', "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(finalVal)); //這樣才不會有中文亂碼
+        pom.setAttribute('download', filename + '.csv');
+        pom.click();
+    }
+
+    function requeryData() {
+        targetModel.requeryData();
+    }
+
+    function setDaysBefore(days) {
+        var dStart = new Date();
+        dStart = new Date(dStart.getUTCFullYear(), dStart.getMonth(), dStart.getDate() - days, dStart.getHours());
+        $("#startTime").datetimepicker("setDate", dStart);
+        $("#endTime").datetimepicker("setDate", new Date());
+        requeryData();
+    }
+
+    function setMainEvent(eventName) {
+        $("#ddlMainEvent ._name").text(eventName);
+    }
+
+    function setTimeDuration(startTime, endTime) {
+        var dStartTime = new Date(startTime + "+0800");
+        if (isNaN(dStartTime.getDate())) {
+            dStartTime = new Date(startTime);
+        }
+        var dEndTime = new Date(endTime + "+0800");
+        if (isNaN(dEndTime.getDate())) {
+            dEndTime = new Date(endTime);
+        }
+        $("#startTime").datetimepicker("setDate", dStartTime);
+        $("#endTime").datetimepicker("setDate", dEndTime);
+        requeryData();
+    }
+
+    function swicthQueryPanel(bShow) {
+        if (bShow) {
+            $("#querySwitcher .btnhidden").show();
+            $("#querySwitcher .btnshow").hide();
+            $("#queryPanel").show();
+        } else {
+            $("#querySwitcher .btnshow").show();
+            $("#querySwitcher .btnhidden").hide();
+            $("#queryPanel").hide();
+        }
+        $(window).trigger("resize");
+    }
+
+    var moduleReflowTimeoutId = null;
+    $(function () {
+        $(".datepicker").datetimepicker($.datepicker.regional["zh-TW"]);
+        parent.decisionInfo = parent.decisionInfo || {};
+        parent.decisionInfo.rainfall = module;
+        module.createHightChart(true);
+        window.onresize = function () {
+            if (moduleReflowTimeoutId) window.clearTimeout(moduleReflowTimeoutId);
+            moduleReflowTimeoutId = setTimeout(function () {
+                $("#theChart").height($("html").height() - $("#chartContainer").offset().top - $("#chartContainer ~:first()").height() - 22);
+                if (targetModel) {
+                    targetModel.reflow();
+                }
+            }, 300);
+        }
+    });
+</script>
+<script type="text/javascript">
+    function expandLargeInfo() {
+        parent.expandLargeInfo();
+        $("#winMin").show();
+        $("#winMax").hide();
+    }
+    function shrinkLargeInfo() {
+        parent.shrinkLargeInfo();
+        $("#winMax").show();
+        $("#winMin").hide();
+    }
+</script>
+
+</html>

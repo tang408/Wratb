@@ -1,0 +1,517 @@
+﻿@charset "utf-8";
+
+.TbListRed {
+
+}
+
+.TbListRed th {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FF0000;
+	font-weight: normal;
+}
+.TbListRed td{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FF0000;
+}
+.TbListRed td a{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #004eff;
+	text-align: left;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+<!---->
+
+.TbList {
+
+}
+
+.TbList th {
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d3d3d3;
+	font-weight: normal;
+}
+.TbList td{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d3d3d3;
+}
+.TbList td a{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #004eff;
+	text-align: left;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.TbForm{}
+.TbForm th{
+	background-color: #baceff;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	padding-top: 6px;
+	padding-right: 3px;
+	padding-bottom: 6px;
+	padding-left: 3px;
+}
+.TbForm td{
+	background-color: #e7e9ef;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	padding-top: 8px;
+	padding-right: 3px;
+	padding-bottom: 8px;
+	padding-left: 3px;
+}
+.TbForm td a{
+	text-decoration: none;
+	color: #355cb5;
+}
+.selected td{
+	background-color: #9db4ef;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	padding-top: 8px;
+	padding-right: 3px;
+	padding-bottom: 8px;
+	padding-left: 3px;
+}
+.txt{
+	border-right-style: none;
+	border-bottom-style: none;
+	font-family: "微軟正黑體";
+	font-size: 12px;
+	color: #03C;
+	text-align: left;
+	border-top-style: none;
+	border-left-style: none;
+}
+.txt02{
+	border-right-style: none;
+	border-bottom-style: none;
+	font-family: "微軟正黑體";
+	font-size: 12px;
+	color: #F30;
+	text-align: left;
+	border-top-style: none;
+	border-left-style: none;
+}
+
+.TbForm .even {
+	background-color: #009fe4;
+	font-size: 15px;
+	color: #FFF;
+	font-weight: bold;
+	text-align: left;
+}
+/*-----------------------------------*/
+
+/*儀錶版用*/
+.dashboard {
+	width: 180px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 18px;
+}
+
+/*查詢用*/
+.QueryStyle{
+	margin-bottom: 20px;
+}
+.QueryStyle th{
+	font-family: "微軟正黑體";
+	color: #535353;
+	background-color: transparent;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-right: 12px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+}
+.QueryStyle td{
+	font-family: "微軟正黑體";
+	color: #535353;
+	background-color: transparent;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 0px;
+	padding-right: 12px;
+	padding-left: 8px;
+}
+/*----------------------------*/
+
+/*報表產製*/
+.Report{}
+.Report th{
+	text-align: center;
+}
+.Report td{
+	text-align: center;
+}
+/*-----------------------------*/
+
+/*表單裡的表格*/
+.List{}
+.List td{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	line-height: 27px;
+	color: #666;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.List td img{
+	height: auto;
+	width: 120px;
+}
+
+/*----------------------------*/
+
+/*功能列按鈕*/
+.BtnTopClass {
+	font-size: 14px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 0px;
+	text-decoration: none;
+	background: -moz-linear-gradient( center top, #355cb5 5%, #355cb5 100% );
+	background: -ms-linear-gradient( top, #355cb5 5%, #355cb5 100% );
+
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#355cb5', endColorstr='#355cb5');
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #355cb5), color-stop(100%, #355cb5) );
+	background-color: #355cb5;
+	color: #ffffff;
+	display: inline-block;
+	-webkit-box-shadow: inset 1px 1px 0px 0px #355cb5;
+	-moz-box-shadow: inset 1px 1px 0px 0px #355cb5;
+	box-shadow: inset 1px 1px 0px 0px #355cb5;
+	padding-top: 6px;
+	padding-right: 20px;
+	padding-bottom: 6px;
+	padding-left: 20px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+.BtnTopClass:hover {
+	background:-moz-linear-gradient( center top, #355cb5 5%, #355cb5 100% );
+	background:-ms-linear-gradient( top, #355cb5 5%, #355cb5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#355cb5', endColorstr='#355cb5');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #355cb5), color-stop(100%, #355cb5) );
+	background-color:#355cb5;
+}
+.BtnTopClass:active {
+	position:relative;
+	top:1px;
+}
+.BtnClass {
+	font-size: 14px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 0px;
+	text-decoration: none;
+	background: -moz-linear-gradient( center top, #6f94ef 5%, #6f94ef 100% );
+	background: -ms-linear-gradient( top, #6f94ef 5%, #6f94ef 100% );
+
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6f94ef', endColorstr='#6f94ef');
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #6f94ef), color-stop(100%, #6f94ef) );
+	background-color: #6f94ef;
+	color: #ffffff;
+	display: inline-block;
+	-webkit-box-shadow: inset 1px 1px 0px 0px #6f94ef;
+	-moz-box-shadow: inset 1px 1px 0px 0px #6f94ef;
+	box-shadow: inset 1px 1px 0px 0px #6f94ef;
+	padding-top: 6px;
+	padding-right: 20px;
+	padding-bottom: 6px;
+	padding-left: 20px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+.BtnClass:hover {
+	background:-moz-linear-gradient( center top, #6f94ef 5%, #6f94ef 100% );
+	background:-ms-linear-gradient( top, #6f94ef 5%, #6f94ef 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6f94ef', endColorstr='#6f94ef');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #6f94ef), color-stop(100%, #6f94ef) );
+	background-color:#6f94ef;
+}
+.BtnClass:active {
+	position:relative;
+	top:1px;
+}
+/*查詢按鈕*/
+.BtnQuery {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	border: 0px solid #ff7700;
+	text-decoration: none;
+	background: -moz-linear-gradient( center top, #ff7700 5%, #ff7700 100% );
+	background: -ms-linear-gradient( top, #ff7700 5%, #ff7700 100% );
+
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7700', endColorstr='#ff7700');
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ff7700), color-stop(100%, #ff7700) );
+	background-color: #ff7700;
+	color: #ffffff;
+	display: inline-block;
+	-webkit-box-shadow: inset 1px 1px 0px 0px #ff7700;
+	-moz-box-shadow: inset 1px 1px 0px 0px #ff7700;
+	box-shadow: inset 1px 1px 0px 0px #ff7700;
+	padding-top: 6px;
+	padding-right: 10px;
+	padding-bottom: 6px;
+	padding-left: 10px;
+	cursor: pointer;
+}
+.BtnQuery:hover {
+	background:-moz-linear-gradient( center top, #ff7700 5%, #ff7700 100% );
+	background:-ms-linear-gradient( top, #ff7700 5%, #ff7700 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7700', endColorstr='#ff7700');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ff7700), color-stop(100%, #ff7700) );
+	background-color:#ff7700;
+}
+.BtnQuery:active {
+	position:relative;
+	top:1px;
+}
+/*頁碼*/
+.BtnPage {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+/*	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;*/
+	border: 1px solid #dcdcdc;
+	text-decoration: none;
+/*	background: -moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+	background: -ms-linear-gradient( top, #ffffff 5%, #f6f6f6 100% );
+
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(100%, #f6f6f6) );*/
+	background-color: #ffffff;
+	color: #666666;
+	display: inline-block;
+	/*text-shadow: 1px 1px 0px #ffffff;
+	-webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	-moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	box-shadow: inset 1px 1px 0px 0px #ffffff;*/
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	cursor: pointer;
+}
+.BtnPage:hover {
+	/*
+	background:-moz-linear-gradient( center top, #f6f6f6 5%, #ffffff 100% );
+	background:-ms-linear-gradient( top, #f6f6f6 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #f6f6f6), color-stop(100%, #ffffff) );*/
+	background-color:#f6f6f6;
+}
+.BtnPage:active {
+	position: relative;
+    top: 1px;
+}
+.BPActive {
+	background-color: #e3e3e3;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	font-size: 14px;
+	color: #000;
+	border: 1px solid #e3e3e3;
+}
+/*詳細頁的功能按鈕*/
+.BtnDetail {
+	font-size: 14px;
+	font-family: "微軟正黑體";
+	font-weight: normal;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #355cb5;
+	text-decoration: none;
+	background: -moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+	background: -ms-linear-gradient( top, #ffffff 5%, #f6f6f6 100% );
+
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(100%, #f6f6f6) );
+	background-color: #ffffff;
+	color: #666666;
+	display: inline-block;
+	text-shadow: 1px 1px 0px #ffffff;
+	-webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	-moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	box-shadow: inset 1px 1px 0px 0px #ffffff;
+	margin-top: 10px;
+	padding-top: 8px;
+	padding-right: 12px;
+	padding-bottom: 8px;
+	padding-left: 12px;
+	cursor: pointer;
+}
+.BtnDetail :hover {
+	background:-moz-linear-gradient( center top, #f6f6f6 5%, #ffffff 100% );
+	background:-ms-linear-gradient( top, #f6f6f6 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #f6f6f6), color-stop(100%, #ffffff) );
+	background-color:#f6f6f6;
+}
+.BtnDetail :active {
+	position:relative;
+	top:1px;
+}
+/*登出按鈕*/
+.BtnLogin {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dcdcdc;
+	text-decoration: none;
+	background: -moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+	background: -ms-linear-gradient( top, #ffffff 5%, #f6f6f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(100%, #f6f6f6) );
+	background-color: #ffffff;
+	color: #7c91fc;
+	display: inline-block;
+	text-shadow: 1px 1px 0px #ffffff;
+	-webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	-moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	box-shadow: inset 1px 1px 0px 0px #ffffff;
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+.BtnLogin:hover {
+	background:-moz-linear-gradient( center top, #f6f6f6 5%, #ffffff 100% );
+	background:-ms-linear-gradient( top, #f6f6f6 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #f6f6f6), color-stop(100%, #ffffff) );
+	background-color:#f6f6f6;
+}
+.BtnLogin:active {
+	position:relative;
+	top:1px;
+}
+
+/*新增案件按鈕*/
+.BtnAdd {
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	border: 0px solid #337fed;
+	text-decoration: none;
+	/*	background: -moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');*/
+	background-color: #4faa5a;
+	color: #ffffff;
+	display: inline-block;
+	background-image: url(../images/16.png);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	padding-top: 8px;
+	padding-right: 10px;
+	padding-bottom: 8px;
+	padding-left: 25px;
+	text-align: left;
+	margin-bottom: auto;
+}
+.BtnAdd:hover {
+	/*background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #1e62d0), color-stop(100%, #3d94f6) );*/
+	background-color:#1e62d0;
+}
+.BtnAdd:active {
+	position:relative;
+	top:1px;
+}
+
+/*---------------------*/

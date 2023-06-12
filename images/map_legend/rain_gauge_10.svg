@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="圖層_1_拷貝"
+   x="0px"
+   y="0px"
+   width="32px"
+   height="32px"
+   viewBox="0 0 32 32"
+   enable-background="new 0 0 32 32"
+   xml:space="preserve"
+   sodipodi:docname="rain_wra10.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata4011"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs4009">
+	
+	
+
+		
+	</defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview4007"
+   showgrid="false"
+   inkscape:zoom="6.609375"
+   inkscape:cx="-0.47805323"
+   inkscape:cy="16.240266"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="圖層_1_拷貝" />
+<g
+   id="水庫堰壩_1_"
+   display="none">
+	<g
+   id="圖層_2_1_"
+   display="inline">
+		<rect
+   fill="#DA1617"
+   width="22"
+   height="22"
+   id="rect3863" />
+	</g>
+	<g
+   id="圖層_1_19_"
+   display="inline">
+		<circle
+   fill="#A8BCFF"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3866" />
+	</g>
+	<polygon
+   display="inline"
+   fill="#4A4A4A"
+   points="1.434,3.557 1.434,20.088 20.691,20.088 20.691,16.454 9.746,11.82 9.828,3.557     "
+   id="polygon3869" />
+	<line
+   display="inline"
+   fill="none"
+   stroke="#005AFF"
+   stroke-miterlimit="10"
+   x1="12.889"
+   y1="4.828"
+   x2="21.777"
+   y2="4.828"
+   id="line3871" />
+	<line
+   display="inline"
+   fill="none"
+   stroke="#005AFF"
+   stroke-miterlimit="10"
+   x1="12.889"
+   y1="7.735"
+   x2="21.777"
+   y2="7.735"
+   id="line3873" />
+	<line
+   display="inline"
+   fill="none"
+   stroke="#005AFF"
+   stroke-miterlimit="10"
+   x1="12.889"
+   y1="10.641"
+   x2="21.777"
+   y2="10.641"
+   id="line3875" />
+</g>
+<g
+   id="CCTV位置_1_"
+   display="none">
+	<g
+   id="圖層_1_18_"
+   display="inline">
+		<circle
+   fill="#FFBB39"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3878" />
+	</g>
+	<rect
+   x="0.586"
+   y="5.292"
+   display="inline"
+   fill="#753925"
+   width="2.508"
+   height="7.466"
+   id="rect3881" />
+	<path
+   display="inline"
+   fill="#753925"
+   d="M4.708,3.391v11.267h15.431V3.391H4.708z M18.21,7.584H6.638V4.923H18.21V7.584z"
+   id="path3883" />
+	<polyline
+   display="inline"
+   fill="none"
+   stroke="#753925"
+   stroke-width="1.2"
+   stroke-miterlimit="10"
+   points="10.97,11.71    10.97,17.998 21.387,17.998  "
+   id="polyline3885" />
+</g>
+<g
+   id="大壩監測_1_"
+   display="none">
+	<g
+   id="圖層_1_17_"
+   display="inline">
+		<circle
+   fill="#FF008A"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3888" />
+	</g>
+	<polyline
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="1.2"
+   stroke-miterlimit="10"
+   points="0.677,11.82    3.582,11.82 5.641,4.799 9.444,18.221 13.614,8.667 16.237,13.906 21.839,13.893  "
+   id="polyline3891" />
+</g>
+<g
+   id="歷年工程點位_1_"
+   display="none">
+	<g
+   id="圖層_1_15_"
+   display="inline">
+		<circle
+   fill="#C4B275"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3894" />
+	</g>
+	<path
+   display="inline"
+   fill="#852F21"
+   d="M20.793,16.155l-5.951-5.731c0.376-0.891,0.585-1.871,0.585-2.9   c0-4.106-3.326-7.436-7.435-7.436c-0.925,0-1.801,0.189-2.619,0.499l3.535,3.361c1.217,1.157,1.266,3.081,0.108,4.297   C7.858,9.464,5.934,9.513,4.717,8.354L1.063,4.879c-0.315,0.825-0.507,1.71-0.507,2.646c0,4.106,3.329,7.435,7.435,7.435   c0.974,0,1.898-0.198,2.75-0.537l6.085,5.856c1.136,1.097,2.947,1.06,4.042-0.077C21.968,19.063,21.934,17.251,20.793,16.155z"
+   id="path3897" />
+</g>
+<g
+   id="水門位置圖_1_"
+   display="none">
+	<g
+   id="圖層_1_14_"
+   display="inline">
+		<circle
+   fill="#B7B7B7"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3900" />
+	</g>
+	<polygon
+   display="inline"
+   fill="#00A2FF"
+   points="1.645,4.192 1.645,7.946 1.645,9.642 1.645,18.846 4.552,18.846 4.552,9.642    17.389,9.642 17.389,18.846 20.294,18.846 20.294,9.642 20.294,7.946 20.294,4.192  "
+   id="polygon3903" />
+</g>
+<g
+   id="人工泥沙濃度_1_"
+   display="none">
+	<g
+   id="圖層_1_12_"
+   display="inline">
+		<circle
+   fill="#FFB680"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3906" />
+	</g>
+	<path
+   display="inline"
+   fill="#FFFFFF"
+   d="M16.945,1.678H6.687H6.512H1.766l2.459,5.439v12.023c0,1.229,1.023,2.219,2.287,2.219   h10.433c1.267,0,2.289-0.989,2.289-2.219V3.894C19.234,2.671,18.212,1.678,16.945,1.678z"
+   id="path3909" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="4.532"
+   x2="17.794"
+   y2="4.532"
+   id="line3911" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="7.452"
+   x2="17.794"
+   y2="7.452"
+   id="line3913" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="10.373"
+   x2="17.794"
+   y2="10.373"
+   id="line3915" />
+	<g
+   display="inline"
+   id="g3919">
+		<path
+   fill="#683501"
+   d="M4.884,19.391c0,0.633,0.48,1.149,1.075,1.149h11.29c0.597,0,1.077-0.517,1.077-1.149v-7.204H4.884V19.391    z"
+   id="path3917" />
+	</g>
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M8.352,18.199c0,0.346-0.277,0.624-0.619,0.624c-0.343,0-0.623-0.278-0.623-0.624   c0-0.338,0.28-0.615,0.623-0.615C8.075,17.584,8.352,17.861,8.352,18.199z"
+   id="path3921" />
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M13.063,18.869c0,0.662-0.531,1.197-1.193,1.197c-0.663,0-1.198-0.535-1.198-1.197   c0-0.664,0.535-1.199,1.198-1.199C12.532,17.67,13.063,18.205,13.063,18.869z"
+   id="path3923" />
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M17.127,18.199c0,0.996-0.803,1.795-1.797,1.795c-0.99,0-1.79-0.799-1.79-1.795   c0-0.992,0.8-1.791,1.79-1.791C16.324,16.408,17.127,17.207,17.127,18.199z"
+   id="path3925" />
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M11.146,15.281c0,0.369-0.299,0.662-0.666,0.662s-0.663-0.293-0.663-0.662   c0-0.365,0.296-0.664,0.663-0.664S11.146,14.916,11.146,15.281z"
+   id="path3927" />
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="12.532"
+   cy="16.338"
+   r="0.664"
+   id="circle3929" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="13.295"
+   x2="17.794"
+   y2="13.295"
+   id="line3931" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="16.215"
+   x2="17.794"
+   y2="16.215"
+   id="line3933" />
+</g>
+<g
+   id="自動泥沙_1_"
+   display="none">
+	<g
+   id="圖層_1_11_"
+   display="inline">
+		<circle
+   fill="#777777"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3936" />
+	</g>
+	<path
+   display="inline"
+   fill="#FFFFFF"
+   d="M16.945,1.678H6.687H6.512H1.766l2.459,5.439v12.023c0,1.229,1.023,2.219,2.287,2.219   h10.433c1.267,0,2.289-0.989,2.289-2.219V3.894C19.234,2.671,18.212,1.678,16.945,1.678z"
+   id="path3939" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="4.532"
+   x2="17.794"
+   y2="4.532"
+   id="line3941" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="7.452"
+   x2="17.794"
+   y2="7.452"
+   id="line3943" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="10.373"
+   x2="17.794"
+   y2="10.373"
+   id="line3945" />
+	<g
+   display="inline"
+   id="g3949">
+		<path
+   fill="#896442"
+   d="M4.884,19.391c0,0.633,0.48,1.149,1.075,1.149h11.29c0.597,0,1.077-0.517,1.077-1.149v-7.204H4.884V19.391    z"
+   id="path3947" />
+	</g>
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M8.352,18.199c0,0.346-0.277,0.624-0.619,0.624c-0.343,0-0.623-0.278-0.623-0.624   c0-0.338,0.28-0.615,0.623-0.615C8.075,17.584,8.352,17.861,8.352,18.199z"
+   id="path3951" />
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M13.063,18.869c0,0.662-0.531,1.197-1.193,1.197c-0.663,0-1.198-0.535-1.198-1.197   c0-0.664,0.535-1.199,1.198-1.199C12.532,17.67,13.063,18.205,13.063,18.869z"
+   id="path3953" />
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M17.127,17.004c0,0.994-0.803,1.791-1.797,1.791c-0.99,0-1.79-0.797-1.79-1.791   c0-0.992,0.8-1.793,1.79-1.793C16.324,15.211,17.127,16.012,17.127,17.004z"
+   id="path3955" />
+	<path
+   display="inline"
+   fill="#2D1D0F"
+   d="M11.146,15.281c0,0.369-0.299,0.662-0.666,0.662s-0.663-0.293-0.663-0.662   c0-0.365,0.296-0.664,0.663-0.664S11.146,14.916,11.146,15.281z"
+   id="path3957" />
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="12.532"
+   cy="16.338"
+   r="0.664"
+   id="circle3959" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="13.295"
+   x2="17.794"
+   y2="13.295"
+   id="line3961" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="14.026"
+   y1="16.215"
+   x2="17.794"
+   y2="16.215"
+   id="line3963" />
+</g>
+<g
+   id="g3970"
+   style="fill:#3d91ff;fill-opacity:1">
+			<circle
+   cx="15.759"
+   cy="15.758"
+   r="15.259"
+   id="circle3966"
+   style="fill:#3d91ff;fill-opacity:1" />
+			<path
+   d="M 15.759,31.518 C 7.07,31.518 0,24.448 0,15.759 0,7.07 7.069,0 15.759,0 c 8.688,0 15.759,7.069 15.759,15.759 0,8.688 -7.071,15.759 -15.759,15.759 z m 0,-30.519 C 7.621,0.999 1,7.62 1,15.758 c 0,8.137 6.621,14.758 14.759,14.758 8.138,0 14.759,-6.619 14.759,-14.757 0,-8.138 -6.622,-14.76 -14.759,-14.76 z"
+   id="path3968"
+   inkscape:connector-curvature="0"
+   style="fill:#3d91ff;fill-opacity:1" />
+		</g><g
+   id="g3985">
+		<g
+   id="g3983"
+   transform="translate(1,2)">
+			<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path3973"
+   d="m 24.162,9.917 c -0.37,0 -0.725,0.097 -1.061,0.249 C 22.068,8.612 20.378,7.595 18.46,7.595 18.151,7.595 17.856,7.628 17.562,7.68 16.547,5.985 14.78,4.859 12.765,4.859 c -2.841,0 -5.193,2.238 -5.622,5.158 -0.027,0 -0.052,-0.007 -0.076,-0.007 -1.907,0 -3.449,1.655 -3.449,3.698 H 27.423 C 27.214,11.572 25.844,9.917 24.162,9.917 Z" />
+			<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path3975"
+   d="m 5.657,22.657 c -0.074,0 -0.149,-0.013 -0.22,-0.039 C 5.159,22.515 5.035,22.236 5.154,22.003 L 8.445,15.63 c 0.125,-0.231 0.449,-0.34 0.723,-0.237 0.278,0.105 0.404,0.383 0.28,0.617 L 6.161,22.382 C 6.07,22.555 5.87,22.657 5.657,22.657 Z" />
+			<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path3977"
+   d="m 10.184,22.611 c -0.075,0 -0.147,-0.014 -0.217,-0.039 -0.276,-0.102 -0.4,-0.379 -0.281,-0.613 l 3.238,-6.372 c 0.123,-0.233 0.439,-0.342 0.714,-0.239 0.273,0.104 0.396,0.383 0.278,0.612 l -3.239,6.375 c -0.09,0.17 -0.288,0.276 -0.493,0.276 z" />
+			<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path3979"
+   d="m 14.569,22.611 c -0.077,0 -0.149,-0.014 -0.223,-0.039 -0.28,-0.102 -0.408,-0.377 -0.284,-0.606 l 3.34,-6.313 c 0.123,-0.231 0.455,-0.338 0.736,-0.233 0.276,0.103 0.403,0.375 0.278,0.606 l -3.338,6.312 c -0.09,0.171 -0.293,0.273 -0.509,0.273 z" />
+			<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path3981"
+   d="m 19.048,22.611 c -0.075,0 -0.147,-0.014 -0.223,-0.039 -0.275,-0.102 -0.401,-0.377 -0.276,-0.606 l 3.289,-6.313 c 0.119,-0.231 0.445,-0.338 0.723,-0.233 0.272,0.103 0.403,0.375 0.28,0.606 l -3.293,6.312 c -0.087,0.171 -0.288,0.273 -0.5,0.273 z" />
+		</g>
+	</g>
+<g
+   id="雨量站_拷貝_1_"
+   display="none">
+	<g
+   id="圖層_1_6_"
+   display="inline">
+		<g
+   id="g3992">
+			<circle
+   fill="#8F8F90"
+   cx="10.97"
+   cy="11.095"
+   r="15.259"
+   id="circle3988" />
+			<path
+   fill="#FFFFFF"
+   d="M10.97,26.971c-8.753,0-15.875-7.121-15.875-15.875c0-8.754,7.121-15.876,15.875-15.876     s15.875,7.122,15.875,15.875S19.725,26.971,10.97,26.971z M10.97-3.546c-8.073,0-14.642,6.568-14.642,14.642     c0,8.074,6.568,14.643,14.642,14.643c8.074,0,14.643-6.569,14.643-14.643C25.611,3.022,19.043-3.546,10.97-3.546z"
+   id="path3990" />
+		</g>
+	</g>
+	<path
+   display="inline"
+   fill="#676769"
+   d="M15.567,6.315c0.419-3.672-4.255-8.004-4.315-8.062v-0.009l-0.01,0.002l-0.006-0.002   v0.009c-0.06,0.058-4.71,4.375-4.306,8.042c0,0.014-0.006,0.026-0.006,0.041c0,2.388,1.934,4.323,4.318,4.323   c2.394,0,4.325-1.936,4.325-4.323C15.567,6.329,15.567,6.321,15.567,6.315z"
+   id="path3995" />
+	<path
+   display="inline"
+   fill="#FFFFFF"
+   d="M11.017,9.087c-1.475,0-2.676-1.199-2.676-2.673c0-0.17,0.139-0.308,0.309-0.308   s0.309,0.138,0.309,0.308c0,1.135,0.923,2.057,2.059,2.057c0.503,0,1.251-0.159,1.578-0.417c0.134-0.104,0.328-0.083,0.434,0.051   c0.104,0.134,0.081,0.328-0.052,0.433C12.518,8.898,11.645,9.087,11.017,9.087z"
+   id="path3997" />
+	<polygon
+   display="inline"
+   fill="#66CCFF"
+   points="11.059,11.935 2.823,11.935 2.823,13.327 10.302,19.314 10.302,23.35    11.059,23.35 11.815,23.35 11.815,19.314 19.299,13.327 19.299,11.935  "
+   id="polygon3999" />
+	<polygon
+   display="inline"
+   fill="#FFFFFF"
+   points="9.498,23.35 8.265,23.35 8.265,20.729 0.691,14.771 0.691,10.205 1.925,10.205    1.925,14.172 9.498,20.128  "
+   id="polygon4001" />
+	<polygon
+   display="inline"
+   fill="#FFFFFF"
+   points="13.676,23.35 12.442,23.35 12.442,20.128 20.016,14.172 20.016,10.205    21.248,10.205 21.248,14.771 13.676,20.729  "
+   id="polygon4003" />
+</g></svg>

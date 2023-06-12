@@ -1,0 +1,663 @@
+﻿@charset "utf-8";
+
+.mis {
+    display: block;
+}
+
+.mis_content {
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #FFF;
+    width: 33%;
+    height: 100%;
+    float: left;
+}
+
+.mis_content h1 {
+    font-family: "微軟正黑體";
+    color: #000000;
+    background-image: url(../images/icon_title.png);
+    background-repeat: no-repeat;
+    padding-left: 28px;
+}
+
+.mis_content p {
+    color: #0f97ff;
+    background-image: url(../images/icon_titleS.png);
+    background-repeat: no-repeat;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 28px;
+    background-position: 8px;
+    font-family: "微軟正黑體";
+}
+
+.mis_content a {
+    color: #FF6600;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    font-family: "微軟正黑體";
+    text-decoration: none;
+    display: inline-block;
+    float: right;
+}
+
+.mis_content a:hover {
+    color: #66C;
+}
+
+.misDown {
+    display: block;
+}
+
+.misDown_content {
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #FFF;
+    width: 100%;
+    height: 33%;
+    float: left;
+}
+
+.misDown_content h1 {
+    font-family: "微軟正黑體";
+    color: #000000;
+    background-image: url(../images/icon_title.png);
+    background-repeat: no-repeat;
+    padding-left: 28px;
+    margin: 20px;
+}
+
+.misDown_content p {
+    color: #0f97ff;
+    background-image: url(../images/icon_titleS.png);
+    background-repeat: no-repeat;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 28px;
+    background-position: 8px;
+    font-family: "微軟正黑體";
+}
+
+.misDown_content a {
+    color: #FF6600;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    font-family: "微軟正黑體";
+    text-decoration: none;
+    display: inline-block;
+    /*float: right;*/
+}
+
+.misDown_content a:hover {
+    color: #66C;
+}
+
+/*捲軸*/
+.scroller {
+    width: 100%;
+    margin: 10px auto;
+    height: 500px;
+    overflow: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroller::-webkit-scrollbar {
+    background: transparent;
+    width: 6px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    background: #CCC;
+    border-radius: 6px;
+}
+
+.scroller--content {
+    padding-top: 8px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+}
+
+.scroller--content h1 {
+    font-family: "微軟正黑體";
+    color: #000000;
+    background-image: url(../images//icon_title.png);
+    background-repeat: no-repeat;
+    padding-left: 28px;
+}
+
+.scroller--content h2 {
+    font-family: "微軟正黑體";
+    color: #000000;
+    background-image: url(../images/icon_title.png);
+    background-repeat: no-repeat;
+    padding-left: 28px;
+    float: left;
+}
+
+.scroller--content p {
+    color: #0f97ff;
+    background-image: url(../images/icon_titleS.png);
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    padding-left: 28px;
+    background-position: 8px;
+    font-family: "微軟正黑體";
+}
+
+.scroller--content .stitle {
+    color: #0f97ff;
+    background-image: url(../images/icon_titleS.png);
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    padding-bottom: 4px;
+    padding-left: 28px;
+    background-position: 8px;
+    font-family: "微軟正黑體";
+}
+
+.scroller--content a {
+    color: #FF6600;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    font-family: "微軟正黑體";
+    text-decoration: none;
+    display: inline-block;
+    /*float: right;*/
+}
+
+    .scroller--content a:hover {
+        color: #66C;
+    }
+/*捲軸結尾*/
+
+/*展開收合選單*/
+.mis_menu {
+display: block;
+float: left;
+text-align: center;
+/*margin-top: 12%;*/
+}
+
+.mis_menu ul {
+}
+
+.mis_menu ul li {
+-webkit-border-top-right-radius: 4px;
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+-moz-border-radius-bottomright: 4px;
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+background-color: #0f97ff;
+height: 37px;
+width: 29px;
+text-indent: -9999px;
+}
+
+.mis_menu ul li a {
+text-indent: -9999px;
+}
+
+.mis_menu ul li.open {
+background-image: url(../images/mis_menu_open.png);
+background-repeat: no-repeat;
+}
+
+.mis_menu ul li.close {
+background-image: url(../images/mis_menu_close.png);
+background-repeat: no-repeat;
+}
+
+.mis_menuD {
+display: block;
+text-align: center;
+margin-right: auto;
+margin-left: auto;
+height: 29px;
+width: 37px;
+}
+
+.mis_menuD ul {
+}
+
+.mis_menuD ul li {
+-webkit-border-top-left-radius: 4px;
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topleft: 4px;
+-moz-border-radius-topright: 4px;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+background-color: #0f97ff;
+height: 29px;
+width: 37px;
+text-indent: -9999px;
+}
+
+.mis_menuD ul li a {
+text-indent: -9999px;
+}
+
+.mis_menuD ul li.open {
+background-image: url(../images/mis_menuD_open.png);
+background-repeat: no-repeat;
+}
+
+.mis_menuD ul li.close {
+background-image: url(../images/mis_menuD_close.png);
+background-repeat: no-repeat;
+}
+/*展開收合選單結尾*/
+
+/*左側標註清單*/
+.List-Label {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #bfbfbf;
+    font-family: "微軟正黑體";
+    font-size: 16px;
+    color: #000;
+    padding: 8px;
+    margin-top: 6px;
+    line-height: 25px;
+}
+
+.List-Label-Num {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #70bbf7;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.BtnLabelEdit {
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: normal;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: #777777;
+    display: inline-block;
+    background-image: url(../images/btn_edit.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    text-indent: -99999;
+    float: right;
+    background-color: #f5f5f5;
+    background-position: center center;
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+}
+
+.BtnLabelEdit:hover {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+cursor: pointer;
+}
+
+.BtnLabelEdit:active {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+}
+
+.BtnLabelExtent {
+font-size: 12px;
+font-family: Arial;
+font-weight: normal;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+border: 0px;
+padding: 0px;
+text-decoration: none;
+color: #777777;
+display: inline-block;
+background-image: url(../images/icon_list.png);
+background-repeat: no-repeat;
+height: 25px;
+width: 25px;
+text-indent: -99999;
+float: right;
+background-color: #f5f5f5;
+background-position: center center;
+margin-top: 4px;
+margin-right: 4px;
+margin-bottom: 8px;
+}
+
+.BtnLabelExtent:hover {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+cursor: pointer;
+}
+
+.BtnLabelExtent:active {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+}
+
+.BtnLabelDel {
+font-size: 12px;
+font-family: Arial;
+font-weight: normal;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+border: 0px;
+padding: 0px;
+text-decoration: none;
+color: #777777;
+display: inline-block;
+background-image: url(../images/btn_delete.png);
+background-repeat: no-repeat;
+height: 25px;
+width: 25px;
+text-indent: -99999;
+float: right;
+background-color: #f5f5f5;
+background-position: center center;
+margin-top: 4px;
+margin-right: 4px;
+margin-bottom: 8px;
+}
+
+.BtnLabelDel:hover {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+cursor: pointer;
+}
+
+.BtnLabelDel:active {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+}
+
+.BtnLabelSave {
+font-size: 12px;
+font-family: Arial;
+font-weight: normal;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+border: 0px;
+padding: 0px;
+text-decoration: none;
+color: #777777;
+display: inline-block;
+background-image: url(../images/btn_save.png);
+background-repeat: no-repeat;
+height: 25px;
+width: 25px;
+text-indent: -99999;
+float: right;
+background-color: #f5f5f5;
+background-position: center center;
+margin-top: 4px;
+margin-right: 4px;
+margin-bottom: 8px;
+}
+
+.BtnLabelSave:hover {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+cursor: pointer;
+}
+
+.BtnLabelSave:active {
+height: 25px;
+width: 25px;
+background-color: #FFF;
+}
+/*左側標註清單結尾*/
+
+/*頁籤*/
+.menu__tabs {
+    list-style: none;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ff7474;
+    display: block;
+}
+
+.menu__tabs li {
+    float: left;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.menu__tabs a {
+    display: inline-block;
+    color: #9a9a9a;
+    text-decoration: none;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: "微軟正黑體";
+    font-size: 15px;
+    background-color: #FFFFFF;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+}
+
+.menu__tabs a:hover {
+    color: #FFFFFF;
+    background-color: #ff7474;
+}
+
+.menu__tabs a.active {
+    color: #FFFFFF;
+    font-size: 15px;
+    background-color: #ff7474;
+}
+
+    .menu__tabs a.active i {
+        color: #80cbb7;
+    }
+
+.menu__tabs a i {
+    margin-right: 3px;
+    color: #aaaaaa;
+}
+
+/*--------------------------
+* MENU WRAPPER
+---------------------------*/
+.menu {
+    margin: 55px auto;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.menu__wrapper {
+    position: relative;
+    z-index: 400;
+    background: #FFF;
+    -webkit-border-radius: 0 4px 4px 4px;
+    -moz-border-radius: 0 4px 4px 4px;
+    border-radius: 0 4px 4px 4px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.menu--shadow {
+    position: absolute;
+    z-index: 300;
+    bottom: -5px;
+    height: 25px;
+    width: 100%;
+}
+
+.menu--shadow:after,
+.menu--shadow:before {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    background: rgba(0,0,0,0.2);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 15px 5px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px 5px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.25);
+    -webkit-transform: scale(0.8) rotate(-4deg);
+    -ms-transform: scale(0.8) rotate(-4deg);
+    -o-transform: scale(0.8) rotate(-4deg);
+    transform: scale(0.8) rotate(-4deg);
+}
+
+.menu--shadow:after {
+    right: 0;
+    left: auto;
+    -webkit-transform: scale(0.8) rotate(4deg);
+    -ms-transform: scale(0.8) rotate(4deg);
+    -o-transform: scale(0.8) rotate(4deg);
+    transform: scale(0.8) rotate(4deg);
+}
+
+.menu__wrapper .menu__item {
+    line-height: 1.3;
+    color: #76716f;
+    display: none;
+}
+
+.menu__wrapper .menu__item.item-active {
+    display: block;
+}
+
+.menu__wrapper .menu__item h3 {
+    font-size: 1.8em;
+    color: #333b48;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+}
+
+.menu__wrapper .menu__item p {
+    font-size: 1.3em;
+    line-height: 1.6em;
+    color: #76716f;
+}
+/*頁籤結尾*/
+
+.ListResult{}
+.ListResult th{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	background-color: #d9d9d9;
+	text-align: left;
+	padding-top: 8px;
+	padding-right: 4px;
+	padding-bottom: 8px;
+	padding-left: 4px;
+}
+.ListResult td{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #333;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #c8c8c8;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+}
+
+.ListNum{border-radius:20px;background-color:#30affe;color:#FFF;padding-left:5px; padding-right:5px; margin-left:10px;}
+
+.Btnshow{
+	font-size: 15px;
+	font-family: "微軟正黑體";
+	font-weight: normal;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 0px solid #337fed;
+	text-decoration: none;
+	background-color: transparent;
+	color: #4d4d4d;
+	display: inline-block;
+	background-image: url(../images/btn_icon_show.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 40px;
+}
+.Btnshow:hover {
+	background-image: url(../images/btn_icon_hide.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color:#d9d9d9;
+}
+.Btnshow:active {
+	position:relative;
+	top:1px;
+}
+
+.Btnhide{
+	font-size: 15px;
+	font-family: "微軟正黑體";
+	font-weight: normal;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 0px solid #337fed;
+	text-decoration: none;
+	background-color: transparent;
+	color: #4d4d4d;
+	display: inline-block;
+	background-image: url(../images/btn_icon_hide.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 40px;
+}
+.Btnhide:hover {
+	background-image: url(../images/btn_icon_show.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color:#d9d9d9;
+}
+.Btnhide:active {
+	position:relative;
+	top:1px;
+}

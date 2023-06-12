@@ -1,0 +1,6 @@
+﻿  #container_left, #container_right {
+            min-width: 310px;
+            max-width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }

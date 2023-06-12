@@ -1,0 +1,351 @@
+﻿@charset "utf-8";
+.TbList {
+	width: 100%;
+	border: 1px solid #66bb6a;
+	margin-top: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.TbList .left{
+	text-align: left;
+}
+.TbList .right{
+	text-align: right;
+}
+.TbList .TableTitle{
+	color: #FFF;
+	background-color: #05c0cf;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 8px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	font-size: 18px;
+}
+.TbList th {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #FFF;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: normal;
+	background-color: #66bb6a;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	padding-right: 8px;
+	padding-left: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.TbList td{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #66bb6a;
+	padding-right: 8px;
+	padding-left: 8px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #66bb6a;
+	background-color: #FFF;
+}
+.TbList td a{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #004eff;
+	text-align: left;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.TbList tr:hover{
+	background-color: #c3edda;
+}
+
+
+.TbListRed {
+	width: 100%;
+	border: 1px solid #FF0000;
+	margin-top: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.TbListRed .left{
+	text-align: left;
+}
+.TbListRed .right{
+	text-align: right;
+}
+.TbListRed .TableTitle{
+	color: #FFF;
+	background-color: #05c0cf;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 8px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	font-size: 18px;
+}
+.TbListRed th {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #FFF;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: normal;
+	background-color: #FF0000;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	padding-right: 8px;
+	padding-left: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.TbListRed td{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FF0000;
+	padding-right: 8px;
+	padding-left: 8px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #FF0000;
+	background-color: #FFF;
+}
+.TbListRed td a{
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #004eff;
+	text-align: left;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.TbListRed tr:hover{
+	background-color: #c3edda;
+}
+<!---->
+.TbForm{
+	width: 100%;
+	border: 1px solid #66bb6a;
+	margin-top: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.TbForm th{
+	background-color: #aed581;
+	border-right-width: 4px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #66bb6a;
+	border-bottom-color: #66bb6a;
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 6px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+}
+.TbForm td{
+	background-color: #FFFFFF;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #66bb6a;
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 6px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+}
+.TbForm td a{
+	text-decoration: none;
+	color: #355cb5;
+}
+.selected td{
+	background-color: #9db4ef;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	text-align: left;
+	padding-top: 8px;
+	padding-right: 3px;
+	padding-bottom: 8px;
+	padding-left: 3px;
+}
+.txt{
+	border-right-style: none;
+	border-bottom-style: none;
+	font-family: "微軟正黑體";
+	font-size: 12px;
+	color: #03C;
+	text-align: left;
+	border-top-style: none;
+	border-left-style: none;
+}
+.txt02{
+	border-right-style: none;
+	border-bottom-style: none;
+	font-family: "微軟正黑體";
+	font-size: 12px;
+	color: #F30;
+	text-align: left;
+	border-top-style: none;
+	border-left-style: none;
+}
+.TbForm .even {
+	background-color: #009fe4;
+	font-size: 15px;
+	color: #FFF;
+	font-weight: bold;
+	text-align: left;
+}
+/*-----------------------------------*/
+
+
+/*表單裡的表格*/
+.List{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	line-height: 27px;
+	border: 1px solid #66bb6a;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.List th{
+	color: #000;
+	background-color: #aed581;
+	text-align: center;
+}
+.List td{
+	color: #666;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	background-color: #FFF;
+	text-align: center;
+	border: 1px solid #66bb6a;
+}
+.List td img{
+	height: auto;
+	width: 120px;
+}
+
+/*----------------------------*/
+
+.txtGreen{
+	color: #5ab021;
+}
+.txtBlue{
+	color: #007fd9;
+}
+.txtYellow{
+	color: #ffa300;
+}
+.txtRed{
+	color: #d51b28;
+}
+.txtGray{
+	color: #5e5e5e;
+}
+.txtOrange{
+	color: #ff6300;
+}
+.txtSpace{
+	margin-right: 4px;
+	margin-left: 4px;
+}
+.txtRight{
+	float: right;
+}
+.txtTop{
+	margin-top: 10px;
+}
+/*-----------災害示警表格---------------*/
+.TbFormAlert th{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #40a955;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 6px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	background-image: url(../images/arr.png);
+	background-repeat: no-repeat;
+	background-position: left 18px;
+	white-space: nowrap;
+	vertical-align: top;
+	font-weight: normal;
+}
+.TbFormAlert td{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #000;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 6px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+	line-height: 27px;
+}
+.TbFormAlert td a{
+	text-decoration: none;
+	color: #355cb5;
+}

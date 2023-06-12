@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        台9甲線10.2K監測平台
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/GSBase.css" rel="stylesheet" type="text/css">
+    <link href="css/GSForms.css" rel="stylesheet" type="text/css">
+    <link href="css/GSButton.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
+    <link rel="stylesheet" href="css/mainMap.css">
+    <!-- 放header -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <div w3-include-html="header.html"></div>
+
+</head>
+
+<script>
+    w3.includeHTML();
+</script>
+
+
+<body>
+    <form method="post" action="./MainMap.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="jJJrqG9Mr4+VgfbWb8//n2PzLaVj6bgYs33NFHr3XHuY0UuTe9byQWXhYZES5oQwqZbplDOwaNhCSBGaSduclNajH+wApAO68g3CkqkHNcs=">
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7A4B6C4C">
+        </div>
+        <div class="map-content">
+            <div id="cont-2">
+                <iframe src="Map.html" id="iframe_map">
+                </iframe>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="js/bootstrap-3.3.4.js"></script> -->
+
+<script src="js/MainMap.js"></script>
+
+</html>

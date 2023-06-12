@@ -1,0 +1,133 @@
+/*
+ * @author: Allen Kung
+ * @date: 16/04/2009
+ * CSS for xcot.com
+ */
+/*
+body {
+	background:#f0f0f0;
+	color:#999;
+	font-size:12px; 
+	font-family:"Lucida Grande",Arial,sans-serif;
+	line-height:1.5em;
+}*/
+
+* {
+	margin:0;
+	padding:0;
+}
+
+a {
+	color:#ff7b00;text-decoration:none;
+	bblr:expression(this.onFocus=this.blur());
+	outline:none;
+}
+a:hover {text-decoration:underline;}
+
+i {
+	font-size: 11px;
+	color: red;
+}
+
+img {border:none;}
+li {list-style:none;}
+
+.hide {display:none;}
+
+.clear {
+	clear: both;
+    height:1px;
+    margin-top:-1px; 
+    overflow:hidden;
+}
+
+.link_style_1 {
+	background:url(../images/link_style_1.gif) no-repeat 0 2px;
+	padding-left: 15px;
+}
+
+.list_style_1 li a {
+	background:url(../images/list_style_1.gif) no-repeat 0 6px;
+	line-height:2em;
+	padding-left:15px;
+}
+/*
+#wrap {
+	margin:auto;
+	width:960px;
+}*/
+
+/* @group main_nav */
+#main_nav ul {
+	font-size: 15px;
+	list-style: none;
+	font-family: "微軟正黑體";
+}
+
+#main_nav {
+	background: url(../images/nav_bg.png) repeat-x top left;
+	height: 43px;
+	overflow: visible;
+	padding-left: 20px;
+}
+
+#main_nav li {
+	float: left;
+	position: relative;
+	z-index: 5;
+}
+
+#main_nav li a {
+	color: #000;
+	display: block;
+	width: 140px;
+	height: 43px;
+	text-decoration: none;
+	line-height: 43px;
+	text-align: center;
+}
+
+#main_nav li ul li a {
+	font-size: 14px;
+	width: 140px;
+	height: 33px;
+	line-height: 33px;
+	margin: 0px;
+}
+
+#main_nav li ul li a:hover, #main_nav li.focus ul li a:hover {
+	background: #e2e2e2;
+}
+
+#main_nav li.focus a, #main_nav li a:hover {
+	background-image: url(../images/nav_over.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	color: #009fe4;
+}
+
+#main_nav li.focus ul li a {
+	background: none;
+	color: #000;
+}
+
+#main_nav li.focus ul li a:hover {
+	background: none;
+	color: #F60;
+}
+
+#main_nav li ul {
+	position: absolute;
+	top: 43px;
+	left: 0px;
+	background: #e2e2e2;
+	/*border-color: #de813b;
+	border-style: none solid solid;
+	border-width: medium 1px 1px;*/
+	display: none;
+}
+
+#main_nav li ul li{
+	float: none;
+}
+/* @end */

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../App_Themes/Map/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="../script/map/jquery.js" type="text/javascript"></script>
+    <script src="../script/map/bootstrap.js" type="text/javascript"></script>
+    <script src="../script/map_custom/map_vars.js" type="text/javascript"></script>
+    <script src="../Script/map_custom/LayerStyles.js" type="text/javascript"></script>
+    <script src="../Script/map_custom/FeatureDetailContentGenerator.js" type="text/javascript"></script>
+    <script src="../Script/map_custom/BubbleContentGenerator.js" type="text/javascript"></script>
+    <script src="../script/map_custom/map_layers.js" type="text/javascript"></script>
+    <script src="../script/map/proj4.js" type="text/javascript"></script>
+    <script src="../script/map/ol-debug.js" type="text/javascript"></script>
+    <script src="../script/map/tm_openlayers_plugin.js" type="text/javascript"></script>
+    <script src="../script/map/tm_openlayers_locate.js" type="text/javascript"></script>
+    <script src="../script/map/tm_openlayers_layer_manager.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            map = new ol.Map({
+                target: 'map',
+                logo: false,
+                renderer: 'dom'
+            });
+
+            mapPlugin = new oltmx.Plugin(map,
+                {
+                    actives: [
+                        { id: "LayersMg", params: { mapLayers: map_layers} }
+                    ],
+                    displayPrj: displayPrj
+                }
+            );
+            createFolder($("#layerTable"), map_layers);
+        });
+        function createLegend() {
+            for (var target in map_layers) {
+                if (map_layers[target] && map_layers[target].sub)
+                    createFolder($("#layerTable"), parent.map_layers[target].sub, "[\"" + target + "\"].sub");
+            }
+        }
+        // create layer folder
+        function createFolder(parentFolderTable, data) {
+            for (var layerID in data) {
+                var td = parentFolderTable.append("<tr><td/></tr>").find("td:last");
+                var layerInfo = data[layerID];
+                if (layerInfo.type == "folder") {
+                    td.append("<span style='font-weight:bold; color:brown'>&lt;目錄&gt;" + layerInfo.name + "</span><br />");
+                    td.append("<table style='margin-left:50px;'/>");
+                    if (layerInfo.sub)
+                        createFolder(td.children().last(), layerInfo.sub);
+                } else {
+                    td.append("<span style='font-weight:bold;color:blue;'>&lt;圖層&gt;" + layerInfo.name + "</span>，" + 'LayerID: "<span style="color:red;">' + layerInfo.layerID + '</span>"');
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <table id="layerTable">
+    </table>
+    <div style="display: none">
+        <div id="map">
+        </div>
+    </div>
+</body>
+</html>

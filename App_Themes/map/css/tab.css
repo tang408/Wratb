@@ -1,0 +1,85 @@
+ul, li
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .abgne_tab
+        {
+            clear: left;
+            width: 100%;
+            margin: 10px 0;
+        }
+        ul.tabs
+        {
+	width: 100%;
+	height: 43px;
+	background-image: url(../images/tab_bg.png);
+	background-repeat: repeat-x;
+        }
+        ul.tabs li
+        {
+	float: left;
+	height: 43px;
+	overflow: hidden;
+	position: relative;
+	background-image: url(../images/tab.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	text-align: center;
+        }
+        ul.tabs li a
+        {
+	display: block;
+	color: #747474;
+	text-decoration: none;
+	background-image: url(../images/tab.png);
+	background-position: left top;
+	height: 38px;
+	width: 112px;
+	padding-top: 5;
+	line-height: 43px;
+	font-size: 13px;
+        }
+        ul.tabs li a:hover
+        {
+	background-image: url(../images/tab.png);
+	background-position: 0px -43px;
+	height: 38px;
+	width: 112px;
+	padding-top: 5;
+	line-height: 43px;
+	font-size: 13px;
+        }
+        ul.tabs li.active
+        {
+	background-image: url(../images/tab.png);
+	background-position: 0px -43px;
+	color: #000;
+        }
+        ul.tabs li.active a:hover
+        {
+	background-image: url(../images/tab.png);
+	background-position: 0px -43px;
+	color: #000;
+        }
+        div.tab_container
+        {
+	clear: left;
+	width: 100%;
+	background: #fff;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+        }
+        div.tab_container .tab_content
+        {
+	padding-top: 10px;
+	padding-bottom: 20px;
+
+        }
+        div.tab_container .tab_content h2
+        {
+            margin: 0 0 20px;
+        }

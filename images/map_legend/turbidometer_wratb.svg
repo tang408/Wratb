@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="22px"
+   height="22px"
+   viewBox="0 0 22 22"
+   enable-background="new 0 0 22 22"
+   xml:space="preserve"
+   id="svg5506"
+   sodipodi:docname="turb_wratb.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata5512"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs5510">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview5508"
+   showgrid="false"
+   inkscape:zoom="15.170655"
+   inkscape:cx="40.400702"
+   inkscape:cy="17.669411"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg5506" />
+<g
+   id="水庫堰壩"
+   display="none">
+	<g
+   id="圖層_2">
+		<rect
+   display="inline"
+   fill="#DA1617"
+   width="22"
+   height="22"
+   id="rect5385" />
+	</g>
+	<g
+   id="圖層_1_1_"
+   display="inline">
+		<circle
+   fill="#A8BCFF"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5388" />
+	</g>
+	<polygon
+   display="inline"
+   fill="#4A4A4A"
+   points="4.438,5.813 4.438,17.188 17.689,17.188 17.689,14.688 10.158,11.5 10.214,5.813     "
+   id="polygon5391" />
+	<line
+   display="inline"
+   fill="none"
+   stroke="#005AFF"
+   stroke-miterlimit="10"
+   x1="12.32"
+   y1="6.688"
+   x2="18.438"
+   y2="6.688"
+   id="line5393" />
+	<line
+   display="inline"
+   fill="none"
+   stroke="#005AFF"
+   stroke-miterlimit="10"
+   x1="12.32"
+   y1="8.688"
+   x2="18.438"
+   y2="8.688"
+   id="line5395" />
+	<line
+   display="inline"
+   fill="none"
+   stroke="#005AFF"
+   stroke-miterlimit="10"
+   x1="12.32"
+   y1="10.688"
+   x2="18.438"
+   y2="10.688"
+   id="line5397" />
+</g>
+<g
+   id="CCTV位置"
+   display="none">
+	<g
+   id="圖層_1_2_"
+   display="inline">
+		<circle
+   fill="#FFBB39"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5400" />
+	</g>
+	<rect
+   x="3.854"
+   y="7.006"
+   display="inline"
+   fill="#753925"
+   width="1.726"
+   height="5.139"
+   id="rect5403" />
+	<path
+   display="inline"
+   fill="#753925"
+   d="M6.691,5.699v7.752H17.31V5.699H6.691z M15.982,8.584H8.019V6.753h7.964V8.584z"
+   id="path5405" />
+	<polyline
+   display="inline"
+   fill="none"
+   stroke="#753925"
+   stroke-width="1.2"
+   stroke-miterlimit="10"
+   points="11,11.423 11,15.75    18.168,15.75  "
+   id="polyline5407" />
+</g>
+<g
+   id="大壩監測"
+   display="none">
+	<g
+   id="圖層_1_3_"
+   display="inline">
+		<circle
+   fill="#FF008A"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5410" />
+	</g>
+	<polyline
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="1.2"
+   stroke-miterlimit="10"
+   points="3.917,11.5    5.917,11.5 7.333,6.667 9.95,15.903 12.82,9.33 14.625,12.935 18.479,12.924  "
+   id="polyline5413" />
+</g>
+<g
+   id="歷年工程點位"
+   display="none">
+	<g
+   id="圖層_1_4_"
+   display="inline">
+		<circle
+   fill="#C4B275"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5416" />
+	</g>
+	<path
+   display="inline"
+   fill="#852F21"
+   d="M17.76,14.481l-4.096-3.943c0.26-0.613,0.403-1.287,0.403-1.995   c0-2.826-2.29-5.117-5.117-5.117c-0.637,0-1.24,0.13-1.802,0.343l2.432,2.313c0.838,0.796,0.871,2.12,0.075,2.957   C8.858,9.877,7.535,9.911,6.697,9.114L4.183,6.723C3.966,7.29,3.834,7.899,3.834,8.543c0,2.826,2.291,5.116,5.117,5.116   c0.67,0,1.306-0.137,1.893-0.371l4.187,4.03c0.781,0.755,2.028,0.73,2.782-0.052C18.567,16.482,18.544,15.236,17.76,14.481z"
+   id="path5419" />
+</g>
+<g
+   id="水門位置圖"
+   display="none">
+	<g
+   id="圖層_1_5_"
+   display="inline">
+		<circle
+   fill="#B7B7B7"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5422" />
+	</g>
+	<polygon
+   display="inline"
+   fill="#00A2FF"
+   points="4.583,6.25 4.583,8.833 4.583,10 4.583,16.333 6.583,16.333 6.583,10 15.417,10    15.417,16.333 17.417,16.333 17.417,10 17.417,8.833 17.417,6.25  "
+   id="polygon5425" />
+</g>
+<g
+   id="圖層_1_6_"
+   style="fill:#3aa699;fill-opacity:1">
+		<circle
+   style="fill:#3aa699;stroke:#ffffff;stroke-miterlimit:10;fill-opacity:1"
+   id="circle5428"
+   r="10.5"
+   cy="11"
+   cx="11"
+   stroke-miterlimit="10" />
+	</g><path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path5431"
+   d="M 15.112,4.52 H 8.052 7.932 4.667 l 1.692,3.743 v 8.274 c 0,0.845 0.705,1.526 1.574,1.526 h 7.179 c 0.871,0 1.575,-0.682 1.575,-1.526 V 6.044 C 16.688,5.204 15.983,4.52 15.112,4.52 Z" /><line
+   style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10"
+   id="line5433"
+   y2="6.4829998"
+   x2="15.697"
+   y1="6.4829998"
+   x1="13.104"
+   stroke-miterlimit="10" /><line
+   style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10"
+   id="line5435"
+   y2="8.493"
+   x2="15.697"
+   y1="8.493"
+   x1="13.104"
+   stroke-miterlimit="10" /><line
+   style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10"
+   id="line5437"
+   y2="10.503"
+   x2="15.697"
+   y1="10.503"
+   x1="13.104"
+   stroke-miterlimit="10" /><g
+   id="g5441">
+		<path
+   style="fill:#683501"
+   inkscape:connector-curvature="0"
+   id="path5439"
+   d="m 6.813,16.708 c 0,0.436 0.331,0.792 0.739,0.792 h 7.77 c 0.41,0 0.741,-0.356 0.741,-0.792 v -4.956 h -9.25 z" />
+	</g><circle
+   style="fill:#2d1d0f"
+   id="circle5443"
+   r="0.42699999"
+   cy="15.89"
+   cx="8.7720003" /><circle
+   style="fill:#2d1d0f"
+   id="circle5445"
+   r="0.82300001"
+   cy="16.35"
+   cx="11.618" /><circle
+   style="fill:#2d1d0f"
+   id="circle5447"
+   r="1.234"
+   cy="15.89"
+   cx="14.003" /><circle
+   style="fill:#2d1d0f"
+   id="circle5449"
+   r="0.458"
+   cy="13.881"
+   cx="10.664" /><circle
+   style="fill:#2d1d0f"
+   id="circle5451"
+   r="0.45699999"
+   cy="14.608"
+   cx="12.075" /><line
+   style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10"
+   id="line5453"
+   y2="12.514"
+   x2="15.697"
+   y1="12.514"
+   x1="13.104"
+   stroke-miterlimit="10" /><line
+   style="fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10"
+   id="line5455"
+   y2="14.523"
+   x2="15.697"
+   y1="14.523"
+   x1="13.104"
+   stroke-miterlimit="10" />
+<g
+   id="自動泥沙"
+   display="none">
+	<g
+   id="圖層_1_7_"
+   display="inline">
+		<circle
+   fill="#777777"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5458" />
+	</g>
+	<path
+   display="inline"
+   fill="#FFFFFF"
+   d="M15.112,4.52h-7.06h-0.12H4.667l1.692,3.743v8.274c0,0.845,0.705,1.526,1.574,1.526h7.179   c0.871,0,1.575-0.682,1.575-1.526V6.044C16.688,5.204,15.983,4.52,15.112,4.52z"
+   id="path5461" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="13.104"
+   y1="6.483"
+   x2="15.697"
+   y2="6.483"
+   id="line5463" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="13.104"
+   y1="8.493"
+   x2="15.697"
+   y2="8.493"
+   id="line5465" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="13.104"
+   y1="10.503"
+   x2="15.697"
+   y2="10.503"
+   id="line5467" />
+	<g
+   display="inline"
+   id="g5471">
+		<path
+   fill="#896442"
+   d="M6.813,16.708c0,0.436,0.331,0.792,0.739,0.792h7.77c0.41,0,0.741-0.356,0.741-0.792v-4.956h-9.25V16.708z    "
+   id="path5469" />
+	</g>
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="8.772"
+   cy="15.89"
+   r="0.427"
+   id="circle5473" />
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="11.618"
+   cy="16.35"
+   r="0.823"
+   id="circle5475" />
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="14.003"
+   cy="15.065"
+   r="1.234"
+   id="circle5477" />
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="10.664"
+   cy="13.881"
+   r="0.458"
+   id="circle5479" />
+	<circle
+   display="inline"
+   fill="#2D1D0F"
+   cx="12.075"
+   cy="14.608"
+   r="0.457"
+   id="circle5481" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="13.104"
+   y1="12.514"
+   x2="15.697"
+   y2="12.514"
+   id="line5483" />
+	
+		<line
+   display="inline"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.25"
+   stroke-miterlimit="10"
+   x1="13.104"
+   y1="14.523"
+   x2="15.697"
+   y2="14.523"
+   id="line5485" />
+</g>
+<g
+   id="雨量站"
+   display="none">
+	<g
+   id="圖層_1_8_"
+   display="inline">
+		<circle
+   fill="#FF9AB7"
+   stroke="#FFFFFF"
+   stroke-miterlimit="10"
+   cx="11"
+   cy="11"
+   r="10.5"
+   id="circle5488" />
+	</g>
+	<g
+   display="inline"
+   id="g5503">
+		<g
+   transform="translate(1.000000, 2.000000)"
+   id="g5501">
+			<path
+   fill="#434343"
+   d="M16.471,6.356c-0.255,0-0.498,0.067-0.729,0.171c-0.711-1.069-1.873-1.769-3.192-1.769     c-0.212,0-0.418,0.022-0.619,0.059c-0.7-1.167-1.915-1.941-3.303-1.941c-1.955,0-3.574,1.54-3.868,3.549     c-0.019,0-0.036-0.006-0.053-0.006c-1.312,0-2.373,1.14-2.373,2.546h16.381C18.571,7.496,17.628,6.356,16.471,6.356L16.471,6.356     z"
+   id="path5491" />
+			<path
+   fill="#434343"
+   d="M3.737,15.123c-0.05,0-0.103-0.008-0.152-0.025c-0.191-0.07-0.277-0.262-0.194-0.424l2.265-4.385     c0.085-0.16,0.309-0.234,0.497-0.164c0.191,0.072,0.278,0.262,0.193,0.424l-2.262,4.385C4.021,15.053,3.883,15.123,3.737,15.123     L3.737,15.123z"
+   id="path5493" />
+			<path
+   fill="#434343"
+   d="M6.852,15.092c-0.052,0-0.102-0.008-0.149-0.025c-0.189-0.07-0.275-0.262-0.192-0.424l2.228-4.385     c0.084-0.161,0.302-0.234,0.492-0.164c0.188,0.07,0.272,0.262,0.19,0.422l-2.228,4.386C7.129,15.02,6.994,15.092,6.852,15.092     L6.852,15.092z"
+   id="path5495" />
+			<path
+   fill="#434343"
+   d="M9.869,15.092c-0.053,0-0.103-0.008-0.153-0.025c-0.193-0.07-0.281-0.259-0.195-0.419l2.299-4.343     c0.086-0.16,0.313-0.233,0.506-0.163c0.192,0.071,0.28,0.259,0.194,0.419l-2.297,4.343C10.158,15.021,10.018,15.092,9.869,15.092     L9.869,15.092z"
+   id="path5497" />
+			<path
+   fill="#434343"
+   d="M12.951,15.092c-0.051,0-0.103-0.008-0.151-0.025c-0.191-0.07-0.277-0.259-0.192-0.419l2.264-4.343     c0.082-0.16,0.307-0.233,0.496-0.163c0.19,0.071,0.278,0.259,0.194,0.419l-2.265,4.343     C13.235,15.021,13.098,15.092,12.951,15.092L12.951,15.092z"
+   id="path5499" />
+		</g>
+	</g>
+</g>
+</svg>

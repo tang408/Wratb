@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../script/map/jquery.js" type="text/javascript"></script>
+    <script src="../script/map/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="../App_Themes/Map/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/map.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Map/css/nanoscroller.css" rel="stylesheet" type="text/css" />
+    <script src="../script/map/AssessTools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var resizeInterval = null;
+        var mapPlugin = null;
+
+        $(function () {
+            mapPlugin = parent.mapPlugin;
+            createBaseMap();
+        });
+
+        function resizeLayout() {
+            parent.resizeBox($(".nano").offset().top + $(".nano-content > div").height() + 20);
+            if ($(".nano").height() != ($("html").height() - $(".nano").offset().top)) {
+                $(".nano").height($("html").height() - $(".nano").offset().top);
+                parent.$("#contentBox").height(400);
+            }
+            clearInterval(resizeInterval);
+        }
+        $(window).on("resize", function () {
+            clearInterval(resizeInterval);
+            resizeInterval = setInterval(resizeLayout, 200);
+        });
+
+        function createBaseMap() {
+            $("#baseTable").children().remove();
+            if (parent.map_base.sub)
+                createFolder($("#baseTable"), parent.baseLayerInfos);
+        }
+
+        function createFolder($parentFolderTable, data) {
+            for (var mapID in data) {
+                var mapInfo = data[mapID];
+                if (!mapInfo) continue;
+                var $tr = $("<tr><td style='display:block; position:relative;'/></tr>");
+                var $td = $tr.find("td:last");
+                $td.append('<input type="checkbox" onchange=\'swicthMapVisible(this, "' + mapID + '")\' />');
+                $td.append('<img src="../App_Themes/Map/images/' + mapID + '.png">');
+                $td.append(mapID);
+                $td.addClass("TreeNode");
+                $parentFolderTable.append($tr);
+            }
+
+            //mapPlugin.layersMg.switchTheMap(data.通用版電子地圖, true);
+            $("#baseTable input")[0].checked = true;
+        }
+
+        function swicthMapVisible(obj, mapID) {
+            var disabled = !obj.checked;
+            parent.switchBaseLayer(mapID, obj.checked);
+            var $checkbox = $(obj).parent().find(":checkbox");
+
+            $("#baseTable input").prop("disabled", true);
+            $("#baseTable input").prop("checked", false);
+            $checkbox.prop("checked", true);
+            $("#baseTable input").prop("disabled", false);
+            $checkbox.prop("disabled", true);
+        }
+    </script>
+    <!-- page event -->
+    <script type="text/javascript">
+        function page_active() {
+            createBaseMap();
+        }
+        function page_leave() {
+        }
+    </script>
+</head>
+<body>
+    <!--關閉+說明-->
+    <div class="BtnFunc">
+        <ul>
+            <li class="close"><a href="javascript:void(0);parent.toolSwitch()">關閉</a></li>
+        </ul>
+    </div>
+    <!--可捲動範圍-->
+    <div class="nano">
+        <div class="nano-content">
+            <div>
+                <table id="baseTable" width="100%" border="0" cellpadding="0" cellspacing="0"></table>              
+            </div>
+        </div>
+    </div>
+    <!--可捲動範圍結尾-->
+</body>
+</html>
