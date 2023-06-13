@@ -40,7 +40,7 @@ function genRainStations() {
             if ($("#tr" + stID).length == 1) continue;
             $unitPanel.append(
                 '<tr id="trRF_' + stID + '">' +
-                    '<td><img src="../Images/map_legend/rain_gauge_' + unitID + '.svg" /></td>' +
+                    '<td><img src="../images/map_legend/rain_gauge_' + unitID + '.svg" /></td>' +
                     '<td><span class="TxtBlack">' + stName + '</span></td>' +
                     '<td><span class="TxtNumO">--</span><span class="TxtUnit">mm</span><span class="TxtTime">--</span></td>' +
                     '<td width="120">' +
