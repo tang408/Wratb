@@ -8,7 +8,7 @@
 }
 
 .data_searchBox .search_header p {
-    background-image: url(../img/research.svg);
+    background-image: url(../images/research.svg);
     background-repeat: no-repeat;
     background-size: 25px auto;
     font-family: "微軟正黑體";
@@ -69,7 +69,7 @@
     display: inline-block;
     padding: 6px 20px 6px 36px;
     border-style: none;
-    background-image: url(../img/magnifying-glass.svg);
+    background-image: url(../images/magnifying-glass.svg);
     background-repeat: no-repeat;
     background-size: 20px auto;
     background-position: 8px center;

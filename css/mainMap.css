@@ -29,3 +29,14 @@
         overflow: hidden;
     }
 }
+
+
+.warning-disaster {
+    background-color: #242424;
+    padding: 10px 0;
+}
+
+.warning-disaster div {
+    color: #bbb;
+    font-size: 13px;
+}
