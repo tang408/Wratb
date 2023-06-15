@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <title>Responsive Header</title>
+    <title></title>
 </head>
 
 <body>
@@ -28,24 +28,43 @@
                 </button>
                 <div class="collapse navbar-collapse pt-md-4" id="navbarNav">
                     <ul class="navbar-nav">
-                        <!-- <li class="nav-item active">
-                            <a class="nav-link text-light" href="/Wratb/index.html"><i class="fa fa-home"></i> 決策面板</a>
-                        </li> -->
-                        <li class="nav-item dropdown active">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="/Wratb/index.html" id="navbarDropdown"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-home"></i> 決策面板
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/rain_white.png"/>雨量</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/water_white.png"/>水位</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/Inclinometer_white.png"/>傾斜觀測</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/turbidity_white.png"/>濁度</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/cctv_white.png"/>攝影機</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/BhExten_white.png"/>孔內伸縮</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/SurfaceDM_white.png"/>地表位移</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/tile_white.png"/>傾斜儀</a></li>
-                                <li class="dropdown"><a href="#"><img src="./images/dropdown/SAAV_white.png"/>SAAV</a></li>
+                                <li class="dropdown"><a href="/Wratb/index.html"><img
+                                            src="./images/dropdown/rain_white.png" />雨量</a>
+                                </li>
+
+                                <li class="dropdown"><a href="/Wratb/water.html"><img
+                                            src="./images/dropdown/water_white.png" />水位</a>
+                                </li>
+
+                                <li class="dropdown"><a href="/Wratb/see.html"><img
+                                            src="./images/dropdown/Inclinometer_white.png" />傾斜觀測</a></li>
+
+                                <li class="dropdown"><a href="/Wratb/turbidity.html"><img
+                                            src="./images/dropdown/turbidity_white.png" />濁度</a></li>
+
+                                <li class="dropdown"><a href="/Wratb/CCTV.html"><img
+                                            src="./images/dropdown/cctv_white.png" />攝影機</a>
+                                </li>
+
+                                <li class="dropdown"><a href="/Wratb/expansion.html"><img
+                                            src="./images/dropdown/BhExten_white.png" />孔內伸縮</a></li>
+
+                                <li class="dropdown"><a href="/Wratb/surface.html"><img
+                                            src="./images/dropdown/SurfaceDM_white.png" />地表位移</a></li>
+
+                                <li class="dropdown"><a href="/Wratb/oblique.html"><img
+                                            src="./images/dropdown/tile_white.png" />傾斜儀</a>
+                                </li>
+
+                                <li class="dropdown"><a href="/Wratb/SAAV.html"><img
+                                            src="./images/dropdown/SAAV_white.png" />SAAV</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -81,13 +100,48 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="./script/map/jquery.js" type="text/javascript"></script>
+
+
     <script>
         $(document).ready(function () {
+
+            console.log("1111");
+
             $('.navbar-toggler').on('click', function () {
                 $(this).toggleClass('collapsed');
             });
+
+            $('.nav-item').click(function () {
+                console.log("12132");
+                // 移除当前所有具有active类的导航项
+                $('.nav-item').removeClass('active');
+                // 将被点击的导航项添加active类
+                $(this).addClass('active');
+            });
         });
-    </script>
+
+        // $(document).ready(function () {
+        //     // 監聽點擊事件，將 active class 應用到所點擊的選項
+        //     $('#decisionPanel').click(function () {
+        //         $(this).addClass('active');
+        //         $('#monitoringInfo').removeClass('active');
+        //         $('#disasterWarning').removeClass('active');
+        //     });
+
+        //     $('#monitoringInfo').click(function () {
+        //         $('#decisionPanel').removeClass('active');
+        //         $(this).addClass('active');
+        //         $('#disasterWarning').removeClass('active');
+        //     });
+
+        //     $('#disasterWarning').click(function () {
+        //         $('#decisionPanel').removeClass('active');
+        //         $('#monitoringInfo').removeClass('active');
+        //         $(this).addClass('active');
+        //     });
+        // });
+
     </script>
 </body>
 
@@ -102,11 +156,11 @@
         margin: 0;
     }
 
-    .dropdown-menu li{
+    .dropdown-menu li {
         padding: 10px;
     }
 
-    .dropdown a{
+    .dropdown a {
         color: white;
         text-decoration: none;
     }
@@ -119,7 +173,7 @@
         background-color: black;
         transition-duration: 1.5s;
     }
-    
+
     .navbar-toggler {
         border-color: #444;
     }
@@ -330,11 +384,12 @@
             justify-content: center;
             align-items: center;
         }
+
         .dropdown-menu {
-        width: 60%;
-        margin: auto;
-        padding: 10px 25px;
-        background-color: #4c4c4c;
-    }
+            width: 60%;
+            margin: auto;
+            padding: 10px 25px;
+            background-color: #4c4c4c;
+        }
     }
 </style>
