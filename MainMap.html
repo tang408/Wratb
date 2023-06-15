@@ -25,6 +25,9 @@
 
 </head>
 
+<script>
+    w3.includeHTML();
+</script>
 
 
 <body>
@@ -55,19 +58,5 @@
     crossorigin="anonymous"></script>
 
 <script src="./js/MainMap.js"></script>
-<script>
-    w3.includeHTML();
-
-    $(document).ready(function () {
-        $('.nav-item').click(function () {
-            // 移除当前所有具有active类的导航项
-            $('.nav-item').removeClass('active');
-            // 将被点击的导航项添加active类
-            $(this).addClass('active');
-        });
-    });
-</script>
-
-
 
 </html>
