@@ -28,7 +28,7 @@
                 </button>
                 <div class="collapse navbar-collapse pt-md-4" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle text-light" href="/Wratb/index.html" id="navbarDropdown"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-home"></i> 決策面板
@@ -111,36 +111,15 @@
             $('.navbar-toggler').on('click', function () {
                 $(this).toggleClass('collapsed');
             });
-
-            $('.nav-item').click(function () {
-                console.log("12132");
-                // 移除当前所有具有active类的导航项
-                $('.nav-item').removeClass('active');
-                // 将被点击的导航项添加active类
-                $(this).addClass('active');
-            });
         });
 
-        // $(document).ready(function () {
-        //     // 監聽點擊事件，將 active class 應用到所點擊的選項
-        //     $('#decisionPanel').click(function () {
-        //         $(this).addClass('active');
-        //         $('#monitoringInfo').removeClass('active');
-        //         $('#disasterWarning').removeClass('active');
-        //     });
-
-        //     $('#monitoringInfo').click(function () {
-        //         $('#decisionPanel').removeClass('active');
-        //         $(this).addClass('active');
-        //         $('#disasterWarning').removeClass('active');
-        //     });
-
-        //     $('#disasterWarning').click(function () {
-        //         $('#decisionPanel').removeClass('active');
-        //         $('#monitoringInfo').removeClass('active');
-        //         $(this).addClass('active');
-        //     });
-        // });
+        $('.nav-item').click(function () {
+            console.log("12132");
+            // 移除当前所有具有active类的导航项
+            $('.nav-item').removeClass('active');
+            // 将被点击的导航项添加active类
+            $(this).addClass('active');
+        });
 
     </script>
 </body>
