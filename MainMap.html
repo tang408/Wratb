@@ -21,20 +21,14 @@
     <link rel="stylesheet" href="./css/mainMap.css">
     <!-- 放header -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <div w3-include-html="header.html"></div>
+
 
 </head>
 
-<script>
-    // w3.includeHTML();
-
-    w3.includeHTML(function () {
-        handleNavItemClick();
-    });
-</script>
 
 
 <body>
+    <div w3-include-html="header.html"></div>
     <form method="post" action="./MainMap.aspx" id="form1">
         <div class="aspNetHidden">
             <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
@@ -62,5 +56,12 @@
     crossorigin="anonymous"></script>
 
 <script src="./js/MainMap.js"></script>
+<script>
+    // w3.includeHTML();
+
+    w3.includeHTML(function () {
+        handleNavItemClick();
+    });
+</script>
 
 </html>
