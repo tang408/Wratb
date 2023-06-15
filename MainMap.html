@@ -71,10 +71,19 @@
     $(document).ready(function () {
         // 加载头部内容
         $('#header-placeholder').load('header.html', function () {
-            // 导航项点击事件处理
-            $('.nav-item').click(function () {
-                $('.nav-item').removeClass('active');
-                $(this).addClass('active');
+            // 获取当前页面的URL
+            var currentPageUrl = window.location.href;
+
+            // 遍历导航项并检查URL匹配
+            $('.navbar-nav .nav-item').each(function () {
+                var navLink = $(this).find('.nav-link');
+                var navUrl = navLink.attr('href');
+
+                // 检查URL是否匹配并设置active状态
+                if (currentPageUrl.includes(navUrl)) {
+                    $(this).addClass('active');
+                    navLink.addClass('active');
+                }
             });
         });
     });
