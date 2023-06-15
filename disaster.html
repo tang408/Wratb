@@ -164,16 +164,27 @@
 
 <script>
     $(document).ready(function () {
+        // 加载头部内容
         $('#header-placeholder').load('header.html', function () {
+            // 获取当前页面的URL
             var currentPageUrl = window.location.href;
 
-            $('.navbar-nav .nav-item').each(function () {
-                var navLink = $(this).find('.nav-link');
-                var navUrl = navLink.attr('href');
+            // 导航项点击事件处理
+            $('.navbar-nav .nav-item').click(function () {
+                $('.navbar-nav .nav-item').removeClass('active');
+                $(this).addClass('active');
+            });
 
-                if (currentPageUrl.includes(navUrl)) {
-                    $(this).addClass('active');
-                    navLink.addClass('active');
+            // 遍历子菜单项并检查URL匹配
+            $('.navbar-nav .dropdown-menu .dropdown-item').each(function () {
+                var subMenuLink = $(this).find('a');
+                var subMenuUrl = subMenuLink.attr('href');
+
+                // 检查URL是否匹配并设置active状态
+                if (currentPageUrl.includes(subMenuUrl)) {
+                    $('#decisionPanelDropdown').addClass('active');
+                    subMenuLink.addClass('active');
+                    subMenuLink.closest('.dropdown').addClass('active');
                 }
             });
         });
