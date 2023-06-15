@@ -104,7 +104,14 @@
 
 
     <script>
+        function handleNavItemClick() {
+            $('.nav-item').removeClass('active');
+            $(this).addClass('active');
+        }
+
         $(document).ready(function () {
+            $('.nav-item').click(handleNavItemClick);
+
             $('.navbar-toggler').on('click', function () {
                 $(this).toggleClass('collapsed');
             });
