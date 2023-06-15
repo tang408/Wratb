@@ -20,18 +20,20 @@
         href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
     <link rel="stylesheet" href="./css/mainMap.css">
     <!-- 放header -->
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <div w3-include-html="header.html"></div>
+    <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
+    <!-- <div w3-include-html="header.html"></div> -->
 </head>
 
-<script>
+<!-- <script>
     w3.includeHTML(function () {
         handleNavItemClick();
     });
-</script>
+</script> -->
 
 
 <body>
+    <div id="header-placeholder"></div>
+
     <div id="cont-3" class="cont__item" style="display: block;">
         <div class="warning-disaster">
             <div class="container">本系統災害示警資料，由「國家災害防救科技中心-災害示警公開資料平」台提供。</div>
@@ -164,5 +166,23 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
 <script src="./js/MainMap.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#header-placeholder').load('header.html', function () {
+            var currentPageUrl = window.location.href;
+
+            $('.navbar-nav .nav-item').each(function () {
+                var navLink = $(this).find('.nav-link');
+                var navUrl = navLink.attr('href');
+
+                if (currentPageUrl.includes(navUrl)) {
+                    $(this).addClass('active');
+                    navLink.addClass('active');
+                }
+            });
+        });
+    });
+</script>
 
 </html>

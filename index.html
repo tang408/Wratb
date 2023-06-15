@@ -12,19 +12,21 @@
     <link href="./css/bootstrap-datepicker3.min.css" rel="stylesheet" />
 
 
-    <!-- 放header -->
+    <!-- 放header
     <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <div w3-include-html="header.html"></div>
+    <div w3-include-html="header.html"></div> -->
 
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/list.css">
 </head>
-<script>
+<!-- <script>
     w3.includeHTML();
-</script>
+</script> -->
 
 <body>
+    <div id="header-placeholder"></div>
+
     <div class="wrapper">
         <div class="container">
             <!-- <div class="row"> -->
@@ -1263,5 +1265,24 @@
 <script src="./js/bootstrap-datepicker.zh-TW.js"></script>
 <script src="./js/rain.js"></script>
 <script src="./js/all.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#header-placeholder').load('header.html', function () {
+            var currentPageUrl = window.location.href;
+
+            $('.navbar-nav .nav-item').each(function () {
+                var navLink = $(this).find('.nav-link');
+                var navUrl = navLink.attr('href');
+
+                if (currentPageUrl.includes(navUrl)) {
+                    $(this).addClass('active');
+                    navLink.addClass('active');
+                }
+            });
+        });
+    });
+</script>
 
 </html>
