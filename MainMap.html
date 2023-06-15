@@ -21,16 +21,16 @@
     <link rel="stylesheet" href="./css/mainMap.css">
     <!-- 放header -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
-
+    <div w3-include-html="header.html"></div>
 
 </head>
 
+<script>
+    w3.includeHTML();
+</script>
 
 
 <body>
-    <!-- <div w3-include-html="header.html"></div> -->
-    <div id="header-placeholder"></div>
-
     <form method="post" action="./MainMap.aspx" id="form1">
         <div class="aspNetHidden">
             <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
@@ -56,25 +56,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
-<script src="./js/jquery.min.js" type="text/javascript"></script>
 
 <script src="./js/MainMap.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#header-placeholder').load('header.html', function () {
-            var currentPageUrl = window.location.href;
-
-            $('.navbar-nav .nav-item').each(function () {
-                var navLink = $(this).find('.nav-link');
-                var navUrl = navLink.attr('href');
-
-                if (currentPageUrl.includes(navUrl)) {
-                    $(this).addClass('active');
-                    navLink.addClass('active');
-                }
-            });
-        });
-    });
-</script>
 
 </html>
