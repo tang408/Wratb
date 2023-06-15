@@ -28,7 +28,9 @@
 
 
 <body>
-    <div w3-include-html="header.html"></div>
+    <!-- <div w3-include-html="header.html"></div> -->
+    <div id="header-placeholder"></div>
+
     <form method="post" action="./MainMap.aspx" id="form1">
         <div class="aspNetHidden">
             <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
@@ -57,11 +59,24 @@
 <script src="./js/jquery.min.js" type="text/javascript"></script>
 
 <script src="./js/MainMap.js"></script>
-<script>
+<!-- <script>
     // w3.includeHTML();
 
     w3.includeHTML(function () {
         handleNavItemClick();
+    });
+</script> -->
+
+<script>
+    $(document).ready(function () {
+        // 加载头部内容
+        $('#header-placeholder').load('header.html', function () {
+            // 导航项点击事件处理
+            $('.nav-item').click(function () {
+                $('.nav-item').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
     });
 </script>
 
