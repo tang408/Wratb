@@ -28,9 +28,27 @@
                 </button>
                 <div class="collapse navbar-collapse pt-md-4" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
+                        <!-- <li class="nav-item active">
                             <a class="nav-link text-light" href="/Wratb/index.html"><i class="fa fa-home"></i> 決策面板</a>
+                        </li> -->
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle text-light" href="/Wratb/index.html" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-home"></i> 決策面板
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/rain_white.png"/>雨量</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/water_white.png"/>水位</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/Inclinometer_white.png"/>傾斜觀測</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/turbidity_white.png"/>濁度</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/cctv_white.png"/>攝影機</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/BhExten_white.png"/>孔內伸縮</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/SurfaceDM_white.png"/>地表位移</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/tile_white.png"/>傾斜儀</a></li>
+                                <li class="dropdown"><a href="#"><img src="./images/dropdown/SAAV_white.png"/>SAAV</a></li>
+                            </ul>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="/Wratb/MainMap.html"><i class="fa fa-chart-line"></i>
                                 監測資訊</a>
@@ -77,6 +95,31 @@
 
 
 <style>
+    .dropdown-menu {
+        width: 100%;
+        background-color: #4c4c4c;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li{
+        padding: 10px;
+    }
+
+    .dropdown a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .dropdown img {
+        margin-right: 20px;
+    }
+
+    .dropdown:hover {
+        background-color: black;
+        transition-duration: 1.5s;
+    }
+    
     .navbar-toggler {
         border-color: #444;
     }
@@ -287,5 +330,11 @@
             justify-content: center;
             align-items: center;
         }
+        .dropdown-menu {
+        width: 60%;
+        margin: auto;
+        padding: 10px 25px;
+        background-color: #4c4c4c;
+    }
     }
 </style>
